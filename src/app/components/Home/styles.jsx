@@ -1,5 +1,4 @@
 import { Box, styled } from '@mui/material';
-import bugSvg from '../../assets/svgs/bug.svg';
 import wavePng from '../../assets/images/layered-waves-haikei.png';
 
 export const StyledHomeSection = styled(Box)(() => ({
@@ -10,7 +9,6 @@ export const StyledHomeSection = styled(Box)(() => ({
 
 export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   zIndex: 2,
-  cursor: 'auto',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
@@ -23,7 +21,6 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   },
   '& .bird-animation-wrapper': {
     zIndex: -1,
-    cursor: `url(${bugSvg}), auto `,
     width: 400,
     height: 400,
     position: 'absolute',
@@ -88,7 +85,6 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
       fill: 'white',
       transition: 'all 0.3s ease',
       '&:hover': {
-        cursor: 'pointer',
         fill: '#ffd15d',
         transition: 'all 0.3s ease',
       },
@@ -396,7 +392,6 @@ export const StyledBirdAnimationSection = styled(Box)`
 `;
 
 export const StyledScrollDiv = styled(Box)(({ theme }) => ({
-  cursor: 'pointer',
   '&:hover': {
     '& .scroll-text': {
       letterSpacing: '10px',

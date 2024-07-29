@@ -33,7 +33,7 @@ const Home = () => {
         />
 
         <ContentSection />
-        <Link underline="none" href="#element">
+        <Link underline="none" href="#AboutMe">
           <StyledScrollDiv
             className="styled-scroll-div"
             display={'flex'}

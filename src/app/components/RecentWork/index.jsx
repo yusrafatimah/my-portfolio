@@ -1,19 +1,24 @@
 import React from 'react';
 import Text from '../../common-components/Text';
 import { StyledRecentWork, StyledCard } from './styles';
-import { Box, Modal } from '@mui/material';
+import { Box } from '@mui/material';
 import demo1Svg from '../../assets/images/demo-1.jpg';
 import demo2Svg from '../../assets/images/demo-2.jpg';
 import { magnifierSvg } from '../../assets/svgs/magnifier';
 import prompterVideo from '../../assets/gifs/prompter.mov';
+import CustomModal from '../../common-components/CustomModal';
+import Teleprompter from '../../Features/Teleprompter';
 
 const RecentWork = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openCardModal, setOpenCardModal] = React.useState(false);
+  const handleOpen = () => setOpenCardModal(true);
+  const handleClose = () => setOpenCardModal(false);
+  const [openPrompterModal, setOpenPrompterModal] = React.useState(false);
+  const handleOpenPrompter = () => setOpenPrompterModal(true);
+  const handleClosePrompter = () => setOpenPrompterModal(false);
 
   return (
-    <StyledRecentWork className={'styled-recent-work'}>
+    <StyledRecentWork id="RecentWork" className={'styled-recent-work'}>
       <Text
         className="recent-work-text"
         margin={'0 0 20px 0'}
@@ -24,7 +29,7 @@ const RecentWork = () => {
       />
       <Box pt={'25px'} width={'100%'} display="flex" justifyContent="center">
         <Box className={'card-grid'} display={'flex'}>
-          <StyledCard className={'card'}>
+          <StyledCard className={'card'} onClick={handleOpenPrompter}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
@@ -81,29 +86,32 @@ const RecentWork = () => {
           </Box>
         </Box>
       </Box>
-      <Modal
-        aria-labelledby="unstyled-modal-title"
-        aria-describedby="unstyled-modal-description"
-        open={open}
-        onClose={handleClose}
+      <CustomModal
+        width="1200px"
+        height="700px"
+        open={openCardModal}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
       >
-        <Box
-          className={'modal-content'}
-          sx={{ width: 'fit-content', height: 'fit-content' }}
+        <video
+          width="100%"
+          height="100%"
+          className={'video-player'}
+          controls
+          preload
         >
-          <Box sx={{ width: '1200px', height: '700px' }}>
-            <video
-              width="100%"
-              height="100%"
-              className={'video-player'}
-              controls
-              preload
-            >
-              <source src={prompterVideo} type="video/mp4"></source>
-            </video>
-          </Box>
-        </Box>
-      </Modal>
+          <source src={prompterVideo} type="video/mp4"></source>
+        </video>
+      </CustomModal>
+      <CustomModal
+        width="1200px"
+        height="700px"
+        open={openPrompterModal}
+        handleClose={handleClosePrompter}
+        handleOpen={handleOpenPrompter}
+      >
+        <Teleprompter />
+      </CustomModal>
     </StyledRecentWork>
   );
 };

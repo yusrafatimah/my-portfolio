@@ -15,6 +15,7 @@ html {
   justify-content: center;
 }
 .modal-content {
+  border-radius: 10px;
   font-weight: 500;
   text-align: start;
   position: relative;
@@ -137,5 +138,14 @@ html {
     transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     -webkit-transform: translate3d(0, -5px, 0);
     transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes playScript {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(calc(-100% + 21px));
   }
 }
