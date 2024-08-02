@@ -11,10 +11,12 @@ const Text = ({
   margin,
   lineHeight,
   cursor,
+  fontFamily,
 }) => {
   return (
     <StyledTypography>
       <Typography
+        fontFamily={fontFamily}
         fontSize={fontSize}
         fontWeight={fontWeight}
         color={color}

@@ -18,7 +18,20 @@ const ContentSection = () => {
           <BirdAnimationSection />
         </Box>
       </Box>
-      <Text className="name" text={'Yusra Fatima'} />
+      <Text
+        color={'white'}
+        fontSize={20}
+        fontWeight={500}
+        text={'Hi, My name is'}
+      />
+      <Text
+        color={'white'}
+        fontSize={80}
+        fontWeight={500}
+        text={'Yusra Fatima.'}
+        fontFamily={` "Playwrite BE VLG", cursive !important`}
+        margin={'20px 0 40px 0'}
+      />
       <Box
         display={'flex'}
         alignItems="center"
@@ -26,11 +39,11 @@ const ContentSection = () => {
         minWidth={'355px'}
         justifyContent={'flex-start'}
       >
-        <Text text={'I am a'} fontSize={20} fontWeight={500} color={'white'} />
+        <Text text={'I am a'} fontSize={25} fontWeight={500} color={'white'} />
 
         <Text
           text={'Front-End Web Developer'}
-          fontSize={20}
+          fontSize={25}
           fontWeight={500}
           color={'white'}
           className="wipe-animated-text"
@@ -43,12 +56,12 @@ const ContentSection = () => {
       </Box>
       <CustomButton
         svg={dragonSvg}
-        text={'Hire me'}
+        text={'Download CV'}
         url={'#Home'}
-        height={50}
-        width={170}
-        fontSize={'16px'}
-        fontWeight={700}
+        height={40}
+        width={150}
+        fontSize={'14px'}
+        fontWeight={500}
         margin={'40px 0 20px'}
       />
     </>

@@ -73,7 +73,7 @@ const AboutGrid = () => {
             fontWeight={700}
             lineHeight={1.7}
             color={'white'}
-            text={'40+'}
+            text={'50+'}
           />
           <Text
             fontSize={16}

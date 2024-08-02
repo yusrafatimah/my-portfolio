@@ -10,7 +10,7 @@ const AboutText = () => {
     <StyledAboutTextSection display={'flex'} width={'100%'} gap={'40px'}>
       <Box maxWidth={'50%'} width={'100%'} mt={'25px'}>
         <Text
-          margin={'0 0 1rem 0'}
+          margin={'0 0 1.5rem 0'}
           fontSize={16}
           fontWeight={500}
           lineHeight={1.7}
@@ -23,9 +23,9 @@ const AboutText = () => {
           svg={truckSvg}
           text={'Download CV'}
           url={'#Home'}
-          height={45}
+          height={35}
           width={150}
-          fontSize={'14px'}
+          fontSize={'13px'}
           fontWeight={500}
         />
       </Box>

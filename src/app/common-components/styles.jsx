@@ -1,50 +1,55 @@
 import { Box, Typography, styled } from '@mui/material';
 
 export const StyledButton = styled(Box)`
-  position: relative;
-  background: #ff4c60;
-  display: inline-flex;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  overflow: hidden;
-  cursor: pointer;
-  :hover {
-    .dub-arrow {
-      left: 0;
-    }
-    a {
-      left: 150px;
-    }
-  }
-  svg {
-    height: auto;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    letter-spacing: 1px;
-    position: relative;
-    left: 0;
-    transition: all 0.35s ease-Out;
-    font-family: 'Rubik', sans-serif;
-    overflow: hidden;
-  }
-
-  .dub-arrow {
-    width: 100%;
-    height: 100%;
-    background: white;
-    left: -200px;
-    position: absolute;
-    padding: 0;
+  .button {
+    height: inherit;
+    width: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.35s ease-Out;
-    bottom: 0;
-    fill: #ff4c60;
+    border: 2px solid #00ffbc;
+    color: #00ffbc;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  p {
+    color: #00ffbc;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  #button-5 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #button-5 p {
+    position: relative;
+    transition: all 0.45s ease-Out;
+  }
+
+  #translate {
+    transform: rotate(50deg);
+    width: 100%;
+    height: 250%;
+    left: -200px;
+    top: -30px;
+    background: #00ffbc;
+    position: absolute;
+    transition: all 0.3s ease-Out;
+  }
+
+  #button-5:hover #translate {
+    left: 0;
+  }
+
+  #button-5:hover p {
+    color: #2d3142;
   }
 `;
 

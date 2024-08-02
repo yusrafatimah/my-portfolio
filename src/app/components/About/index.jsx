@@ -36,7 +36,7 @@ const About = () => {
           alignItems="center"
           justifyContent="center"
           flexDirection={'column'}
-          mt={'80px'}
+          mt={'40px'}
         >
           <Text
             className="scroll-text"
@@ -44,7 +44,7 @@ const About = () => {
             fontSize={14}
             fontWeight={500}
             color={'white'}
-            text={'SCROLL'}
+            text={'SEE RECENT WORK'}
           />
           <div className="cursor-outer">
             <div className="animated-blob"></div>

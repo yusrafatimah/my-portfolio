@@ -25,7 +25,7 @@ const Teleprompter = ({ prompter }) => {
   const animationElement = document.getElementById(
     'prompter-animated-script-text',
   );
-  console.log(prompterText, defaultTextInPrompter);
+
   useEffect(() => {
     if (defaultTextInPrompter) {
       setPrompterText(
@@ -64,142 +64,163 @@ const Teleprompter = ({ prompter }) => {
   };
 
   return (
-    <StyledTeleprompterWrapper className="styled-prompter-wrapper">
-      <Box className={'prompter-sidebar'}>
-        <TextField
-          id="outlined-multiline-static"
-          className="script-input"
-          placeholder="Enter text here.."
-          multiline
-          rows={12}
-          fontSize="12px"
-          sx={{
-            width: '100%',
-            background: 'white',
-            borderRadius: '11px 11px 0 0',
-          }}
-          value={prompterText}
-          onChange={e => {
-            handleChangePrompterText(e.target.value);
-          }}
-        />
-        <Box onClick={() => setDefaultTextInPrompter(!defaultTextInPrompter)}>
-          <Text
-            margin={'5px 0 0 0'}
-            fontSize={13}
-            fontWeight={500}
-            color={'white'}
-            cursor={'pointer'}
-            text={
-              defaultTextInPrompter
-                ? 'Remove default text'
-                : 'Try with default text'
-            }
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      width={'100%'}
+      height={'100%'}
+    >
+      <Text
+        margin={'5px 0 0 0'}
+        fontSize={35}
+        fontWeight={500}
+        cursor={'pointer'}
+        text={'TELEPROMPTER'}
+      />
+      <StyledTeleprompterWrapper className="styled-prompter-wrapper">
+        <Box className={'prompter-sidebar'}>
+          <TextField
+            id="outlined-multiline-static"
+            className="script-input"
+            placeholder="Enter text here.."
+            multiline
+            rows={12}
+            fontSize="12px"
+            sx={{
+              width: '100%',
+              background: 'white',
+              borderRadius: '11px 11px 0 0',
+            }}
+            value={prompterText}
+            onChange={e => {
+              handleChangePrompterText(e.target.value);
+            }}
           />
-        </Box>
-        <Box
-          width={'100%'}
-          display={'flex'}
-          gap="4px"
-          mt={'15px'}
-          alignItems={'center'}
-          justifyContent={'space-evenly'}
-        >
-          <Box display={'flex'} gap="4px" alignItems={'center'}>
-            {minusSvg}
+          <Box onClick={() => setDefaultTextInPrompter(!defaultTextInPrompter)}>
             <Text
+              margin={'5px 0 0 0'}
               fontSize={13}
               fontWeight={500}
               color={'white'}
-              text={'12px'}
+              cursor={'pointer'}
+              text={
+                defaultTextInPrompter
+                  ? 'Remove default text'
+                  : 'Try with default text'
+              }
             />
-            {dropdownSvg}
           </Box>
           <Box
+            width={'100%'}
             display={'flex'}
+            gap="4px"
+            mt={'15px'}
             alignItems={'center'}
-            height={27}
-            onClick={() => setShow(!show)}
+            justifyContent={'space-evenly'}
           >
-            {show ? hideSvg : showSvg}
+            <Box display={'flex'} gap="4px" alignItems={'center'}>
+              {minusSvg}
+              <Text
+                fontSize={13}
+                fontWeight={500}
+                color={'white'}
+                text={'12px'}
+              />
+              {dropdownSvg}
+            </Box>
+            <Box
+              display={'flex'}
+              alignItems={'center'}
+              height={27}
+              onClick={() => setShow(!show)}
+            >
+              {show ? hideSvg : showSvg}
+            </Box>
+            <Box display={'flex'} gap="4px" alignItems={'center'}>
+              {minusSvg}
+              <Text
+                fontSize={13}
+                fontWeight={500}
+                color={'white'}
+                text={'5x'}
+              />
+              {dropdownSvg}
+            </Box>
           </Box>
-          <Box display={'flex'} gap="4px" alignItems={'center'}>
-            {minusSvg}
-            <Text fontSize={13} fontWeight={500} color={'white'} text={'5x'} />
-            {dropdownSvg}
+          <Box display={'flex'} width={'95%'} className={'t-slider-container'}>
+            <Slider
+              className="opacity-slider"
+              id="os-3442"
+              value={transparency}
+              size={'small'}
+              sx={{ height: 10, width: '100%' }}
+              step={10}
+              min={10}
+              onChange={(e, v) => handleChangeTransparency(v)}
+            />
           </Box>
-        </Box>
-        <Box display={'flex'} width={'95%'} className={'t-slider-container'}>
-          <Slider
-            className="opacity-slider"
-            id="os-3442"
-            value={transparency}
-            size={'small'}
-            sx={{ height: 10, width: '100%' }}
-            step={10}
-            min={10}
-            onChange={(e, v) => handleChangeTransparency(v)}
-          />
-        </Box>
 
-        <Box mt={'5px'} onClick={() => setPlay(!play)}>
-          {play ? pauseSvg : playSvg}
-        </Box>
-      </Box>
-      <Box
-        className={'prompter-screen'}
-        sx={{
-          width: '100%',
-          height: 'fit-content',
-          maxWidth: 'fit-content',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'relative',
-        }}
-      >
-        <img className="screen-img-bg" src={screenSvg} alt={'screen-img'} />
-        <Box className={'screen-top-bg'} height={'100%'} width={'100%'}>
-          <Box position={'relative'} height={'100%'} width={'100%'}>
-            {prompterText && (
-              <ScriptOverlayContainer
-                id={'prompter-overlay-container-id'}
-                pointerEvents={'auto'}
-                alignItems={prompter?.textPosition}
-              >
-                <ScriptContainer
-                  className="styled-prompter-container"
-                  pointerEvents={'none'}
-                  // speed={prompter?.speed}
-                  // fontSize={prompter?.fontSize}
-                  // opacity={prompter?.transparency}
-                  // animationPlayState={prompter?.play ? 'running' : 'paused'}
-                  // visible={prompter?.show}
-                  speed={8}
-                  fontSize={16}
-                  opacity={transparency}
-                  animationPlayState={play ? 'running' : 'paused'}
-                  visible={show}
-                  width={'100%'}
-                  height={'100%'}
-                >
-                  <Box className="styled-prompter-container-inner">
-                    <p
-                      id={'prompter-animated-script-text'}
-                      className={`script-animation-text`}
-                    >
-                      {prompterText}
-                    </p>
-                    <div className="line-reader"></div>
-                    <Box className={'arrow-icon'}>{arrowSvg}</Box>
-                  </Box>
-                </ScriptContainer>
-              </ScriptOverlayContainer>
-            )}
+          <Box mt={'5px'} onClick={() => setPlay(!play)}>
+            {play ? pauseSvg : playSvg}
           </Box>
         </Box>
-      </Box>
-    </StyledTeleprompterWrapper>
+        <Box
+          className={'prompter-screen'}
+          sx={{
+            width: '100%',
+            height: 'fit-content',
+            maxWidth: 'fit-content',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            position: 'relative',
+          }}
+        >
+          <img className="screen-img-bg" src={screenSvg} alt={'screen-img'} />
+          <Box className={'screen-top-bg'} height={'100%'} width={'100%'}>
+            <Box position={'relative'} height={'100%'} width={'100%'}>
+              {prompterText && (
+                <ScriptOverlayContainer
+                  id={'prompter-overlay-container-id'}
+                  pointerEvents={'auto'}
+                  alignItems={prompter?.textPosition}
+                >
+                  <ScriptContainer
+                    className="styled-prompter-container"
+                    pointerEvents={'none'}
+                    // speed={prompter?.speed}
+                    // fontSize={prompter?.fontSize}
+                    // opacity={prompter?.transparency}
+                    // animationPlayState={prompter?.play ? 'running' : 'paused'}
+                    // visible={prompter?.show}
+                    speed={8}
+                    fontSize={16}
+                    opacity={transparency}
+                    animationPlayState={play ? 'running' : 'paused'}
+                    visible={show}
+                    width={'100%'}
+                    height={'100%'}
+                  >
+                    <Box className="styled-prompter-container-inner">
+                      <p
+                        id={'prompter-animated-script-text'}
+                        className={`script-animation-text`}
+                      >
+                        {prompterText}
+                      </p>
+                      <div className="line-reader"></div>
+                      <Box className={'arrow-icon'}>{arrowSvg}</Box>
+                    </Box>
+                  </ScriptContainer>
+                </ScriptOverlayContainer>
+              )}
+            </Box>
+          </Box>
+        </Box>
+      </StyledTeleprompterWrapper>
+    </Box>
   );
 };
 

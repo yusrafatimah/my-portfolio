@@ -19,21 +19,30 @@ const Home = () => {
       alignItems={'center'}
       flexDirection={'column'}
       justifyContent={'center'}
+      position={'relative'}
     >
+      <Box class="container-fluid">
+        <Box class="background">
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+          <Box class="cube"></Box>
+        </Box>
+      </Box>
       <StyledMainWrapper
         flexDirection={'column'}
         className="styled-main-wrapper"
       >
-        <img
-          className="avatar-img"
-          height={'200px'}
-          width={'auto'}
-          src={require('../../assets/images/illustration.jpg')}
-          alt={'avatar-gif'}
-        />
-
-        <ContentSection />
-        <Link underline="none" href="#AboutMe">
+        <Box paddingLeft={'80px'}>
+          <ContentSection />
+        </Box>
+        <Link width="100%" height="100%" underline="none" href="#AboutMe">
           <StyledScrollDiv
             className="styled-scroll-div"
             display={'flex'}
@@ -48,7 +57,7 @@ const Home = () => {
               fontSize={14}
               fontWeight={500}
               color={'white'}
-              text={'SCROLL'}
+              text={'SEE ABOUT'}
             />
             <div className="cursor-outer">
               <div className="animated-blob"></div>

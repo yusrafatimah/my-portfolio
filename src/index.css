@@ -2,7 +2,7 @@ p {
   font-family: 'Rubik', sans-serif !important;
 }
 body {
-  background-color: #353353;
+  background: linear-gradient(132deg, #fc415a, #591bc5, #212335);
   margin: 0;
 }
 html {
@@ -147,5 +147,28 @@ html {
   }
   100% {
     transform: translateY(calc(-100% + 21px));
+  }
+}
+
+/* Animate Background*/
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
   }
 }

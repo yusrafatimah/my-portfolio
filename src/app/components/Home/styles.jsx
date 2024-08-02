@@ -1,16 +1,97 @@
 import { Box, styled } from '@mui/material';
-import wavePng from '../../assets/images/layered-waves-haikei.png';
 
-export const StyledHomeSection = styled(Box)(() => ({
-  backgroundImage: `url(${wavePng})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover',
-}));
+export const StyledHomeSection = styled(Box)`
+  .container-fluid {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+  }
+  .background {
+    position: relative;
+    background: linear-gradient(132deg, #fc415a, #591bc5, #212335);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0px;
+  }
+  .cube {
+    border-radius: 1px;
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 0.1px #d7d4e4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 8s ease-in forwards infinite;
+  }
+  .cube:nth-child(2n) {
+    border-color: #fff;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 0.1s;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 0.2s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 0.3s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 0.4s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 0.5s;
+    left: 50vw;
+    top: 10vh;
+  }
+  .cube:nth-child(2) {
+    animation-delay: 0.7s;
+    left: 25vw;
+    top: 40vh;
+  }
+  .cube:nth-child(3) {
+    animation-delay: 0.9s;
+    left: 75vw;
+    top: 50vh;
+  }
+  .cube:nth-child(4) {
+    animation-delay: 0.11s;
+    left: 90vw;
+    top: 10vh;
+  }
+  .cube:nth-child(5) {
+    animation-delay: 0.13s;
+    left: 10vw;
+    top: 85vh;
+  }
+  .cube:nth-child(6) {
+    animation-delay: 0.15s;
+    left: 50vw;
+    top: 10vh;
+  }
+`;
 
 export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   zIndex: 2,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'flex-end',
   width: '100%',
   height: '100%',
@@ -32,8 +113,8 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     '& .inner': {
       border: '4px solid #9E9E9E',
       borderRadius: '50% 50% 10px 10px',
-      width: 180,
-      height: 190,
+      width: 150,
+      height: 155,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -44,7 +125,7 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
         width: 2,
         background: '#9e9e9e',
         position: 'absolute',
-        bottom: '221px',
+        bottom: '187px',
       },
       '& .cage-top': {
         height: 20,
@@ -58,11 +139,14 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     },
   },
   '& .name': {
-    fontFamily: '"Rubik", sans-serif',
     color: '#fff',
-    fontSize: '40px',
-    fontWeight: 700,
+    fontSize: '35px',
+    fontWeight: 600,
     margin: '20px 0',
+    '& .yus': {
+      fontSize: '45px',
+      fontWeight: 700,
+    },
   },
   '& .wipe-animated-text': {
     color: 'white',
@@ -97,11 +181,11 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
 export const StyledBirdAnimationSection = styled(Box)`
   position: absolute;
   z-index:1;
-  transform:scale(0.4);
+  transform:scale(0.3);
   width: fit-content;
   height: fit-content;
   margin-left: 36px;
-  margin-bottom: -23px;
+  margin-bottom: -40px;
   .main {
     width: 400px;
     position: relative;
@@ -392,6 +476,8 @@ export const StyledBirdAnimationSection = styled(Box)`
 `;
 
 export const StyledScrollDiv = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
   '&:hover': {
     '& .scroll-text': {
       letterSpacing: '10px',

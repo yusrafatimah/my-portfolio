@@ -43,10 +43,10 @@ const RecentWork = () => {
             <img className="figure" src={demo1Svg} alt="demo-1" />
             <Box className={'top-badge'}>
               <Text
-                fontSize={10}
+                fontSize={11}
                 fontWeight={600}
                 color={'white'}
-                text={'Demo'}
+                text={'Try it yourself'}
               />
             </Box>
           </StyledCard>

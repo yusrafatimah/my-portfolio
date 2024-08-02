@@ -67,7 +67,8 @@ export const StyledCard = styled(Box)`
     align-items: center;
     justify-content: center;
     height: 30px;
-    width: 45px;
+    width: fit-content;
+    padding: 0 6px;
     border-radius: 0 0 20px 20px;
     background-color: #ff4c60;
     position: absolute;

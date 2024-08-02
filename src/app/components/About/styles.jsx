@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material';
 import dotsSvg from '../../assets/svgs/dots-svg.svg';
 
 export const StyleBoxWrapper = styled(Box)(({ theme }) => ({
-  padding: '0 70px',
+  padding: '10px 70px 0 70px',
   height: '100vh',
   display: 'flex',
   justifyContent: 'center',
@@ -33,7 +33,7 @@ export const StyleBoxWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledAboutTextSection = styled(Box)(({ theme }) => ({
-  backgroundColor: '#302f4e!important',
+  backgroundColor: 'rgba(0, 0, 0, 0.2)!important',
   boxShadow: '0 5px 20px 0 rgba(69, 67, 96, .1)',
   padding: 30,
   borderRadius: '20px',
@@ -56,8 +56,10 @@ export const StyledSkillsAnimation = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: center;
-    .inner-images {
+    .width-large-animate {
       animation: widthLarge 1.5s linear 1;
+    }
+    .inner-images {
       transform: scale(1.5);
       border-radius: 50%;
       position: relative;

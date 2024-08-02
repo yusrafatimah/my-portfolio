@@ -1,11 +1,9 @@
 import React from 'react';
-import { Box, Link } from '@mui/material';
+import { Box } from '@mui/material';
 import { StyledButton } from './styles';
 
 const CustomButton = ({
-  svg,
   text,
-  url,
   height,
   width,
   fontWeight,
@@ -14,22 +12,16 @@ const CustomButton = ({
 }) => {
   return (
     <StyledButton
-      className="animated-button"
-      id="animated-btn"
       height={height}
       width={width}
       margin={margin}
+      className="animated-button"
+      id="animated-btn"
     >
-      <Box className="dub-arrow">{svg}</Box>
-      <Link
-        fontSize={fontSize}
-        fontWeight={fontWeight}
-        target="_blank"
-        rel="noreferrer"
-        href={url}
-      >
-        {text}
-      </Link>
+      <Box class="button" id="button-5">
+        <Box id="translate"></Box>
+        <p style={{ fontWeight: fontWeight, fontSize: fontSize }}> {text}</p>
+      </Box>
     </StyledButton>
   );
 };

@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material';
 
 export const StyledTeleprompterWrapper = styled(Box)(() => ({
   width: '100%',
-  height: '100%',
+  height: 'max-content',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center',
