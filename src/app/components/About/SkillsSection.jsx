@@ -93,7 +93,7 @@ const SkillsSection = () => {
               <Box class="flip-image-inner">
                 <Box class="flip-front">
                   <img
-                    src="https://www.openxcell.com/wp-content/uploads/2021/11/reactjs-inner.svg"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3kBKaG5tKGPjFPGEnbmWSQIL1hX7PaNNQvQ&s"
                     alt=""
                   />
                 </Box>

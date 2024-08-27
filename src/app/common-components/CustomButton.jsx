@@ -3,12 +3,15 @@ import { Box } from '@mui/material';
 import { StyledButton } from './styles';
 
 const CustomButton = ({
+  url,
+  type,
   text,
   height,
   width,
   fontWeight,
   fontSize,
   margin,
+  downloadTitle,
 }) => {
   return (
     <StyledButton
@@ -18,9 +21,18 @@ const CustomButton = ({
       className="animated-button"
       id="animated-btn"
     >
-      <Box class="button" id="button-5">
+      <Box class="button" id="custom-button">
         <Box id="translate"></Box>
-        <p style={{ fontWeight: fontWeight, fontSize: fontSize }}> {text}</p>
+        {type === 'link' ? (
+          <a
+            href={require('../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf')}
+            download={downloadTitle}
+          >
+            {text}
+          </a>
+        ) : (
+          <p style={{ fontWeight: fontWeight, fontSize: fontSize }}> {text}</p>
+        )}
       </Box>
     </StyledButton>
   );

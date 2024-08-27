@@ -7,50 +7,87 @@ import demo2Svg from '../../assets/images/demo-2.jpg';
 import { magnifierSvg } from '../../assets/svgs/magnifier';
 import prompterVideo from '../../assets/gifs/prompter.mov';
 import CustomModal from '../../common-components/CustomModal';
+import { nextArrowIcon } from '../../assets/svgs/next-arrow';
+import { backArrowIcon } from '../../assets/svgs/back-arrow';
 import Teleprompter from '../../Features/Teleprompter';
+import CustomCharacters from '../../Features/CustomCharacters';
 
 const RecentWork = () => {
   const [openCardModal, setOpenCardModal] = React.useState(false);
+  const [openPrompterModal, setOpenPrompterModal] = React.useState(false);
+  const [openCharacterModal, setOpenCharacterModal] = React.useState(false);
+
   const handleOpen = () => setOpenCardModal(true);
   const handleClose = () => setOpenCardModal(false);
-  const [openPrompterModal, setOpenPrompterModal] = React.useState(false);
+
   const handleOpenPrompter = () => setOpenPrompterModal(true);
   const handleClosePrompter = () => setOpenPrompterModal(false);
 
+  const handleOpenCharacters = () => setOpenCharacterModal(true);
+  const handleCloseCharacters = () => setOpenCharacterModal(false);
+
+  let scrollvalue = 400;
+  const scrollNext = () => {
+    const scroller = document.getElementById('scroll-next');
+    scrollvalue += 400;
+    scroller && scroller.scrollTo(scrollvalue, 0);
+  };
+  const scrollBack = () => {
+    const scroller = document.getElementById('scroll-next');
+    scrollvalue -= 400;
+    scroller && scroller.scrollTo(scrollvalue, 0);
+  };
   return (
-    <StyledRecentWork id="RecentWork" className={'styled-recent-work'}>
+    <StyledRecentWork
+      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
+      id="RecentWork"
+      className={'styled-recent-work'}
+    >
       <Text
         className="recent-work-text"
-        margin={'0 0 20px 0'}
         fontSize={36}
         fontWeight={700}
         color={'white'}
         text={'Recent Work'}
       />
-      <Box pt={'25px'} width={'100%'} display="flex" justifyContent="center">
-        <Box className={'card-grid'} display={'flex'}>
+      <Box
+        className={'recent-work-wrap'}
+        position={'relative'}
+        width={'100%'}
+        display="flex"
+        justifyContent="center"
+      >
+        <Box
+          width={'fit-content'}
+          className={'arrow-icon back'}
+          onClick={() => scrollBack()}
+        >
+          {backArrowIcon}
+        </Box>
+        <Box id={'scroll-next'} className={'card-grid'} display={'flex'}>
           <StyledCard className={'card'} onClick={handleOpenPrompter}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
-              fontSize={20}
+              fontSize={24}
               fontWeight={700}
               color={'white'}
-              text={'Teleprompter Illustration'}
+              text={'Interactive Teleprompter Demo'}
             />
 
             <Box className={'more'}>{magnifierSvg}</Box>
             <img className="figure" src={demo1Svg} alt="demo-1" />
             <Box className={'top-badge'}>
               <Text
-                fontSize={11}
+                fontSize={12}
                 fontWeight={600}
                 color={'white'}
                 text={'Try it yourself'}
               />
             </Box>
           </StyledCard>
-          <StyledCard className={'card'} onClick={handleOpen}>
+
+          {/* <StyledCard className={'card'} onClick={handleOpen}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
@@ -70,20 +107,37 @@ const RecentWork = () => {
                 text={'Demo'}
               />
             </Box>
-          </StyledCard>
+          </StyledCard> */}
 
-          <Box className={'card'}>
-            <img src={demo1Svg} alt="demo-1" />
-          </Box>
-          <Box className={'card'}>
-            <img src={demo1Svg} alt="demo-1" />
-          </Box>
-          <Box className={'card'}>
-            <img src={demo1Svg} alt="demo-1" />
-          </Box>
-          <Box className={'card'}>
-            <img src={demo1Svg} alt="demo-1" />
-          </Box>
+          <StyledCard className={'card'} onClick={handleOpenCharacters}>
+            <Box className={'hover-section'}></Box>
+            <Text
+              className="details"
+              fontSize={24}
+              fontWeight={700}
+              color={'white'}
+              text={'Pure CSS Characters'}
+            />
+
+            <Box className={'more'}>{magnifierSvg}</Box>
+            <img className="figure" src={demo2Svg} alt="demo-2" />
+            <Box className={'top-badge'}>
+              <Text
+                fontSize={12}
+                fontWeight={600}
+                color={'white'}
+                text={'Demo'}
+              />
+            </Box>
+          </StyledCard>
+        </Box>
+
+        <Box
+          width={'fit-content'}
+          className={'arrow-icon next'}
+          onClick={() => scrollNext()}
+        >
+          {nextArrowIcon}
         </Box>
       </Box>
       <CustomModal
@@ -111,6 +165,15 @@ const RecentWork = () => {
         handleOpen={handleOpenPrompter}
       >
         <Teleprompter />
+      </CustomModal>
+      <CustomModal
+        width="1200px"
+        height="700px"
+        open={openCharacterModal}
+        handleClose={handleCloseCharacters}
+        handleOpen={handleOpenCharacters}
+      >
+        <CustomCharacters />
       </CustomModal>
     </StyledRecentWork>
   );

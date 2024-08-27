@@ -57,9 +57,9 @@ export const StyledTeleprompterWrapper = styled(Box)(() => ({
     border: '1px solid',
     top: '55px',
     right: '110px',
-    backgroundImage: `url(
-      'https://static.vecteezy.com/system/resources/previews/000/134/412/non_2x/vector-character-icons-illustration.jpg'
-    )`,
+    backgroundImage: `url(https://w0.peakpx.com/wallpaper/15/9/HD-wallpaper-macos-monterey-dark-wwdc-2021.jpg)`,
+    backgroundSize: 'cover',
+    backgrounRepeat: 'no-repeat',
   },
 }));
 
@@ -94,7 +94,8 @@ export const ScriptContainer = styled(Box)(
     '& .styled-prompter-container-inner': {
       height: '100%',
       display: 'flex',
-      padding: '30% 0 0 0',
+      // padding: '30% 0 0 0',
+      overflowY: 'auto',
       '& .arrow-icon': {
         height: '100%',
         width: '100%',
@@ -120,8 +121,10 @@ export const ScriptContainer = styled(Box)(
       zIndex: -1,
       position: 'absolute',
       left: 0,
+      marginTop: '105px',
     },
     '& .script-animation-text': {
+      marginTop: '105px',
       whiteSpace: 'pre-line',
       overflowWrap: 'anywhere',
       height: 'max-content',

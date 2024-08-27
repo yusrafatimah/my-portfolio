@@ -2,8 +2,6 @@ import { Box, styled } from '@mui/material';
 import dotsSvg from '../../assets/svgs/dots-svg.svg';
 
 export const StyleBoxWrapper = styled(Box)(({ theme }) => ({
-  padding: '10px 70px 0 70px',
-  height: '100vh',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-start',
@@ -35,7 +33,6 @@ export const StyleBoxWrapper = styled(Box)(({ theme }) => ({
 export const StyledAboutTextSection = styled(Box)(({ theme }) => ({
   backgroundColor: 'rgba(0, 0, 0, 0.2)!important',
   boxShadow: '0 5px 20px 0 rgba(69, 67, 96, .1)',
-  padding: 30,
   borderRadius: '20px',
   [theme.breakpoints.down(1200)]: {},
 }));
@@ -123,7 +120,7 @@ export const StyledSkillsAnimation = styled(Box)`
               p {
                 animation: rotate-reverse 50s linear infinite;
                 font-weight: 700;
-                font-size: 12px;
+                font-size: 10px;
               }
             }
           }
@@ -133,7 +130,7 @@ export const StyledSkillsAnimation = styled(Box)`
         }
       }
       .waviy {
-        -webkit-box-reflect: below -25px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+        -webkit-box-reflect: below -40px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
         position: absolute;
       }
       .waviy {
@@ -143,7 +140,7 @@ export const StyledSkillsAnimation = styled(Box)`
           display: inline-block;
           color: #fff;
           animation: waviy 1s infinite;
-          font-size: 15px;
+          font-size: 22px;
         }
       }
       .image-1 {

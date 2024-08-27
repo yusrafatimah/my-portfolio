@@ -36,7 +36,7 @@ export const MainSection = styled(Box)`
       background-image: radial-gradient(
         circle at 10px -5px,
         transparent 12px,
-        #591bc5 13px
+        #1f5566 13px
       );
     }
 
@@ -45,7 +45,7 @@ export const MainSection = styled(Box)`
       background-size: 40px 20px;
       background-image: radial-gradient(
         circle at 10px 15px,
-        #591bc5 12px,
+        #1f5566 12px,
         transparent 13px
       );
     }
@@ -63,13 +63,13 @@ export const MainSection = styled(Box)`
       background-image: radial-gradient(
         circle at 10px 15px,
         transparent 12px,
-        #591bc5 13px
+        #1f5566 13px
       );
     }
     &::after {
       background-image: radial-gradient(
         circle at 10px 0,
-        #591bc5 12px,
+        #1f5566 12px,
         transparent 13px
       );
     }

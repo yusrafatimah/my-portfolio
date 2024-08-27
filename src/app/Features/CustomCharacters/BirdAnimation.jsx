@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyledBirdAnimationSection } from './styles';
 import { Box } from '@mui/material';
+import { BirdAnimationWrapper, StyledBirdAnimationSection } from './styles';
 
 const BirdAnimationSection = () => {
   (function () {
@@ -66,46 +66,52 @@ const BirdAnimationSection = () => {
     window.addEventListener('resize', updateWindowSize);
   })();
   return (
-    <StyledBirdAnimationSection className="styled-bird-animation-section">
-      <Box className="main">
-        <Box className="face">
-          <Box className="ear-1"></Box>
-          <Box className="ear-2"></Box>
-          <Box className="outer-eye-1">
-            <Box className="inner-eye">
-              <Box className="black-eye">
-                <Box className="white-eye img pointer screen-log"></Box>
+    <BirdAnimationWrapper className={'bird-animation-wrapper'}>
+      <Box className={'inner'}>
+        <div className="cage-string"></div>
+        <div className="cage-top"></div>
+        <StyledBirdAnimationSection className="styled-bird-animation-section">
+          <Box className="main">
+            <Box className="face">
+              <Box className="ear-1"></Box>
+              <Box className="ear-2"></Box>
+              <Box className="outer-eye-1">
+                <Box className="inner-eye">
+                  <Box className="black-eye">
+                    <Box className="white-eye img pointer screen-log"></Box>
+                  </Box>
+                </Box>
+              </Box>
+              <Box className="outer-eye-2">
+                <Box className="inner-eye">
+                  <Box className="black-eye">
+                    <Box className="white-eye img pointer screen-log"></Box>
+                  </Box>
+                </Box>
+              </Box>
+              <Box className="beak"></Box>
+            </Box>
+            <Box className="body">
+              <Box className="fur-wrapper">
+                <Box className="fur-1"></Box>
+                <Box className="fur-2"></Box>
+                <Box className="fur-3"></Box>
               </Box>
             </Box>
-          </Box>
-          <Box className="outer-eye-2">
-            <Box className="inner-eye">
-              <Box className="black-eye">
-                <Box className="white-eye img pointer screen-log"></Box>
-              </Box>
+            <Box className="wing-1"></Box>
+            <Box className="wing-2"></Box>
+            <Box className="feet-wrapper">
+              <Box className="foot-1"></Box>
+              <Box className="foot-2"></Box>
+              <Box className="foot-3"></Box>
+              <Box className="foot-4"></Box>
+              <Box className="foot-5"></Box>
+              <Box className="foot-6"></Box>
             </Box>
           </Box>
-          <Box className="beak"></Box>
-        </Box>
-        <Box className="body">
-          <Box className="fur-wrapper">
-            <Box className="fur-1"></Box>
-            <Box className="fur-2"></Box>
-            <Box className="fur-3"></Box>
-          </Box>
-        </Box>
-        <Box className="wing-1"></Box>
-        <Box className="wing-2"></Box>
-        <Box className="feet-wrapper">
-          <Box className="foot-1"></Box>
-          <Box className="foot-2"></Box>
-          <Box className="foot-3"></Box>
-          <Box className="foot-4"></Box>
-          <Box className="foot-5"></Box>
-          <Box className="foot-6"></Box>
-        </Box>
+        </StyledBirdAnimationSection>
       </Box>
-    </StyledBirdAnimationSection>
+    </BirdAnimationWrapper>
   );
 };
 

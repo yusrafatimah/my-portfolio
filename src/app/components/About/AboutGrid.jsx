@@ -7,7 +7,16 @@ import { coffeeSvg } from '../../assets/svgs/coffee';
 
 const AboutGrid = () => {
   return (
-    <StyledAboutGrid className="styled-about-section">
+    <StyledAboutGrid
+      className="styled-about-section"
+      flexDirection={{
+        xs: 'column-reverse',
+        sm: 'column-reverse',
+        md: 'column-reverse',
+        lg: 'row',
+      }}
+      gap={{ xs: '30px', sm: '30px', md: '30px' }}
+    >
       <Box
         className={'grid-wrapper'}
         width={'100%'}

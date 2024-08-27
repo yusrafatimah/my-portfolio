@@ -22,13 +22,25 @@ export const StyledButton = styled(Box)`
     text-decoration: none;
     letter-spacing: 1px;
   }
-  #button-5 {
+  a {
+    position: relative;
+    z-index: 1;
+    color: #00ffbc;
+    text-decoration: none;
+    letter-spacing: 1px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #custom-button {
     position: relative;
     overflow: hidden;
     cursor: pointer;
   }
 
-  #button-5 p {
+  #custom-button p {
     position: relative;
     transition: all 0.45s ease-Out;
   }
@@ -44,11 +56,14 @@ export const StyledButton = styled(Box)`
     transition: all 0.3s ease-Out;
   }
 
-  #button-5:hover #translate {
+  #custom-button:hover #translate {
     left: 0;
   }
 
-  #button-5:hover p {
+  #custom-button:hover p {
+    color: #2d3142;
+  }
+  #custom-button:hover a {
     color: #2d3142;
   }
 `;

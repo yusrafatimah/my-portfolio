@@ -1,7 +1,7 @@
 export const showSvg = (
   <svg
-    height="25"
-    width="25"
+    height="28"
+    width="28"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 576 512"
   >

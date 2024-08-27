@@ -7,8 +7,30 @@ import { truckSvg } from '../../assets/svgs/truck';
 
 const AboutText = () => {
   return (
-    <StyledAboutTextSection display={'flex'} width={'100%'} gap={'40px'}>
-      <Box maxWidth={'50%'} width={'100%'} mt={'25px'}>
+    <StyledAboutTextSection
+      className="styled-about-text-section"
+      flexDirection={{
+        xs: 'column',
+        sm: 'column',
+        md: 'column',
+        lg: 'row',
+      }}
+      padding={{
+        xs: '0 0 30px 0',
+        sm: '0 0 30px 0',
+        md: '0 0 30px 0',
+        lg: '30px',
+      }}
+      alignItems={{ xs: 'center', sm: 'center', md: 'center' }}
+      display={'flex'}
+      width={'100%'}
+      gap={'40px'}
+    >
+      <Box
+        maxWidth={{ xs: '90%', sm: '90%', md: '90%', lg: '50%' }}
+        width={'100%'}
+        mt={'25px'}
+      >
         <Text
           margin={'0 0 1.5rem 0'}
           fontSize={16}
@@ -22,14 +44,19 @@ const AboutText = () => {
         <CustomButton
           svg={truckSvg}
           text={'Download CV'}
-          url={'#Home'}
+          url={'../../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf'}
+          type={'link'}
+          downloadTitle={'Yusra_Frontend_Dev_Resume'}
           height={35}
           width={150}
           fontSize={'13px'}
           fontWeight={500}
         />
       </Box>
-      <Box maxWidth={'50%'} width={'100%'}>
+      <Box
+        maxWidth={{ xs: '90%', sm: '90%', md: '90%', lg: '50%' }}
+        width={'100%'}
+      >
         <Box mt={'20px'}>
           <Text
             margin={'0 0 1rem 0'}

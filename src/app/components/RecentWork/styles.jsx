@@ -27,8 +27,8 @@ export const StyledCard = styled(Box)`
     background: #7a7ae7;
     top: 0;
     position: absolute;
-    height: 250px;
-    width: 300px;
+    height: 400px;
+    width: 450px;
     opacity: 0;
     border-radius: 20px;
   }
@@ -78,7 +78,6 @@ export const StyledCard = styled(Box)`
   }
 `;
 export const StyledRecentWork = styled(Box)(({ theme }) => ({
-  height: '100vh',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -90,8 +89,38 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
       transition: 'all 0.3s ease',
     },
   },
+  '& .recent-work-wrap': {
+    '&:hover': {
+      '& .arrow-icon': {
+        opacity: 1,
+        transition: 'all 0.3s ease',
+      },
+    },
+  },
+  '& .arrow-icon': {
+    opacity: 0,
+    position: 'absolute',
+    transition: 'all 0.3s ease',
+    cursor: 'pointer',
+    zIndex: 1,
+    top: '170px',
+    '&:hover': {
+      transform: 'scale(1.1)',
+      transition: 'all 0.3s ease',
+    },
+    svg: {
+      width: 50,
+      height: 'auto',
+    },
+  },
+  '& .next': {
+    right: 3,
+  },
+  '& .back': {
+    left: 3,
+  },
   '& .recent-work-text': {
-    margin: '0 70px',
+    margin: '0 70px 30px 70px',
     position: 'relative',
     letterSpacing: '2px',
     transition: 'all 0.3s ease',
@@ -106,18 +135,21 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
       width: 37,
     },
   },
+
   '& .card-grid': {
+    flexWrap: 'wrap',
+    paddingBottom: 40,
+    overflowX: 'auto',
+    scrollBehavior: 'smooth',
     gap: '40px',
-    flexFlow: 'wrap',
-    justifyContent: 'space-between',
-    maxWidth: 1000,
+    justifyContent: 'center',
     width: '100%',
     '& .card': {
       img: {
         borderRadius: '20px',
-        width: '300px',
-        height: '250px',
-        objectFit: 'contain',
+        width: '450px',
+        height: '400px',
+        objectFit: 'cover',
         background: 'white',
       },
     },

@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import React from 'react';
 import { StyledTypography } from './styles';
 
@@ -14,19 +13,17 @@ const Text = ({
   fontFamily,
 }) => {
   return (
-    <StyledTypography>
-      <Typography
-        fontFamily={fontFamily}
-        fontSize={fontSize}
-        fontWeight={fontWeight}
-        color={color}
-        className={className}
-        margin={margin}
-        lineHeight={lineHeight}
-        sx={{ cursor: cursor }}
-      >
-        {text}
-      </Typography>
+    <StyledTypography
+      fontFamily={fontFamily}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      color={color}
+      className={className}
+      margin={margin}
+      lineHeight={lineHeight}
+      sx={{ cursor: cursor }}
+    >
+      {text}
     </StyledTypography>
   );
 };

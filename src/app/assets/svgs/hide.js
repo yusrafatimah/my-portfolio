@@ -1,7 +1,7 @@
 export const hideSvg = (
   <svg
-    height="27"
-    width="27"
+    height="29"
+    width="29"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 512"
   >
