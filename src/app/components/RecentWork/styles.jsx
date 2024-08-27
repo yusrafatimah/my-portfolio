@@ -24,7 +24,7 @@ export const StyledCard = styled(Box)`
     }
   }
   .hover-section {
-    background: #7a7ae7;
+    background: rgb(3 169 126 / 68%);
     top: 0;
     position: absolute;
     height: 400px;

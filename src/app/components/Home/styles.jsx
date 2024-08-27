@@ -436,7 +436,7 @@ export const StyledCatAnimationSection = styled(Box)`
     height: 20px;
     width: 80px;
     border-radius: 25px;
-    top: -0.8px;
+    top: -1.8px;
     left: 33px;
     position: absolute;
   }
