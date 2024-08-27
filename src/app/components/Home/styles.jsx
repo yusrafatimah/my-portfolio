@@ -121,6 +121,20 @@ export const StyledHomeSection = styled(Box)`
           bottom: 105px;
         }
       }
+      .border {
+        height: 20px;
+        width: 15px;
+        position: absolute;
+        background: #2d2c2c;
+      }
+      .left {
+        left: 75px;
+        top: 220px;
+      }
+      .right {
+        right: 75px;
+        top: 305px;
+      }
     }
   }
   .background {
@@ -222,17 +236,19 @@ export const StyledCatAnimationSection = styled(Box)`
     height: fit-content;
     width: fit-content;
     position: absolute;
-    bottom: -10px;
+    bottom: -3px;
     right: 100px;
-    transform: scale(0.5);
+    transform: rotate(15deg) scale(0.5);
   }
   .branch {
     height: 15px;
-    width: 320px;
+    width: 345px;
     background-color: rgb(101 81 60);
     position: absolute;
-    bottom: 52px;
+    bottom: 55px;
+    transform: rotate(15deg);
   }
+
   .leaf {
     display: flex;
     flex-wrap: wrap;

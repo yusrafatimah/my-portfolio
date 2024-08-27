@@ -97,7 +97,6 @@ const Home = () => {
                     <div className="branch">
                       <div className="leaf leaf1"></div>
                     </div>
-
                     <div id="box">
                       <div class="cat">
                         <div class="cat-head">
@@ -179,6 +178,8 @@ const Home = () => {
                     </div>
                   </StyledCatAnimationSection>
                 </div>
+                <div className="border left"></div>
+                <div className="border right"></div>
                 <div className="stand"></div>
                 <div className="base"></div>
                 <div className="button"></div>
@@ -190,7 +191,7 @@ const Home = () => {
                   <Box className={'eye-lash eye-lash-3'}></Box>
 
                   <Box id="square1" className={'eye-body moving-eye'}>
-                    <Box className={' eye-ball'}></Box>
+                    <Box className={'eye-ball'}></Box>
                   </Box>
                 </Box>
               )}
