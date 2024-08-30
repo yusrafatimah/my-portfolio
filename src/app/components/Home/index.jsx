@@ -1,13 +1,14 @@
 import { Box, Link } from '@mui/material';
 import React from 'react';
 import {
-  StyledCatAnimationSection,
+  StyledCodeSection,
   StyledHomeSection,
   StyledMainWrapper,
   StyledScrollDiv,
 } from './styles';
 import ContentSection from './ContentSection';
 import Text from '../../common-components/Text';
+import BirdAnimationSection from '../../Features/CustomCharacters/BirdAnimation';
 
 const Home = () => {
   var eyeball = document.getElementById('eyeball');
@@ -25,7 +26,7 @@ const Home = () => {
 
   return (
     <StyledHomeSection
-      id="otherElement"
+      id="homeSection"
       className={'home-section'}
       width={'100%'}
       height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
@@ -72,118 +73,41 @@ const Home = () => {
           </Box>
         </StyledMainWrapper>
 
-        {/* <Box className={'chameleon-svg'}>{chameleonSvg}</Box> */}
-
         <Box
           className={'home-animate-eye-square'}
           width={{ xs: '100%', sm: '100%', md: '100%', lg: '55%' }}
           height={'100%'}
         >
           <Box width={'500px'} height={'470px'} position={'relative'}>
-            {/* <Box className={'squares sq1'}></Box>
-            <Box className={'squares sq2'}></Box>
-            <Box className={'squares sq3'}></Box>
-            <Box className={'squares sq4'}></Box> */}
-
-            <Box
-              id="container"
-              className={'eye-inner-div'}
-              width={'500px'}
-              height={'470px'}
-            >
+            <Box id="container" className={'eye-inner-div'}>
               <div className="screen">
                 <div className="screen-inner">
-                  <StyledCatAnimationSection>
-                    <div className="branch">
-                      <div className="leaf leaf1"></div>
-                    </div>
-                    <div id="box">
-                      <div class="cat">
-                        <div class="cat-head">
-                          <div class="cat-ears">
-                            {/* <div class="cat-ear left"></div> */}
-                            <div class="cat-ear right"></div>
-                          </div>
-                          <div class="cat-eyes">
-                            {/* <div class="cat-eye left"></div> */}
-                            <div class="cat-eye right">
-                              <div id="eyeball" class="eye-inner"></div>
-                            </div>
-                          </div>
-                          <div class="muzzle">
-                            {/* <div class="cat-nose"></div> */}
-                          </div>
-                        </div>
-                        <div className="dot dot1"></div>
-                        <div className="dot dot2"></div>
-                        <div className="dot dot3"></div>
-                        <div className="dot dot4"></div>
-                        <div className="dot dot5"></div>
-                        <div class="cat-body"></div>
-                        <div className="paws p1">
-                          <div class="cat-paw cat-paw1"></div>
-                          <div class="cat-paw cat-paw2"></div>
-                        </div>
-                        <div className="paws p2">
-                          <div class="cat-paw cat-paw1"></div>
-                          <div class="cat-paw cat-paw2"></div>
-                        </div>
-                        <div class="tail">
-                          <div className="tail-abc"></div>
-                          <div class="tail-segment">
-                            <div class="tail-segment">
-                              <div class="tail-segment">
-                                <div class="tail-segment">
-                                  <div class="tail-segment">
-                                    <div class="tail-segment">
-                                      <div class="tail-segment">
-                                        <div class="tail-segment">
-                                          <div class="tail-segment">
-                                            <div class="tail-segment">
-                                              <div class="tail-segment">
-                                                <div class="tail-segment">
-                                                  <div class="tail-segment">
-                                                    <div class="tail-segment">
-                                                      <div class="tail-segment">
-                                                        <div class="tail-segment">
-                                                          <div class="tail-segment">
-                                                            <div class="tail-segment">
-                                                              <div class="tail-segment">
-                                                                <div class="tail-segment">
-                                                                  <div class="tail-segment">
-                                                                    <div class="tail-segment"></div>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </StyledCatAnimationSection>
+                  <BirdAnimationSection height={'80%'} scale={'scale(.5)'} />
+                  <StyledCodeSection className="styled-code-section">
+                    <Text
+                      fontSize={16}
+                      fontWeight={700}
+                      lineHeight={1.7}
+                      color={'white'}
+                      text={
+                        <span>
+                          <span className="code-tag">{'<code>'}</span>
+                          <br />
+                          <span className="code-text">
+                            {'Custom animations'}
+                          </span>
+                          <br />
+                          <span className="code-tag">{'</code>'}</span>
+                        </span>
+                      }
+                    />
+                  </StyledCodeSection>
                 </div>
-                <div className="border left"></div>
-                <div className="border right"></div>
                 <div className="stand"></div>
                 <div className="base"></div>
                 <div className="button"></div>
               </div>
+
               {false && (
                 <Box className={'eye-animation'}>
                   <Box className={'eye-lash eye-lash-1'}></Box>
@@ -199,14 +123,15 @@ const Home = () => {
           </Box>
         </Box>
       </Box>
-      <Link
+      <StyledScrollDiv
         sx={{ zIndex: 1, height: 'fit-content', padding: '30px 0' }}
         width="100%"
         height="100%"
         underline="none"
         href="#AboutMe"
+        mt={'40px'}
       >
-        <StyledScrollDiv
+        <Box
           className="styled-scroll-div"
           display={'flex'}
           alignItems="center"
@@ -224,8 +149,8 @@ const Home = () => {
           <div className="cursor-outer">
             <div className="animated-blob"></div>
           </div>
-        </StyledScrollDiv>
-      </Link>
+        </Box>
+      </StyledScrollDiv>
     </StyledHomeSection>
   );
 };

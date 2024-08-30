@@ -7,10 +7,11 @@ import demo2Svg from '../../assets/images/demo-2.jpg';
 import { magnifierSvg } from '../../assets/svgs/magnifier';
 import prompterVideo from '../../assets/gifs/prompter.mov';
 import CustomModal from '../../common-components/CustomModal';
-import { nextArrowIcon } from '../../assets/svgs/next-arrow';
-import { backArrowIcon } from '../../assets/svgs/back-arrow';
+// import { nextArrowIcon } from '../../assets/svgs/next-arrow';
+// import { backArrowIcon } from '../../assets/svgs/back-arrow';
 import Teleprompter from '../../Features/Teleprompter';
 import CustomCharacters from '../../Features/CustomCharacters';
+import { StyledScrollDiv } from '../Home/styles';
 
 const RecentWork = () => {
   const [openCardModal, setOpenCardModal] = React.useState(false);
@@ -26,17 +27,17 @@ const RecentWork = () => {
   const handleOpenCharacters = () => setOpenCharacterModal(true);
   const handleCloseCharacters = () => setOpenCharacterModal(false);
 
-  let scrollvalue = 400;
-  const scrollNext = () => {
-    const scroller = document.getElementById('scroll-next');
-    scrollvalue += 400;
-    scroller && scroller.scrollTo(scrollvalue, 0);
-  };
-  const scrollBack = () => {
-    const scroller = document.getElementById('scroll-next');
-    scrollvalue -= 400;
-    scroller && scroller.scrollTo(scrollvalue, 0);
-  };
+  // let scrollvalue = 400;
+  // const scrollNext = () => {
+  //   const scroller = document.getElementById('scroll-next');
+  //   scrollvalue += 400;
+  //   scroller && scroller.scrollTo(scrollvalue, 0);
+  // };
+  // const scrollBack = () => {
+  //   const scroller = document.getElementById('scroll-next');
+  //   scrollvalue -= 400;
+  //   scroller && scroller.scrollTo(scrollvalue, 0);
+  // };
   return (
     <StyledRecentWork
       height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
@@ -57,13 +58,13 @@ const RecentWork = () => {
         display="flex"
         justifyContent="center"
       >
-        <Box
+        {/* <Box
           width={'fit-content'}
           className={'arrow-icon back'}
           onClick={() => scrollBack()}
         >
           {backArrowIcon}
-        </Box>
+        </Box> */}
         <Box id={'scroll-next'} className={'card-grid'} display={'flex'}>
           <StyledCard className={'card'} onClick={handleOpenPrompter}>
             <Box className={'hover-section'}></Box>
@@ -132,14 +133,41 @@ const RecentWork = () => {
           </StyledCard>
         </Box>
 
-        <Box
+        {/* <Box
           width={'fit-content'}
           className={'arrow-icon next'}
           onClick={() => scrollNext()}
         >
           {nextArrowIcon}
-        </Box>
+        </Box> */}
       </Box>
+      <StyledScrollDiv
+        mt={'40px'}
+        width={'100%'}
+        underline="none"
+        href="#ExperienceSection"
+      >
+        <Box
+          className="styled-scroll-div"
+          display={'flex'}
+          alignItems="center"
+          justifyContent="center"
+          flexDirection={'column'}
+        >
+          <Text
+            className="scroll-text"
+            margin={'0 0 10px 0'}
+            fontSize={14}
+            fontWeight={500}
+            color={'white'}
+            text={'MY EXPERIENCE'}
+          />
+          <div className="cursor-outer">
+            <div className="animated-blob"></div>
+          </div>
+        </Box>
+      </StyledScrollDiv>
+
       <CustomModal
         width="1200px"
         height="700px"

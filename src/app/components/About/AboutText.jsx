@@ -37,9 +37,7 @@ const AboutText = () => {
           fontWeight={500}
           lineHeight={1.7}
           color={'white'}
-          text={
-            'I am Bolby Doe, web developer from London, United Kingdom. I have rich experience in web site design and building and customization, also I am good at WordPress.I have rich experience in web site design and building and customization, also I am good at WordPress.'
-          }
+          text={`I'm a front-end developer with over 3+ years of experience creating websites using JSX, SCSS, ReactJS to create pixel-perfect interfaces that users love. I'm a pro with CSS-in-JS libraries like Styled Components and Bootstrap. But that's not all – I also sprinkle in a touch of style with frameworks like Material UI, Ant Design, Sass, and CSS, making sure every pixel is just right. Moreover, I was Team Lead of developers for over a year.`}
         />
         <CustomButton
           svg={truckSvg}

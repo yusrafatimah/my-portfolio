@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { BirdAnimationWrapper, StyledBirdAnimationSection } from './styles';
 
-const BirdAnimationSection = () => {
+const BirdAnimationSection = ({ height, scale }) => {
   (function () {
     const safeToAnimate = window.matchMedia(
       '(prefers-reduced-motion: no-preference)',
@@ -66,7 +66,11 @@ const BirdAnimationSection = () => {
     window.addEventListener('resize', updateWindowSize);
   })();
   return (
-    <BirdAnimationWrapper className={'bird-animation-wrapper'}>
+    <BirdAnimationWrapper
+      height={height}
+      scale={scale}
+      className={'bird-animation-wrapper'}
+    >
       <Box className={'inner'}>
         <div className="cage-string"></div>
         <div className="cage-top"></div>

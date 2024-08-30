@@ -4,7 +4,7 @@ import {
   ScriptOverlayContainer,
   StyledTeleprompterWrapper,
 } from './styles';
-import { Box, Slider, TextField } from '@mui/material';
+import { Box, Slider, TextField, Tooltip } from '@mui/material';
 import screenSvg from '../../assets/images/screen.jpg';
 import { playSvg } from '../../assets/svgs/play';
 import { pauseSvg } from '../../assets/svgs/pause';
@@ -21,9 +21,36 @@ const Teleprompter = ({ prompter }) => {
   const [prompterText, setPrompterText] = useState('');
   const [transparency, setTransparency] = useState(80);
   const [defaultTextInPrompter, setDefaultTextInPrompter] = useState(true);
+  const [speedBaseValue, setSpeedBaseValue] = useState(50280);
+  const [baseLineHeight, setBaseLineHeight] = useState(21);
+  const [speed, setSpeed] = useState(1);
+  const [fontsize, setFontsize] = useState(14);
+  const [textPosition, setTextPosition] = useState('center');
 
   const animationElement = document.getElementById(
     'prompter-animated-script-text',
+  );
+  let divHeight = animationElement && animationElement.offsetHeight;
+  let lineHeight = prompter?.baseLineHeight ?? 21;
+  let totalLines = Math.round(divHeight / lineHeight);
+
+  useEffect(() => {
+    console.log('totalLines in start', totalLines);
+    if (totalLines > 10) {
+      let linesToBeCounted = totalLines - 10;
+      let newspeedBaseValue = prompter?.speedBaseValue;
+      let multiplier = linesToBeCounted * 720;
+      if (linesToBeCounted > 0) {
+        newspeedBaseValue = newspeedBaseValue + multiplier;
+      }
+      setSpeedBaseValue(newspeedBaseValue);
+      console.log('totalLines', totalLines);
+    }
+  }, [totalLines]);
+  console.log(
+    'speedbasevalue',
+    Math.round(speedBaseValue),
+    Math.round(speedBaseValue) / speed,
   );
 
   useEffect(() => {
@@ -61,6 +88,34 @@ const Teleprompter = ({ prompter }) => {
 
   const handleChangeTransparency = value => {
     setTransparency(value);
+  };
+
+  const handleChangeSpeed = action => {
+    let newSpeed = speed;
+    if (action === 'minus' && speed > 1) newSpeed -= 1;
+    if (action === 'plus' && speed < 8) newSpeed += 1;
+    setSpeed(newSpeed);
+    setPlay(false);
+  };
+
+  const handleChangeFontSize = action => {
+    let newFontSize = fontsize;
+    let newspeedBaseValue = speedBaseValue;
+    let newbaseLineHeight = baseLineHeight;
+    if (action === 'minus' && fontsize > 14) {
+      newFontSize -= 1;
+      newspeedBaseValue -= 720;
+      newbaseLineHeight -= 1.5;
+    }
+    if (action === 'plus' && fontsize < 50) {
+      newFontSize += 1;
+      newspeedBaseValue += 720;
+      newbaseLineHeight += 1.5;
+    }
+    setFontsize(newFontSize);
+    setSpeedBaseValue(newspeedBaseValue);
+    setBaseLineHeight(newbaseLineHeight);
+    setPlay(false);
   };
 
   return (
@@ -121,14 +176,18 @@ const Teleprompter = ({ prompter }) => {
             justifyContent={'space-evenly'}
           >
             <Box display={'flex'} gap="4px" alignItems={'center'}>
-              {minusSvg}
+              <span onClick={() => handleChangeFontSize('minus')}>
+                {minusSvg}
+              </span>
               <Text
                 fontSize={13}
                 fontWeight={500}
                 color={'white'}
-                text={'12px'}
+                text={`${fontsize}px`}
               />
-              {dropdownSvg}
+              <span onClick={() => handleChangeFontSize('plus')}>
+                {dropdownSvg}
+              </span>
             </Box>
             <Box
               display={'flex'}
@@ -139,14 +198,16 @@ const Teleprompter = ({ prompter }) => {
               {show ? hideSvg : showSvg}
             </Box>
             <Box display={'flex'} gap="4px" alignItems={'center'}>
-              {minusSvg}
+              <span onClick={() => handleChangeSpeed('minus')}>{minusSvg}</span>
               <Text
                 fontSize={13}
                 fontWeight={500}
                 color={'white'}
-                text={'5x'}
+                text={`${speed}x`}
               />
-              {dropdownSvg}
+              <span onClick={() => handleChangeSpeed('plus')}>
+                {dropdownSvg}
+              </span>
             </Box>
           </Box>
           <Box display={'flex'} width={'95%'} className={'t-slider-container'}>
@@ -161,10 +222,23 @@ const Teleprompter = ({ prompter }) => {
               onChange={(e, v) => handleChangeTransparency(v)}
             />
           </Box>
-
-          <Box mt={'5px'} onClick={() => setPlay(!play)}>
-            {play ? pauseSvg : playSvg}
-          </Box>
+          <Tooltip
+            title={show ? '' : 'Click on eye icon to add text on canvas'}
+            arrow
+            placement="top"
+          >
+            <Box sx={{ cursor: show ? 'pointer' : 'not-allowed' }}>
+              <Box
+                mt={'5px'}
+                onClick={() => {
+                  setPlay(!play);
+                }}
+                sx={{ pointerEvents: show ? 'auto' : 'none' }}
+              >
+                {play ? pauseSvg : playSvg}
+              </Box>
+            </Box>
+          </Tooltip>
         </Box>
         <Box
           className={'prompter-screen'}
@@ -185,21 +259,17 @@ const Teleprompter = ({ prompter }) => {
                 <ScriptOverlayContainer
                   id={'prompter-overlay-container-id'}
                   pointerEvents={'auto'}
-                  alignItems={prompter?.textPosition}
+                  alignItems={textPosition}
                 >
                   <ScriptContainer
                     className="styled-prompter-container"
                     pointerEvents={'none'}
-                    // speed={prompter?.speed}
-                    // fontSize={prompter?.fontSize}
-                    // opacity={prompter?.transparency}
-                    // animationPlayState={prompter?.play ? 'running' : 'paused'}
-                    // visible={prompter?.show}
-                    speed={8}
-                    fontSize={16}
+                    speed={speed}
+                    fontSize={fontsize}
                     opacity={transparency}
                     animationPlayState={play ? 'running' : 'paused'}
                     visible={show}
+                    lineHeight={baseLineHeight}
                     width={'100%'}
                     height={'100%'}
                   >

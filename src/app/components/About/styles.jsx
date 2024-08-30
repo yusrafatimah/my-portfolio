@@ -42,11 +42,18 @@ export const StyledSkillsAnimation = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${props => props.theme.breakpoints.down(660)} {
+    background: #224f5b;
+    border-radius: 50%;
+  }
   .blob-svg {
     position: absolute;
     height: auto;
     width: 650px;
     z-index: -1;
+    ${props => props.theme.breakpoints.down(660)} {
+      width: 100%;
+    }
   }
   .main-orbit {
     transform: scale(0.7);
@@ -65,6 +72,9 @@ export const StyledSkillsAnimation = styled(Box)`
       display: flex;
       align-items: center;
       justify-content: center;
+      ${props => props.theme.breakpoints.down(660)} {
+        transform: scale(1);
+      }
       .rotating-orbits {
         animation: rotate 30s linear infinite;
         border-radius: 50%;

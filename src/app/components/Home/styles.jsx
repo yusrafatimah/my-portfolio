@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, Link, styled } from '@mui/material';
 
 export const StyledHomeSection = styled(Box)`
   .container-fluid {
@@ -67,10 +67,12 @@ export const StyledHomeSection = styled(Box)`
       right: -40px;
     }
     .eye-inner-div {
+      width: 500px;
+      height: 470px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #2aecb169;
+      background: #00bcd44a;
       background-image: repeating-linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.1),
@@ -81,6 +83,9 @@ export const StyledHomeSection = styled(Box)`
       border-radius: 82% 85% 35% 40% /78%;
       background-size: 4px 4px;
       position: relative;
+      ${props => props.theme.breakpoints.down(530)} {
+        width: 100%;
+      }
       .screen {
         width: 350px;
         height: 280px;
@@ -89,12 +94,20 @@ export const StyledHomeSection = styled(Box)`
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        ${props => props.theme.breakpoints.down(530)} {
+          width: 300px;
+          height: 200px;
+        }
         .screen-inner {
           margin-top: 20px;
           width: 320px;
           height: 220px;
           background: #5b5b5b;
           border-radius: 5px;
+          ${props => props.theme.breakpoints.down(530)} {
+            width: 250px;
+            height: 150px;
+          }
         }
         .stand {
           height: 20px;
@@ -103,6 +116,9 @@ export const StyledHomeSection = styled(Box)`
           position: absolute;
           bottom: 45px;
           border-radius: 5px;
+          ${props => props.theme.breakpoints.down(530)} {
+            bottom: 82px;
+          }
         }
         .base {
           height: 35px;
@@ -111,6 +127,9 @@ export const StyledHomeSection = styled(Box)`
           position: absolute;
           bottom: 58px;
           border-radius: 10px;
+          ${props => props.theme.breakpoints.down(530)} {
+            bottom: 95px;
+          }
         }
         .button {
           height: 20px;
@@ -119,6 +138,9 @@ export const StyledHomeSection = styled(Box)`
           background: #9e9e9e;
           border-radius: 50%;
           bottom: 105px;
+          ${props => props.theme.breakpoints.down(530)} {
+            bottom: 140px;
+          }
         }
       }
       .border {
@@ -224,387 +246,15 @@ export const StyledHomeSection = styled(Box)`
   }
 `;
 
-export const StyledCatAnimationSection = styled(Box)`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  #box {
-    display: block;
-    height: fit-content;
-    width: fit-content;
-    position: absolute;
-    bottom: -3px;
-    right: 100px;
-    transform: rotate(15deg) scale(0.5);
+export const StyledCodeSection = styled(Box)`
+  margin: 20px 0 0 10px;
+  .code-tag {
+    color: #02c6b3;
   }
-  .branch {
-    height: 15px;
-    width: 345px;
-    background-color: rgb(101 81 60);
-    position: absolute;
-    bottom: 55px;
-    transform: rotate(15deg);
-  }
-
-  .leaf {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 0 70px;
-    background-color: #1f801f;
-    position: absolute;
-  }
-  .leaf1 {
-    transform: rotate(100deg);
-    top: 12px;
-    right: 255px;
-  }
-
-  .dot {
-    background: #00945d;
-    border-radius: 50%;
-    position: absolute;
-  }
-  .dot1 {
-    height: 5px;
-    width: 5px;
-    right: 40px;
-    z-index: 101;
-    top: -60px;
-  }
-  .dot2 {
-    height: 5px;
-    width: 5px;
-    right: 28px;
-    z-index: 101;
-    top: -47px;
-  }
-  .dot3 {
-    height: 5px;
-    width: 5px;
-    right: 19px;
-    z-index: 101;
-    top: -60px;
-  }
-  .dot4 {
-    height: 5px;
-    width: 5px;
-    right: 8px;
-    z-index: 101;
-    top: -44px;
-  }
-  .dot5 {
-    height: 5px;
-    width: 5px;
-    right: -2px;
-    z-index: 101;
-    top: -55px;
-  }
-  .cat * {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cat,
-  .cat-ears,
-  .cat-eyes,
-  .muzzle,
-  .cat-body,
-  .cat-paw,
-  .tail,
-  .tail-segment {
-    position: relative;
-  }
-  .cat-head,
-  .cat-body,
-  .cat-paw,
-  .tail-segment {
-    background-color: rgb(9 206 124);
-  }
-  .left {
-    float: left;
-  }
-  .right {
-    float: right;
-  }
-  .cat {
-    animation: purr 5s infinite cubic-bezier(0, 0.75, 1, 0.25);
-  }
-  .cat-head {
-    width: 150px;
-    height: 100px;
-    border-radius: 70px;
-    z-index: 100;
-    position: absolute;
-    top: -85px;
-    left: 47px;
-    transform: translateX(-20px) translateY(30px);
-    // animation: head-bob 5s infinite ease-in-out;
-  }
-  .cat-ears {
-    left: -23px;
-    top: -42px;
-    z-index: -100;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(
-      to bottom right,
-      transparent 0%,
-      transparent 50%,
-      rgb(9 206 124) 50%,
-      rgb(9 206 124) 100%
-    );
-    border-radius: 0px 8px 0px 0px;
-  }
-  .cat-ear.left {
-    transform: rotate(-20deg) translateX(-10px);
-  }
-  .cat-ear.right {
-    transform: rotate(20deg) translateX(10px);
-  }
-  .cat-eyes {
-    top: -34px;
-    width: 60%;
-    left: -62px;
-  }
-  .cat-eye {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: rgb(0 148 93);
-    animation: eye-blink 5s infinite;
-    text-align: center;
-  }
-  .eye-inner {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: black;
-    text-align: center;
-    position: absolute;
-    top: 5px;
-    left: 3px;
-  }
-
-  .muzzle {
-    top: 50px;
-  }
-  .cat-nose {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid #666666;
-  }
-  .cat-body {
-    width: 200px;
-    height: 120px;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 215px;
-    top: -75px;
-    left: 90px;
-    z-index: 0;
-  }
-  .paws {
-    position: relative;
-    transform: rotate(95deg);
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    top: 210px;
-    z-index: 100;
-  }
-  .p1 {
-    right: -105px;
-  }
-  .p2 {
-    right: -175px;
-  }
-  .cat-paw {
-    height: 15px;
-    width: 40px;
-    border-radius: 25px;
-    position: absolute;
-    background: #00945d;
-  }
-  .cat-paw1 {
-    left: -182px;
-    top: 190px;
-    transform: rotate(-45deg);
-  }
-  .cat-paw2 {
-    left: -161px;
-    top: 190px;
-    transform: rotate(45deg);
-  }
-  .tail {
-    left: 179px;
-    top: -25px;
-    transform: rotate(90deg);
-  }
-  .tail-abc {
-    background-color: rgb(9 206 124);
-    height: 20px;
-    width: 80px;
-    border-radius: 25px;
-    top: -1.8px;
-    left: 33px;
-    position: absolute;
-  }
-  .tail-segment {
-    background-color: rgb(9 206 124);
-    height: 20px;
-    width: 30px;
-    border-radius: 50px;
-    top: -1px;
-    left: 10px;
-    transform: rotate(13deg);
-  }
-
-  @keyframes head-bob {
-    0% {
-      transform: translateX(-15px) translateY(45px);
-    }
-    10% {
-      transform: translateX(-15px) translateY(45px);
-    }
-    30% {
-      transform: translateX(0) translateY(0);
-    }
-    75% {
-      transform: translateX(0) translateY(0);
-    }
-    90% {
-      transform: translateX(-15px) translateY(45px);
-    }
-    100% {
-      transform: translateX(-15px) translateY(45px);
-    }
-  }
-
-  @keyframes eye-blink {
-    0% {
-      transform: scaleY(0);
-    }
-    10% {
-      transform: scaleY(0);
-    }
-    15% {
-      transform: scaleY(1);
-    }
-    48% {
-      transform: scaleY(1);
-    }
-    50% {
-      transform: scaleY(0);
-    }
-    52% {
-      transform: scaleY(1);
-    }
-    90% {
-      transform: scaleY(1);
-    }
-    95% {
-      transform: scaleY(0);
-    }
-    100% {
-      transform: scaleY(0);
-    }
-  }
-
-  @keyframes purr {
-    0% {
-      left: -1px;
-    }
-    1% {
-      left: 0px;
-    }
-    2% {
-      left: -1px;
-    }
-    3% {
-      left: 0px;
-    }
-    4% {
-      left: -1px;
-    }
-    5% {
-      left: 0px;
-    }
-    6% {
-      left: -1px;
-    }
-    7% {
-      left: 0px;
-    }
-    8% {
-      left: -1px;
-    }
-    9% {
-      left: 0px;
-    }
-    10% {
-      left: -1px;
-    }
-    11% {
-      left: 0px;
-    }
-    12% {
-      left: -1px;
-    }
-    13% {
-      left: 0px;
-    }
-    14% {
-      left: -1px;
-    }
-    15% {
-      left: 0px;
-    }
-    16% {
-      left: -1px;
-    }
-    17% {
-      left: 0px;
-    }
-    18% {
-      left: -1px;
-    }
-    19% {
-      left: 0px;
-    }
-    20% {
-      left: -1px;
-    }
-    21% {
-      left: 0px;
-    }
-    94% {
-      left: 0px;
-    }
-    95% {
-      left: -1px;
-    }
-    96% {
-      left: 0px;
-    }
-    97% {
-      left: -1px;
-    }
-    98% {
-      left: 0px;
-    }
-    99% {
-      left: -1px;
-    }
-    100% {
-      left: 0px;
-    }
+  .code-text {
+    color: #ffffff;
+    margin-left: 20px;
+    font-family: fantasy !important;
   }
 `;
 
@@ -664,35 +314,40 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down(1200)]: {},
 }));
 
-export const StyledScrollDiv = styled(Box)(({ theme }) => ({
-  width: '100%',
-  height: '100%',
-  '&:hover': {
-    '& .scroll-text': {
-      letterSpacing: '10px',
-      transition: 'all 0.3s ease',
+export const StyledScrollDiv = styled(Link)(({ theme }) => ({
+  '& .styled-scroll-div': {
+    width: '100%',
+    height: '100%',
+    [theme.breakpoints.down(1200)]: {
+      display: 'none',
     },
-  },
-  '& .scroll-text': {
-    color: 'white',
-    letterSpacing: '2px',
-    transition: 'all 0.3s ease',
-    marginBottom: '15px',
-  },
-  '& .cursor-outer': {
-    height: 30,
-    width: 20,
-    border: '2px solid white',
-    borderRadius: '20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    '& .animated-blob': {
-      width: 6,
-      height: 6,
-      background: 'white',
-      borderRadius: '50%',
-      animation: 'moverUpDown 2s infinite  alternate',
+    '&:hover': {
+      '& .scroll-text': {
+        letterSpacing: '10px',
+        transition: 'all 0.3s ease',
+      },
+    },
+    '& .scroll-text': {
+      color: 'white',
+      letterSpacing: '2px',
+      transition: 'all 0.3s ease',
+      marginBottom: '15px',
+    },
+    '& .cursor-outer': {
+      height: 30,
+      width: 20,
+      border: '2px solid white',
+      borderRadius: '20px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      '& .animated-blob': {
+        width: 6,
+        height: 6,
+        background: 'white',
+        borderRadius: '50%',
+        animation: 'moverUpDown 2s infinite  alternate',
+      },
     },
   },
 }));

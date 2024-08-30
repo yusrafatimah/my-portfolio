@@ -31,6 +31,9 @@ export const StyledCard = styled(Box)`
     width: 450px;
     opacity: 0;
     border-radius: 20px;
+    ${props => props.theme.breakpoints.down(480)} {
+      width: 90%;
+    }
   }
   .details {
     position: absolute;
@@ -138,19 +141,24 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
 
   '& .card-grid': {
     flexWrap: 'wrap',
-    paddingBottom: 40,
+    padding: '60px 0 100px 0',
     overflowX: 'auto',
     scrollBehavior: 'smooth',
     gap: '40px',
     justifyContent: 'center',
     width: '100%',
     '& .card': {
+      [theme.breakpoints.down(480)]: {
+        display: 'flex',
+        justifyContent: 'center',
+      },
       img: {
         borderRadius: '20px',
         width: '450px',
         height: '400px',
         objectFit: 'cover',
         background: 'white',
+        [theme.breakpoints.down(480)]: { width: '90%' },
       },
     },
   },

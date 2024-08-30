@@ -40,8 +40,13 @@ const About = () => {
         <AboutText />
       </Box>
       <AboutGrid />
-      <Link width={'100%'} underline="none" href="#RecentWork">
-        <StyledScrollDiv
+      <StyledScrollDiv
+        mt={'40px'}
+        width={'100%'}
+        underline="none"
+        href="#RecentWork"
+      >
+        <Box
           className="styled-scroll-div"
           display={'flex'}
           alignItems="center"
@@ -60,8 +65,8 @@ const About = () => {
           <div className="cursor-outer">
             <div className="animated-blob"></div>
           </div>
-        </StyledScrollDiv>
-      </Link>
+        </Box>
+      </StyledScrollDiv>
     </StyleBoxWrapper>
   );
 };

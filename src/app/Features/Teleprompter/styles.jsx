@@ -57,7 +57,7 @@ export const StyledTeleprompterWrapper = styled(Box)(() => ({
     border: '1px solid',
     top: '55px',
     right: '110px',
-    backgroundImage: `url(https://w0.peakpx.com/wallpaper/15/9/HD-wallpaper-macos-monterey-dark-wwdc-2021.jpg)`,
+    backgroundImage: `url(https://img.freepik.com/free-vector/pink-gradient-layer-patterned-background_53876-99010.jpg)`,
     backgroundSize: 'cover',
     backgrounRepeat: 'no-repeat',
   },
@@ -84,6 +84,7 @@ export const ScriptContainer = styled(Box)(
     fontFamily,
     opacity = 4,
     animationPlayState,
+    lineHeight,
     visible,
   }) => ({
     visibility: visible ? 'visible' : 'hidden',
@@ -96,6 +97,9 @@ export const ScriptContainer = styled(Box)(
       display: 'flex',
       // padding: '30% 0 0 0',
       overflowY: 'auto',
+      // p: {
+      //   marginTop: 105,
+      // },
       '& .arrow-icon': {
         height: '100%',
         width: '100%',
@@ -129,8 +133,9 @@ export const ScriptContainer = styled(Box)(
       overflowWrap: 'anywhere',
       height: 'max-content',
       color: 'black',
-      padding: '0 1.5rem 1.2rem 1rem',
+      padding: '0 1.5rem 0 1rem',
       fontSize: `${fontSize}px`,
+      lineHeight: `${lineHeight}px`,
       margin: 0,
       fontWeight: '400',
       textAlign: 'left',
