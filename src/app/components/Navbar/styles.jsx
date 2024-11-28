@@ -15,8 +15,6 @@ export const Nav = styled.div`
   }
 `;
 export const NavbarContainer = styled.div`
-  position: fixed;
-  background: #12272d;
   display: flex;
   justify-content: space-between;
   align-items: center;

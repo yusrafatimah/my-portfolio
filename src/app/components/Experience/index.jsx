@@ -37,7 +37,7 @@ const ExperienceSection = () => {
             fontSize={14}
             fontWeight={400}
             margin={'10px 0'}
-            color={'white'}
+            color={'#c8c8c8'}
             text={'Full Time - 2 years 11 months'}
           />
           <Box position={'relative'} className={'grid-item-wrapper'}>
@@ -60,13 +60,13 @@ const ExperienceSection = () => {
                 fontSize={20}
                 fontWeight={700}
                 margin={'10px 0'}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={'Team Lead'}
               />
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• Started leading a team of senior frontend and full stack developers along with supervising a few junior developers.'
                 }
@@ -74,7 +74,7 @@ const ExperienceSection = () => {
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• I manage the team sprints and also work on developing new features along with code reviews and collaboration with other teams.'
                 }
@@ -101,13 +101,13 @@ const ExperienceSection = () => {
                 fontSize={20}
                 fontWeight={700}
                 margin={'10px 0'}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={'Senior Full Stack Developer'}
               />
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• Started working on a new product using Styled Components, Material UI, and TypeScript, creating 80% of the new revamped UI from FIGMA designs.'
                 }
@@ -115,7 +115,7 @@ const ExperienceSection = () => {
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• Ensured pixel-perfect implementations and added animations for enhanced user engagement'
                 }
@@ -142,13 +142,13 @@ const ExperienceSection = () => {
                 fontSize={20}
                 fontWeight={700}
                 margin={'10px 0'}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={'Front-End Developer'}
               />
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• Developed a mobile-responsive live streaming studio with ReactJS, Ant Design, HTML5, CSS3, and JavaScript and SASS/SCSS.'
                 }
@@ -156,7 +156,7 @@ const ExperienceSection = () => {
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• Implemented server-side logic using RESTful APIs ensuring seamless front-end and back-end communication'
                 }
@@ -179,7 +179,7 @@ const ExperienceSection = () => {
             fontSize={14}
             fontWeight={400}
             margin={'10px 0'}
-            color={'white'}
+            color={'#c8c8c8'}
             text={'Full Time - 10 months'}
           />
           <Box
@@ -206,13 +206,13 @@ const ExperienceSection = () => {
                 fontSize={20}
                 fontWeight={700}
                 margin={'10px 0'}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={'Frontend Web Developer'}
               />
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={
                   '• Developed a 4K-optimized website UI for a visually appealing experience. Contributed to multiple projects, including an Invoices web app with client and admin panels, using React JS for scalable solutions.'
                 }
@@ -222,7 +222,7 @@ const ExperienceSection = () => {
           <Text
             fontSize={26}
             fontWeight={700}
-            color={'white'}
+            color={'#c8c8c8'}
             text={'Education'}
           />
 
@@ -246,13 +246,13 @@ const ExperienceSection = () => {
                 fontSize={20}
                 fontWeight={700}
                 margin={'10px 0'}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={'COMSATS Institute of Information and Technology'}
               />
               <Text
                 fontSize={14}
                 fontWeight={400}
-                color={'white'}
+                color={'#c8c8c8'}
                 text={'Bachelors in Computer Science'}
               />
             </Box>

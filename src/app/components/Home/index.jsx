@@ -30,7 +30,6 @@ const Home = () => {
       className={'home-section'}
       width={'100%'}
       height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
-      paddingTop={{ md: 0, lg: '60px' }}
       display={'flex'}
       alignItems={'center'}
       flexDirection={'column'}

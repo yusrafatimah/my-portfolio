@@ -99,7 +99,7 @@ const ClientsAndReviewsSection = () => {
                   <Text
                     fontSize={20}
                     fontWeight={700}
-                    color={'white'}
+                    color={'#c8c8c8'}
                     text={data?.name}
                     margin={'1rem 0 0 0'}
                   />
@@ -115,7 +115,7 @@ const ClientsAndReviewsSection = () => {
                     <Text
                       fontSize={17}
                       fontWeight={400}
-                      color={'white'}
+                      color={'#c8c8c8'}
                       text={data?.text}
                     />
                   </Box>
