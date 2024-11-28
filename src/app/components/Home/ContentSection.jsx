@@ -33,37 +33,44 @@ const ContentSection = () => {
       >
         <Text
           className={'intro-text'}
-          text={'I am a'}
+          text={'I am a Front-End Web'}
           fontSize={25}
           fontWeight={500}
           color={'white'}
         />
 
         <Text
-          text={'Front-End Web Developer'}
+          text={'Developer'}
           fontSize={25}
           fontWeight={500}
           color={'white'}
           className="wipe-animated-text"
         />
       </Box>
+      <Text
+        text={`I have expertise in building modern and user-friendly pixel-perfect interfaces. I specialize in solving complex challenges with innovative solutions, blending design and functionality to craft outstanding digital experiences. Let's build something extraordinary together!`}
+        color={'#c8c8c8'}
+        fontSize={14}
+        margin={'10px 0 0 0'}
+        fontWeight={400}
+      />
       <Box className={'social-platform-wrapper'}>
         {linkedInSvg}
         {instaSvg}
         {twitterSvg}
+        <CustomButton
+          url={'../../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf'}
+          type={'link'}
+          downloadTitle={'Yusra_Frontend_Dev_Resume'}
+          svg={dragonSvg}
+          text={'Download CV'}
+          height={40}
+          width={150}
+          fontSize={'14px'}
+          fontWeight={500}
+          // margin={'40px 0 20px'}
+        />
       </Box>
-      <CustomButton
-        url={'../../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf'}
-        type={'link'}
-        downloadTitle={'Yusra_Frontend_Dev_Resume'}
-        svg={dragonSvg}
-        text={'Download CV'}
-        height={40}
-        width={150}
-        fontSize={'14px'}
-        fontWeight={500}
-        margin={'40px 0 20px'}
-      />
     </>
   );
 };

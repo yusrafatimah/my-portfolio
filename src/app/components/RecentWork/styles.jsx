@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, Grid, styled } from '@mui/material';
 import dotsSvg from '../../assets/svgs/dots-svg.svg';
 
 export const StyledCard = styled(Box)`
@@ -123,7 +123,7 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
     left: 3,
   },
   '& .recent-work-text': {
-    margin: '0 70px 30px 70px',
+    margin: '0 0 20px 70px',
     position: 'relative',
     letterSpacing: '2px',
     transition: 'all 0.3s ease',
@@ -164,3 +164,9 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down(1200)]: {},
 }));
+
+export const CardContainer = styled(Grid)`
+  display: flex;
+  width: 100%;
+  padding: 50px;
+`;

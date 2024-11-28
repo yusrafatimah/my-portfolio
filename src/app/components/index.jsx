@@ -5,6 +5,8 @@ import { MainSection } from './styles';
 import RecentWork from './RecentWork';
 import ExperienceSection from './Experience';
 import ClientsAndReviewsSection from './Clients&Reviews';
+import Navbar from './Navbar';
+import { Box } from '@mui/material';
 
 const MainBody = () => {
   return (
@@ -14,13 +16,20 @@ const MainBody = () => {
       flexDirection={'column'}
       sx={{ scrollBehavior: 'smooth', position: 'relative' }}
     >
-      <Home />
-      <div class="wave"></div>
-      <div class="wave wave--top"></div>
-      <About />
-      <RecentWork />
-      <ExperienceSection />
-      <ClientsAndReviewsSection />
+      <Box
+        style={{
+          maxWidth: '1450px',
+        }}
+      >
+        <Navbar />
+        <Home />
+        {/* <div class="wave"></div>
+      <div class="wave wave--top"></div> */}
+        <About />
+        <RecentWork />
+        <ExperienceSection />
+        <ClientsAndReviewsSection />
+      </Box>
     </MainSection>
   );
 };

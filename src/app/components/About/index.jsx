@@ -11,14 +11,19 @@ import { StyledScrollDiv } from '../Home/styles';
 const About = () => {
   return (
     <StyleBoxWrapper
-      padding={{ xs: '30px', sm: '30px', md: '30px', lg: '10px 70px 0 70px' }}
-      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
+      padding={{
+        xs: '30px',
+        sm: '30px',
+        md: '30px',
+        lg: '40px 0px 100px 70px',
+      }}
+      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100%' }}
       id="AboutMe"
       className={'about-section'}
     >
       <Text
         className="about-me-text"
-        margin={'0 0 20px 0'}
+        margin={'30px 0 20px 0'}
         fontSize={36}
         fontWeight={700}
         color={'white'}
@@ -40,7 +45,7 @@ const About = () => {
         <AboutText />
       </Box>
       <AboutGrid />
-      <StyledScrollDiv
+      {/* <StyledScrollDiv
         mt={'40px'}
         width={'100%'}
         underline="none"
@@ -66,7 +71,7 @@ const About = () => {
             <div className="animated-blob"></div>
           </div>
         </Box>
-      </StyledScrollDiv>
+      </StyledScrollDiv> */}
     </StyleBoxWrapper>
   );
 };

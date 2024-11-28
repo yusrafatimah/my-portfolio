@@ -7,6 +7,7 @@ export const StyledClientsAndReviewsSection = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   alignItems: 'flex-start',
   flexDirection: 'column',
+  padding: '40px 0px 40px 0px',
   '& .clients-reviews-text': {
     margin: '20px 70px 20px 70px',
     position: 'relative',
@@ -28,7 +29,7 @@ export const StyledClientsAndReviewsSection = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledCarousalSection = styled(Box)`
-  padding: 80px 0;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
   width: 100%;

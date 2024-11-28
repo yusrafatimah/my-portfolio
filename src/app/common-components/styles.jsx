@@ -2,12 +2,12 @@ import { Box, Typography, styled } from '@mui/material';
 
 export const StyledButton = styled(Box)`
   .button {
-    height: inherit;
     width: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px solid #00ffbc;
+    border-radius: 50px;
     color: #00ffbc;
     text-transform: uppercase;
     text-decoration: none;

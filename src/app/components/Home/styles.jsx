@@ -6,7 +6,6 @@ export const StyledHomeSection = styled(Box)`
     margin: 0;
     padding: 0;
     width: 100%;
-    background: #fff;
     position: absolute;
   }
   .chameleon-svg {
@@ -17,8 +16,10 @@ export const StyledHomeSection = styled(Box)`
   .home-animate-eye-square {
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    justify-content: flex-end;
+    ${props => props.theme.breakpoints.down(1200)} {
+      justify-content: center;
+    }
     .squares {
       height: 80px;
       width: 80px;
@@ -138,6 +139,11 @@ export const StyledHomeSection = styled(Box)`
           background: #9e9e9e;
           border-radius: 50%;
           bottom: 105px;
+          // -webkit-animation: ring 4s 0.7s ease-in-out infinite;
+          // -webkit-transform-origin: 50% 4px;
+          // -moz-animation: ring 4s 0.7s ease-in-out infinite;
+          // -moz-transform-origin: 50% 4px;
+          // animation: ring 4s 0.7s ease-in-out infinite;
           ${props => props.theme.breakpoints.down(530)} {
             bottom: 140px;
           }
@@ -161,7 +167,7 @@ export const StyledHomeSection = styled(Box)`
   }
   .background {
     position: relative;
-    background: linear-gradient(132deg, #1f5566, #39717f, #1f5566);
+    background: transparent;
     background-size: 400% 400%;
     animation: Gradient 15s ease infinite;
     position: relative;
@@ -178,68 +184,68 @@ export const StyledHomeSection = styled(Box)`
     left: 45vw;
     width: 10px;
     height: 10px;
-    border: solid 0.1px #9ce39d;
+    border: solid 0.1px #03ffbd;
     transform-origin: top left;
     transform: scale(0) rotate(0deg) translate(-50%, -50%);
     animation: cube 18s ease-in forwards infinite;
   }
 
   .cube:nth-child(2) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.1s;
     left: 50vw;
     top: 40vh;
   }
   .cube:nth-child(3) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.2s;
     left: 75vw;
     top: 50vh;
   }
   .cube:nth-child(4) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.3s;
     left: 90vw;
     top: 10vh;
   }
   .cube:nth-child(5) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.4s;
     left: 10vw;
     top: 85vh;
   }
   .cube:nth-child(6) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.5s;
     left: 50vw;
     top: 10vh;
   }
   .cube:nth-child(7) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.7s;
     left: 35vw;
     top: 60vh;
   }
   .cube:nth-child(8) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.9s;
     left: 85vw;
     top: 90vh;
   }
   .cube:nth-child(9) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.11s;
     left: 150vw;
     top: 20vh;
   }
   .cube:nth-child(10) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.13s;
     left: 5vw;
     top: 35vh;
   }
   .cube:nth-child(11) {
-    border-color: #75f277;
+    border-color: #03ffbd;
     animation-delay: 0.15s;
     left: 95vw;
     top: 15vh;
@@ -250,11 +256,21 @@ export const StyledCodeSection = styled(Box)`
   margin: 20px 0 0 10px;
   .code-tag {
     color: #02c6b3;
+    font-size: 11px;
+    font-family: monaco;
+    line-height: 1.3;
   }
   .code-text {
     color: #ffffff;
-    margin-left: 20px;
-    font-family: fantasy !important;
+    font-size: 9.6px;
+    font-family: monaco;
+    line-height: 1.3;
+  }
+  .code-syntax {
+    color: #ff56f2;
+  }
+  .code-syntax-a {
+    color: #79c942;
   }
 `;
 
@@ -265,6 +281,9 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   height: '100%',
   position: 'relative',
+  '& .intro-text-wrap': {
+    [theme.breakpoints.down(1200)]: { maxWidth: '700px' },
+  },
   '& .avatar-img': {
     borderRadius: '50%',
   },
@@ -300,6 +319,7 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   '& .social-platform-wrapper': {
     marginTop: '30px',
     display: 'flex',
+    alignItems: 'center',
     gap: '20px',
     svg: {
       fill: 'white',

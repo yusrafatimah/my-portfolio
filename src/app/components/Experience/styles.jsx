@@ -3,13 +3,13 @@ import dotsSvg from '../../assets/svgs/dots-svg.svg';
 
 export const StyledExperienceSection = styled(Box)(({ theme }) => ({
   width: '100%',
-
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-start',
   flexDirection: 'column',
+  padding: '40px 0px 40px 0px',
   '& .experience-section-text': {
-    margin: '20px 70px 20px 70px',
+    margin: '20px 0px 20px 70px',
     position: 'relative',
     letterSpacing: '2px',
     transition: 'all 0.3s ease',
@@ -31,10 +31,9 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '80px',
+
     '& .grid-item': {
-      height: 500,
-      minHeight: 630,
+      minHeight: 655,
       borderRadius: 10,
       padding: '30px',
       display: 'flex',

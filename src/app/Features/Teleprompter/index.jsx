@@ -26,7 +26,7 @@ const Teleprompter = ({ prompter }) => {
   const [speed, setSpeed] = useState(1);
   const [fontsize, setFontsize] = useState(14);
   const [textPosition, setTextPosition] = useState('center');
-
+  console.log(setTextPosition('center'));
   const animationElement = document.getElementById(
     'prompter-animated-script-text',
   );

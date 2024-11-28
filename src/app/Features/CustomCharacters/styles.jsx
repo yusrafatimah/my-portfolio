@@ -24,17 +24,16 @@ export const BirdAnimationWrapper = styled(Box)(({ theme, height, scale }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 'inherit',
-
   transform: scale,
   position: 'absolute',
   right: -93,
-  bottom: -29.5,
+  bottom: -38.5,
   [theme.breakpoints.down(530)]: { transform: 'scale(.365)' },
 
   '& .inner': {
     border: '4px solid #C2DBE9',
     borderRadius: '50% 50% 10px 10px',
-    margin: '0 40px 40px 0',
+    margin: '0 ',
     width: 183,
     height: 190,
     display: 'flex',

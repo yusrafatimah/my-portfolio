@@ -5,29 +5,35 @@ import {
 } from './styles';
 import Text from '../../common-components/Text';
 import { Avatar, Box, Link } from '@mui/material';
-import { StyledScrollDiv } from '../Home/styles';
+// import { StyledScrollDiv } from '../Home/styles';
 
 const ClientsAndReviewsSection = () => {
   const carouselImages = [
     {
-      name: 'Syed HaseebSyed Haseeb',
+      name: 'Syed Haseeb',
       text: '"Genuine expert as Front end developer" is the phrase that pops into my mind when I think about Yusra.',
-      title: 'Senior Backend Developer at Toycycle',
+      title: 'Senior Backend Developer at Heuristify',
     },
     {
       name: 'Rooshan Ahmed',
       text: 'Yusra is sincere and passionate about solving client-related problems and writing clean code while working on projects. She has tremendous potential while enthusiastically tackling all assignments. She is friendly and easy-going person.',
       title: 'Full Stack Developer at H&S Real Estate Pakistan',
     },
+
     {
       name: 'Shaiharyaar Ahmad',
       text: `I  have been in this field for 3+ years and i have not yet find a more devoted and passsionate person about it's work more than Yusra. If you want her to give 100%, she will give her 110%. She will go above and beyond. She has a creative mind and keen sense when it comes to Frontend.`,
       title: 'Senior Full Stack Developer at OneStream Live',
     },
     {
-      name: 'Summen Zahid',
-      text: `I've had the pleasure of working closely with Yusra and she continually impresses everyone by her strong leadership and clear communication and aligning team goals with company objectives, ensuring our product is successful. I highly recommend Yusra for her exceptional management skills, communication abilities, and her expertise in UI and Frontend Development.`,
-      title: 'Senior Full Stack Engineer at OneStream Live',
+      name: 'Ayyama Qazi',
+      text: `It is my great pleasure to recommend Yusra Fatima. She is an exceptionally talented individual and her professionalism is evident from her attention to details, ability to meet deadlines and not only does she collaborate with her colleagues very efficiently but is always willing to lend a helping hand where required. She knows how to navigate a project and be a team player. Her creativity and drive to constantly learn and grow are a huge plus. I am confident Yusra would be a valuable asset to any organisation.`,
+      title: 'Lead Quality Assurance Engineer at OneStream Live',
+    },
+    {
+      name: 'Ifrah Nisar',
+      text: `I highly recommend Yusra, who excelled as the lead of the Studio team during our time together at OneStream Live. Her expertise in project management and creative strategy consistently drove her team's initiatives to success. Yusra's ability to inspire her team while maintaining a collaborative atmosphere made a significant impact across departments. Her problem-solving skills and attention to detail ensured that every project exceeded expectations. It was a pleasure to work alongside her, and I have no doubt she will continue to achieve great things.`,
+      title: 'Digital Content Creator at OneStream Live',
     },
   ];
 
@@ -56,7 +62,7 @@ const ClientsAndReviewsSection = () => {
   }, [index]);
   return (
     <StyledClientsAndReviewsSection
-      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100%', xl: '100vh' }}
+      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100%', xl: '100%' }}
       id="ClientsAndReviewsSection"
       className={'clients-reviews-section'}
     >
@@ -132,7 +138,7 @@ const ClientsAndReviewsSection = () => {
         </Box>
       </StyledCarousalSection>
 
-      <StyledScrollDiv
+      {/* <StyledScrollDiv
         mb={'15px'}
         width={'100%'}
         underline="none"
@@ -157,7 +163,7 @@ const ClientsAndReviewsSection = () => {
             <div className="animated-blob"></div>
           </div>
         </Box>
-      </StyledScrollDiv>
+      </StyledScrollDiv> */}
     </StyledClientsAndReviewsSection>
   );
 };

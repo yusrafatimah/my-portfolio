@@ -56,15 +56,14 @@ export const StyledSkillsAnimation = styled(Box)`
     }
   }
   .main-orbit {
-    transform: scale(0.7);
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    .width-large-animate {
-      animation: widthLarge 1.5s linear 1;
-    }
     .inner-images {
-      transform: scale(1.5);
+      animation: widthLarge 1.5s linear 1;
+      transform: scale(1.1);
       border-radius: 50%;
       position: relative;
       width: 300px;
@@ -72,9 +71,6 @@ export const StyledSkillsAnimation = styled(Box)`
       display: flex;
       align-items: center;
       justify-content: center;
-      ${props => props.theme.breakpoints.down(660)} {
-        transform: scale(1);
-      }
       .rotating-orbits {
         animation: rotate 30s linear infinite;
         border-radius: 50%;
@@ -88,7 +84,6 @@ export const StyledSkillsAnimation = styled(Box)`
           background-color: transparent;
           perspective: 1000px;
           .flip-image-inner {
-            border-radius: 50%;
             position: relative;
             width: 100%;
             height: 100%;
@@ -123,13 +118,13 @@ export const StyledSkillsAnimation = styled(Box)`
               height: 100%;
               -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
-              background-color: #493765;
+              background-color: #2980b9;
               color: white;
               border-radius: 50%;
               transform: rotateY(180deg);
               p {
                 animation: rotate-reverse 50s linear infinite;
-                font-weight: 700;
+                font-weight: 400;
                 font-size: 10px;
               }
             }
@@ -140,18 +135,17 @@ export const StyledSkillsAnimation = styled(Box)`
         }
       }
       .waviy {
-        -webkit-box-reflect: below -40px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+        -webkit-box-reflect: below -25px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
         position: absolute;
+        /* bottom: 93px; */
       }
-      .waviy {
-        letter-spacing: 3px;
-        span {
-          position: relative;
-          display: inline-block;
-          color: #fff;
-          animation: waviy 1s infinite;
-          font-size: 22px;
-        }
+      .waviy span {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        animation: waviy 1s infinite;
+        animation-delay: calc(0.1s * var(--i));
+        font-size: 15px;
       }
       .image-1 {
         position: relative;
@@ -189,6 +183,16 @@ export const StyledSkillsAnimation = styled(Box)`
     }
     .img-8 {
       transform: translate(241px, -295px);
+    }
+  }
+  @keyframes waviy {
+    0%,
+    40%,
+    100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-2px);
     }
   }
 `;

@@ -15,17 +15,29 @@ const CustomButton = ({
 }) => {
   return (
     <StyledButton
-      height={height}
+      height={'auto'}
       width={width}
       margin={margin}
       className="animated-button"
       id="animated-btn"
     >
-      <Box class="button" id="custom-button">
+      <Box
+        style={{
+          height: height,
+        }}
+        class="button"
+        id="custom-button"
+      >
         <Box id="translate"></Box>
         {type === 'link' ? (
           <a
-            href={require('../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf')}
+            href={
+              downloadTitle
+                ? require('../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf')
+                : url
+            }
+            target={'_blank'}
+            rel="noreferrer"
             download={downloadTitle}
           >
             {text}

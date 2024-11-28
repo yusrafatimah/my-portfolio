@@ -30,6 +30,7 @@ const Home = () => {
       className={'home-section'}
       width={'100%'}
       height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
+      paddingTop={{ md: 0, lg: '60px' }}
       display={'flex'}
       alignItems={'center'}
       flexDirection={'column'}
@@ -52,11 +53,11 @@ const Home = () => {
       </Box>
       <Box
         width={'100%'}
-        height={'100%'}
+        // height={'100%'}
         display={'flex'}
         alignItems={'center'}
         gap={{ xs: '40px', sm: '40px', md: '80px', lg: 0 }}
-        paddingTop={{ xs: '5%', sm: '5%', md: '5%', lg: 0 }}
+        paddingTop={{ xs: '5%', sm: '5%', md: '5%', lg: '0' }}
         flexDirection={{
           xs: 'column-reverse',
           sm: 'column-reverse',
@@ -68,7 +69,7 @@ const Home = () => {
           width={{ xs: '100%', sm: '100%', md: '100%', lg: '45%' }}
           className="styled-main-wrapper"
         >
-          <Box paddingLeft={'7.5%'}>
+          <Box className={'intro-text-wrap'} paddingLeft={'7.5%'}>
             <ContentSection />
           </Box>
         </StyledMainWrapper>
@@ -78,11 +79,16 @@ const Home = () => {
           width={{ xs: '100%', sm: '100%', md: '100%', lg: '55%' }}
           height={'100%'}
         >
-          <Box width={'500px'} height={'470px'} position={'relative'}>
+          <Box
+            width={'500px'}
+            height={'470px'}
+            position={'relative'}
+            marginRight={{ md: 0, lg: ' 7.5%' }}
+          >
             <Box id="container" className={'eye-inner-div'}>
               <div className="screen">
                 <div className="screen-inner">
-                  <BirdAnimationSection height={'80%'} scale={'scale(.5)'} />
+                  <BirdAnimationSection height={'100%'} scale={'scale(.5)'} />
                   <StyledCodeSection className="styled-code-section">
                     <Text
                       fontSize={16}
@@ -91,13 +97,34 @@ const Home = () => {
                       color={'white'}
                       text={
                         <span>
-                          <span className="code-tag">{'<code>'}</span>
-                          <br />
-                          <span className="code-text">
-                            {'Custom animations'}
-                          </span>
-                          <br />
-                          <span className="code-tag">{'</code>'}</span>
+                          <span className="code-tag">{'let'}</span>
+
+                          <code className="code-text">
+                            {' myProfile'}
+                            <span className="code-tag">{' = '}</span>
+                            <span className="code-syntax">{'{ }'}</span>;
+                            <br />
+                            {'myProfile'}
+                            <span className="code-tag">{'.'}</span>
+                            {'name'}
+                            <span className="code-tag">{' = '}</span>
+                            {'"Yusra";'}
+                            <br />
+                            <span>
+                              {'myProfile'}
+                              <span className="code-tag">{'.'}</span>
+                              {'skills ='}
+                              <span className="code-syntax">{'['}</span>
+                              <span className="code-syntax-a">
+                                {`'ReactJS', 
+                                  'CSS3',
+                                  'JavaScript',
+                                  'Typescript', 'TailwindCss'`}
+                              </span>
+                              <span className="code-syntax">{']'}</span>;
+                            </span>
+                            <br />
+                          </code>
                         </span>
                       }
                     />
@@ -105,7 +132,9 @@ const Home = () => {
                 </div>
                 <div className="stand"></div>
                 <div className="base"></div>
-                <div className="button"></div>
+                <div className="button">
+                  <div className="button-in"></div>
+                </div>
               </div>
 
               {false && (
@@ -124,12 +153,12 @@ const Home = () => {
         </Box>
       </Box>
       <StyledScrollDiv
-        sx={{ zIndex: 1, height: 'fit-content', padding: '30px 0' }}
+        sx={{ zIndex: 1, height: 'fit-content' }}
         width="100%"
         height="100%"
         underline="none"
         href="#AboutMe"
-        mt={'40px'}
+        mt={'80px'}
       >
         <Box
           className="styled-scroll-div"

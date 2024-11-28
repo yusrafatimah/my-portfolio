@@ -1,46 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Text from '../../common-components/Text';
-import { StyledRecentWork, StyledCard } from './styles';
-import { Box } from '@mui/material';
-import demo1Svg from '../../assets/images/demo-1.jpg';
-import demo2Svg from '../../assets/images/demo-2.jpg';
-import { magnifierSvg } from '../../assets/svgs/magnifier';
-import prompterVideo from '../../assets/gifs/prompter.mov';
-import CustomModal from '../../common-components/CustomModal';
-// import { nextArrowIcon } from '../../assets/svgs/next-arrow';
-// import { backArrowIcon } from '../../assets/svgs/back-arrow';
-import Teleprompter from '../../Features/Teleprompter';
-import CustomCharacters from '../../Features/CustomCharacters';
-import { StyledScrollDiv } from '../Home/styles';
+import { StyledRecentWork, StyledCard, CardContainer } from './styles';
+import { Box, useMediaQuery } from '@mui/material';
+// import demo1Svg from '../../assets/images/demo-1.jpg';
+// import demo2Svg from '../../assets/images/demo-2.jpg';
+// import { magnifierSvg } from '../../assets/svgs/magnifier';
+// import prompterVideo from '../../assets/gifs/prompter.mov';
+// import CustomModal from '../../common-components/CustomModal';
+// import Teleprompter from '../../Features/Teleprompter';
+// import CustomCharacters from '../../Features/CustomCharacters';
+import ProjectCard from './ProjectCards';
+import { projects } from './constants';
 
 const RecentWork = () => {
-  const [openCardModal, setOpenCardModal] = React.useState(false);
-  const [openPrompterModal, setOpenPrompterModal] = React.useState(false);
-  const [openCharacterModal, setOpenCharacterModal] = React.useState(false);
+  // const [openCardModal, setOpenCardModal] = React.useState(false);
+  // const [openPrompterModal, setOpenPrompterModal] = React.useState(false);
+  // const [openCharacterModal, setOpenCharacterModal] = React.useState(false);
 
-  const handleOpen = () => setOpenCardModal(true);
-  const handleClose = () => setOpenCardModal(false);
+  // const handleOpen = () => setOpenCardModal(true);
+  // const handleClose = () => setOpenCardModal(false);
 
-  const handleOpenPrompter = () => setOpenPrompterModal(true);
-  const handleClosePrompter = () => setOpenPrompterModal(false);
+  // const handleOpenPrompter = () => setOpenPrompterModal(true);
+  // const handleClosePrompter = () => setOpenPrompterModal(false);
 
-  const handleOpenCharacters = () => setOpenCharacterModal(true);
-  const handleCloseCharacters = () => setOpenCharacterModal(false);
+  // const handleOpenCharacters = () => setOpenCharacterModal(true);
+  // const handleCloseCharacters = () => setOpenCharacterModal(false);
+  const isBelowDesktopView = useMediaQuery('(max-width: 899px)');
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
 
-  // let scrollvalue = 400;
-  // const scrollNext = () => {
-  //   const scroller = document.getElementById('scroll-next');
-  //   scrollvalue += 400;
-  //   scroller && scroller.scrollTo(scrollvalue, 0);
-  // };
-  // const scrollBack = () => {
-  //   const scroller = document.getElementById('scroll-next');
-  //   scrollvalue -= 400;
-  //   scroller && scroller.scrollTo(scrollvalue, 0);
-  // };
   return (
     <StyledRecentWork
-      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100vh' }}
+      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100%' }}
       id="RecentWork"
       className={'styled-recent-work'}
     >
@@ -51,7 +41,7 @@ const RecentWork = () => {
         color={'white'}
         text={'Recent Work'}
       />
-      <Box
+      {/* <Box
         className={'recent-work-wrap'}
         position={'relative'}
         width={'100%'}
@@ -64,9 +54,9 @@ const RecentWork = () => {
           onClick={() => scrollBack()}
         >
           {backArrowIcon}
-        </Box> */}
+        </Box> 
         <Box id={'scroll-next'} className={'card-grid'} display={'flex'}>
-          <StyledCard className={'card'} onClick={handleOpenPrompter}>
+          {/* <StyledCard className={'card'} onClick={handleOpenPrompter}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
@@ -86,9 +76,8 @@ const RecentWork = () => {
                 text={'Try it yourself'}
               />
             </Box>
-          </StyledCard>
-
-          {/* <StyledCard className={'card'} onClick={handleOpen}>
+          </StyledCard> *
+          <StyledCard className={'card'} onClick={handleOpen}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
@@ -99,7 +88,7 @@ const RecentWork = () => {
             />
 
             <Box className={'more'}>{magnifierSvg}</Box>
-            <img className="figure" src={demo2Svg} alt="demo-2" />
+            <img className="figure" src={demo1Svg} alt="demo-2" />
             <Box className={'top-badge'}>
               <Text
                 fontSize={10}
@@ -108,8 +97,7 @@ const RecentWork = () => {
                 text={'Demo'}
               />
             </Box>
-          </StyledCard> */}
-
+          </StyledCard>
           <StyledCard className={'card'} onClick={handleOpenCharacters}>
             <Box className={'hover-section'}></Box>
             <Text
@@ -132,42 +120,7 @@ const RecentWork = () => {
             </Box>
           </StyledCard>
         </Box>
-
-        {/* <Box
-          width={'fit-content'}
-          className={'arrow-icon next'}
-          onClick={() => scrollNext()}
-        >
-          {nextArrowIcon}
-        </Box> */}
       </Box>
-      <StyledScrollDiv
-        mt={'40px'}
-        width={'100%'}
-        underline="none"
-        href="#ExperienceSection"
-      >
-        <Box
-          className="styled-scroll-div"
-          display={'flex'}
-          alignItems="center"
-          justifyContent="center"
-          flexDirection={'column'}
-        >
-          <Text
-            className="scroll-text"
-            margin={'0 0 10px 0'}
-            fontSize={14}
-            fontWeight={500}
-            color={'white'}
-            text={'MY EXPERIENCE'}
-          />
-          <div className="cursor-outer">
-            <div className="animated-blob"></div>
-          </div>
-        </Box>
-      </StyledScrollDiv>
-
       <CustomModal
         width="1200px"
         height="700px"
@@ -202,7 +155,19 @@ const RecentWork = () => {
         handleOpen={handleOpenCharacters}
       >
         <CustomCharacters />
-      </CustomModal>
+      </CustomModal> */}
+
+      <CardContainer className="recent-work-grid" container xs={12} rowGap={7}>
+        {projects &&
+          projects.map((project, index) => (
+            <ProjectCard
+              project={project}
+              openModal={openModal}
+              even={isBelowDesktopView ? true : index % 2 === 0}
+              setOpenModal={setOpenModal}
+            />
+          ))}
+      </CardContainer>
     </StyledRecentWork>
   );
 };

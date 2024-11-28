@@ -2,6 +2,10 @@ import { Box, styled } from '@mui/material';
 import cursorSvg from '../assets/svgs/cursor.svg';
 
 export const MainSection = styled(Box)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: url(${cursorSvg}), auto;
   .wave-svg {
     position: absolute;

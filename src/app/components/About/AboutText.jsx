@@ -33,10 +33,10 @@ const AboutText = () => {
       >
         <Text
           margin={'0 0 1.5rem 0'}
-          fontSize={16}
-          fontWeight={500}
+          fontSize={14}
+          fontWeight={400}
           lineHeight={1.7}
-          color={'white'}
+          color={'#c8c8c8'}
           text={`I'm a front-end developer with over 3+ years of experience creating websites using JSX, SCSS, ReactJS to create pixel-perfect interfaces that users love. I'm a pro with CSS-in-JS libraries like Styled Components and Bootstrap. But that's not all – I also sprinkle in a touch of style with frameworks like Material UI, Ant Design, Sass, and CSS, making sure every pixel is just right. Moreover, I was Team Lead of developers for over a year.`}
         />
         <CustomButton
@@ -55,7 +55,7 @@ const AboutText = () => {
         maxWidth={{ xs: '90%', sm: '90%', md: '90%', lg: '50%' }}
         width={'100%'}
       >
-        <Box mt={'20px'}>
+        <Box>
           <Text
             margin={'0 0 1rem 0'}
             fontSize={16}

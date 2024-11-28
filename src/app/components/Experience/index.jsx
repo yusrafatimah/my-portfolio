@@ -7,7 +7,7 @@ import { StyledScrollDiv } from '../Home/styles';
 const ExperienceSection = () => {
   return (
     <StyledExperienceSection
-      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100%', xl: '100vh' }}
+      height={{ xs: '100%', sm: '100%', md: '100%', lg: '100%', xl: '100%' }}
       id="ExperienceSection"
       className={'styled-experience-section'}
     >
@@ -18,9 +18,13 @@ const ExperienceSection = () => {
         color={'white'}
         text={'Experience'}
       />
-      <Box className={'grid'}>
+      <Box
+        className={'grid'}
+        gap={{ xs: '50px', sm: '50px', md: '60px', lg: '70px', xl: '80px' }}
+      >
         <Box
-          width={{ xs: '75%', sm: '75%', md: '90%', lg: '90%', xl: 620 }}
+          maxWidth={{ xs: '75%', sm: '75%', md: '80%', lg: 500, xl: 520 }}
+          width={'100%'}
           className={'grid-item'}
         >
           <Text
@@ -157,19 +161,12 @@ const ExperienceSection = () => {
                   '• Implemented server-side logic using RESTful APIs ensuring seamless front-end and back-end communication'
                 }
               />
-              <Text
-                fontSize={14}
-                fontWeight={400}
-                color={'white'}
-                text={
-                  '• Integrated CSS Grid and Flexbox for more efficient and responsive layout design.'
-                }
-              />
             </Box>
           </Box>
         </Box>
         <Box
-          width={{ xs: '75%', sm: '75%', md: '90%', lg: '90%', xl: 620 }}
+          maxWidth={{ xs: '75%', sm: '75%', md: '80%', lg: 500, xl: 520 }}
+          width={'100%'}
           className={'grid-item'}
         >
           <Text
@@ -262,7 +259,7 @@ const ExperienceSection = () => {
           </Box>
         </Box>
       </Box>
-      <StyledScrollDiv
+      {/* <StyledScrollDiv
         mt={'30px'}
         mb={'15px'}
         width={'100%'}
@@ -288,7 +285,7 @@ const ExperienceSection = () => {
             <div className="animated-blob"></div>
           </div>
         </Box>
-      </StyledScrollDiv>
+      </StyledScrollDiv> */}
     </StyledExperienceSection>
   );
 };
