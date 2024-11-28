@@ -55,9 +55,15 @@ const ContentSection = () => {
         fontWeight={400}
       />
       <Box className={'social-platform-wrapper'}>
-        {linkedInSvg}
-        {instaSvg}
-        {twitterSvg}
+        <a
+          href={'https://www.linkedin.com/in/yusra-f-518658206/'}
+          target={'_blank'}
+          rel="noreferrer"
+        >
+          {linkedInSvg}
+        </a>
+        <a href={'/'}>{instaSvg}</a>
+        <a href={'/'}>{twitterSvg}</a>
         <CustomButton
           url={'../../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf'}
           type={'link'}

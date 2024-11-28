@@ -7,6 +7,7 @@ import ExperienceSection from './Experience';
 import ClientsAndReviewsSection from './Clients&Reviews';
 import Navbar from './Navbar';
 import { Box } from '@mui/material';
+import Footer from './Footer';
 
 const MainBody = () => {
   return (
@@ -30,6 +31,7 @@ const MainBody = () => {
         <ExperienceSection />
         <ClientsAndReviewsSection />
       </Box>
+      <Footer />
     </MainSection>
   );
 };

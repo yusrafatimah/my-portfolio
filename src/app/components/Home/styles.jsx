@@ -325,7 +325,7 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
       fill: 'white',
       transition: 'all 0.3s ease',
       '&:hover': {
-        fill: '#ffd15d',
+        fill: '#00ffbc',
         transition: 'all 0.3s ease',
       },
     },

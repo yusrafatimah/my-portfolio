@@ -1,40 +1,22 @@
 import React, { useState } from 'react';
 import {
   ButtonContainer,
-  Divider,
-  GitHubButton,
   MobileIcon,
   MobileLink,
   MobileMenu,
   NavbarContainer,
   NavItems,
   NavLink,
-  NavLogo,
-  Span,
-  SpanTitle,
 } from './styles';
 import CustomButton from '../../common-components/CustomButton';
 import { truckSvg } from '../../assets/svgs/truck';
+import Logo from '../../common-components/Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <NavbarContainer>
-      <NavLogo>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            color: 'white',
-          }}
-        >
-          <SpanTitle>
-            <Span>Y</Span>
-            <Divider>YUSRA FATIMA</Divider>
-            <Span>F</Span>
-          </SpanTitle>
-        </div>
-      </NavLogo>
+      <Logo />
       <MobileIcon>
         <div
           onClick={() => {
