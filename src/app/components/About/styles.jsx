@@ -43,8 +43,8 @@ export const StyledSkillsAnimation = styled(Box)`
   align-items: center;
   justify-content: center;
   ${props => props.theme.breakpoints.down(660)} {
-    background: #224f5b;
-    border-radius: 50%;
+    // background: #224f5b;
+    // border-radius: 50%;
   }
   .blob-svg {
     position: absolute;

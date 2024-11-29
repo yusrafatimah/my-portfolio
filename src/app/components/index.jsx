@@ -20,6 +20,7 @@ const MainBody = () => {
       <Box
         style={{
           maxWidth: '1450px',
+          width: '100%',
         }}
       >
         <Navbar />

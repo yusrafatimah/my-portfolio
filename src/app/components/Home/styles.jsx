@@ -313,8 +313,8 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     margin: 0,
     animation:
       '6s typing-erase 2s steps(50, end) infinite, blink-caret .5s step-end infinite',
-    lineheight: '1.5',
-    letterspacing: '0.00938em',
+    lineHeight: '1.5',
+    letterSpacing: '0.00938em',
   },
   '& .social-platform-wrapper': {
     marginTop: '30px',
