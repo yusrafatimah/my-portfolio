@@ -68,18 +68,18 @@ export const projects = [
     github: null,
     href: null,
   },
-  {
-    id: 3,
-    title: 'Get An Intervention',
-    date: 'Freelance project',
-    description:
-      'Get An Intervention is your go-to platform for finding trusted and effective addiction intervention services. Whether you’re seeking help for yourself or a loved one, our platform connects you with professional interventionists who can guide you on the path to recovery. We provide a streamlined process to help you access the support you need, when you need it most. Start your journey to healing today with Get An Intervention.',
-    images: ['/assets/projects/get-an-intervention/hero.png'],
-    tags: ['HTML 5', 'CSS 3', 'GitHub', 'Prettier', 'Perfect Pixel Extension'],
-    category: 'web app',
-    github: null,
-    href: 'https://get-an-intervention-dev.vercel.app/',
-  },
+  // {
+  //   id: 3,
+  //   title: 'Get An Intervention',
+  //   date: 'Freelance project',
+  //   description:
+  //     'Get An Intervention is your go-to platform for finding trusted and effective addiction intervention services. Whether you’re seeking help for yourself or a loved one, our platform connects you with professional interventionists who can guide you on the path to recovery. We provide a streamlined process to help you access the support you need, when you need it most. Start your journey to healing today with Get An Intervention.',
+  //   images: ['/assets/projects/get-an-intervention/hero.png'],
+  //   tags: ['HTML 5', 'CSS 3', 'GitHub', 'Prettier', 'Perfect Pixel Extension'],
+  //   category: 'web app',
+  //   github: null,
+  //   href: 'https://get-an-intervention-dev.vercel.app/',
+  // },
 
   {
     id: 4,
