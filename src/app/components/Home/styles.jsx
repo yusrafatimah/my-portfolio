@@ -20,6 +20,12 @@ export const StyledHomeSection = styled(Box)`
     ${props => props.theme.breakpoints.down(1200)} {
       justify-content: center;
     }
+    .home-animate-eye-square-inner {
+      ${props => props.theme.breakpoints.down(430)} {
+        padding: 0 10px;
+        height: 350px;
+      }
+    }
     .squares {
       height: 80px;
       width: 80px;
@@ -73,7 +79,7 @@ export const StyledHomeSection = styled(Box)`
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #00bcd44a;
+      background: ${({ theme }) => theme.palette.background.blob};
       background-image: repeating-linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.1),
@@ -86,6 +92,9 @@ export const StyledHomeSection = styled(Box)`
       position: relative;
       ${props => props.theme.breakpoints.down(530)} {
         width: 100%;
+      }
+      ${props => props.theme.breakpoints.down(450)} {
+        height: 350px;
       }
       .screen {
         width: 350px;
@@ -120,6 +129,9 @@ export const StyledHomeSection = styled(Box)`
           ${props => props.theme.breakpoints.down(530)} {
             bottom: 82px;
           }
+          ${props => props.theme.breakpoints.down(450)} {
+            bottom: 23px;
+          }
         }
         .base {
           height: 35px;
@@ -130,6 +142,9 @@ export const StyledHomeSection = styled(Box)`
           border-radius: 10px;
           ${props => props.theme.breakpoints.down(530)} {
             bottom: 95px;
+          }
+          ${props => props.theme.breakpoints.down(450)} {
+            bottom: 35px;
           }
         }
         .button {
@@ -146,6 +161,9 @@ export const StyledHomeSection = styled(Box)`
           // animation: ring 4s 0.7s ease-in-out infinite;
           ${props => props.theme.breakpoints.down(530)} {
             bottom: 140px;
+          }
+          ${props => props.theme.breakpoints.down(450)} {
+            bottom: 80px;
           }
         }
       }
@@ -289,17 +307,20 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   },
   '& .intro-text': {
     textShadow: '2px 2px black',
+    [theme.breakpoints.down(600)]: { fontSize: '20px' },
   },
   '& .name-text': {
     fontFamily: ` "Playwrite BE VLG", cursive !important`,
-    color: '#fff',
     fontSize: '55px',
+    color: theme.palette.text.default,
     fontWeight: 600,
     margin: '20px 0',
+    [theme.breakpoints.down(600)]: { fontSize: '40px' },
     '& .first-letter': {
       fontSize: '75px',
       fontWeight: 700,
       textShadow: '5px 5px 0px #2d6373, 9px 6px 0px #2aecb1',
+      [theme.breakpoints.down(600)]: { fontSize: '55px' },
     },
   },
   '& .wipe-animated-text': {

@@ -1,12 +1,10 @@
 import React from 'react';
 import Text from '../../common-components/Text';
 import { StyleBoxWrapper } from './styles';
-import { Box, Link } from '@mui/material';
-
+import { Box } from '@mui/material';
 import SkillsSection from './SkillsSection';
 import AboutText from './AboutText';
 import AboutGrid from './AboutGrid';
-import { StyledScrollDiv } from '../Home/styles';
 
 const About = () => {
   return (
@@ -40,6 +38,7 @@ const About = () => {
           md: 'column',
           lg: 'row',
         }}
+        marginTop={{ xs: '60px', sm: '60px', md: '60px', lg: '0' }}
       >
         <SkillsSection />
         <AboutText />
@@ -75,5 +74,4 @@ const About = () => {
     </StyleBoxWrapper>
   );
 };
-
 export default About;

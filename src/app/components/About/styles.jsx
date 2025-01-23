@@ -7,6 +7,10 @@ export const StyleBoxWrapper = styled(Box)(({ theme }) => ({
   alignItems: 'flex-start',
   flexDirection: 'column',
   '&:hover': {
+    // '& .inner-images': {
+    //    animation: widthLarge 1.5s linear 1;
+    //   transform: scale(1.1);
+    // },
     '& .about-me-text': {
       letterSpacing: '10px',
       transition: 'all 0.3s ease',
@@ -85,6 +89,7 @@ export const StyledSkillsAnimation = styled(Box)`
           perspective: 1000px;
           .flip-image-inner {
             position: relative;
+            border-radius: 50%;
             width: 100%;
             height: 100%;
             text-align: center;
@@ -118,7 +123,7 @@ export const StyledSkillsAnimation = styled(Box)`
               height: 100%;
               -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
-              background-color: #2980b9;
+              background: ${({ theme }) => theme.palette.background.blob};
               color: white;
               border-radius: 50%;
               transform: rotateY(180deg);
@@ -135,9 +140,8 @@ export const StyledSkillsAnimation = styled(Box)`
         }
       }
       .waviy {
-        -webkit-box-reflect: below -25px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+        -webkit-box-reflect: below -35px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
         position: absolute;
-        /* bottom: 93px; */
       }
       .waviy span {
         position: relative;

@@ -6,9 +6,9 @@ export const StyledButton = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #00ffbc;
+    border: 2px solid ${({ theme }) => theme.palette.text.primary};
     border-radius: 50px;
-    color: #00ffbc;
+    color: ${({ theme }) => theme.palette.text.primary};
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.8em;
@@ -18,14 +18,14 @@ export const StyledButton = styled(Box)`
     overflow: hidden;
   }
   p {
-    color: #00ffbc;
+    color: ${({ theme }) => theme.palette.text.primary};
     text-decoration: none;
     letter-spacing: 1px;
   }
   a {
     position: relative;
     z-index: 1;
-    color: #00ffbc;
+    color: ${({ theme }) => theme.palette.text.primary};
     text-decoration: none;
     letter-spacing: 1px;
     height: 100%;
@@ -48,26 +48,27 @@ export const StyledButton = styled(Box)`
   #translate {
     transform: rotate(50deg);
     width: 100%;
-    height: 250%;
+    height: 275%;
     left: -200px;
     top: -30px;
-    background: #00ffbc;
+    background: ${({ theme }) => theme.palette.text.primary};
     position: absolute;
     transition: all 0.3s ease-Out;
   }
 
   #custom-button:hover #translate {
-    left: 0;
+    left: 2px;
   }
 
   #custom-button:hover p {
-    color: #2d3142;
+    color: ${({ theme }) => theme.palette.text.secondary};
   }
   #custom-button:hover a {
-    color: #2d3142;
+    color: ${({ theme }) => theme.palette.text.secondary};
   }
 `;
 
-export const StyledTypography = styled(Typography)(({ theme }) => ({
+export const StyledTypography = styled(Typography)(({ theme, color }) => ({
   [theme.breakpoints.down(1200)]: {},
+  color: color === 'light' ? theme.palette.text.tertiary : color,
 }));

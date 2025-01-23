@@ -36,7 +36,7 @@ const AboutText = () => {
           fontSize={14}
           fontWeight={400}
           lineHeight={1.7}
-          color={'#c8c8c8'}
+          color={'light'}
           text={`I'm a front-end developer with over 3+ years of experience creating websites using JSX, SCSS, ReactJS to create pixel-perfect interfaces that users love. I'm a pro with CSS-in-JS libraries like Styled Components and Bootstrap. But that's not all – I also sprinkle in a touch of style with frameworks like Material UI, Ant Design, Sass, and CSS, making sure every pixel is just right. Moreover, I was Team Lead of developers for over a year.`}
         />
         <CustomButton

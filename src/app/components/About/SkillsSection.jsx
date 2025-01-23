@@ -1,14 +1,13 @@
 import React from 'react';
 import { StyledSkillsAnimation } from './styles';
 import { blobSvg } from '../../assets/svgs/blob';
-import { Box } from '@mui/material';
 
 const SkillsSection = () => {
   return (
     <StyledSkillsAnimation className="styled-skills-animation">
       {blobSvg}
       <div className="main-orbit">
-        <div className="inner-images">
+        <div className="inner-images" id={'skills-animated-blob'}>
           <div className="image-1">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl5XuEHgCJBwJsLt9qTwExX51W0JZcA4Xg95JAfg5qvc9vK4XMR4xjj9ugwcL8Dth4A0Q&usqp=CAU"
@@ -16,12 +15,12 @@ const SkillsSection = () => {
             />
           </div>
           <div className="waviy">
-            <span style={{ ['--i']: 1 }}>S</span>
-            <span style={{ ['--i']: 2 }}>K</span>
-            <span style={{ ['--i']: 3 }}>I</span>
-            <span style={{ ['--i']: 4 }}>L</span>
-            <span style={{ ['--i']: 5 }}>L</span>
-            <span style={{ ['--i']: 6 }}>S</span>
+            <span style={{ '--i': 1 }}>S</span>
+            <span style={{ '--i': 2 }}>K</span>
+            <span style={{ '--i': 3 }}>I</span>
+            <span style={{ '--i': 4 }}>L</span>
+            <span style={{ '--i': 5 }}>L</span>
+            <span style={{ '--i': 6 }}>S</span>
           </div>
           <div className="rotating-orbits">
             <div className="flip-image img-1">
@@ -258,5 +257,4 @@ const SkillsSection = () => {
     </StyledSkillsAnimation>
   );
 };
-
 export default SkillsSection;

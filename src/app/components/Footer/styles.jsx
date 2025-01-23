@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material';
 
 export const StyledFooter = styled(Box)(({ theme }) => ({
   width: '100%',
-  background: '#033b4a',
+  background: theme.palette.background.secondary,
   padding: '150px 0 50px 0',
   clipPath: 'polygon(0% 52%, 120% -10%, 100% 100%, 100% 100%, 0% 100%)',
   display: 'flex',

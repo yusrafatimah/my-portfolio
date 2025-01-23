@@ -13,6 +13,7 @@ export const StyledClientsAndReviewsSection = styled(Box)(({ theme }) => ({
     position: 'relative',
     letterSpacing: '2px',
     transition: 'all 0.3s ease',
+    [theme.breakpoints.down(1200)]: { margin: '20px 0px 20px 30px' },
     '&:before': {
       content: '" "',
       backgroundImage: `url(${dotsSvg})`,
@@ -39,7 +40,7 @@ export const StyledCarousalSection = styled(Box)`
     overflow: hidden;
     width: 700px;
     position: relative;
-    ${props => props.theme.breakpoints.down(750)} {
+    ${props => props.theme.breakpoints.down(1200)} {
       width: 90%;
     }
   }
@@ -101,7 +102,7 @@ export const StyledCarousalSection = styled(Box)`
   .slideshowDot.active {
     border-radius: 30px;
     width: 30px;
-    background-color: #00ffbc;
+    background-color: ${({ theme }) => theme.palette.text.primary};
     transition: 0.3s all ease;
   }
 

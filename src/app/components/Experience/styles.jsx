@@ -13,6 +13,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
     position: 'relative',
     letterSpacing: '2px',
     transition: 'all 0.3s ease',
+    [theme.breakpoints.down(1200)]: { margin: '20px 0px 20px 30px' },
     '&:before': {
       content: '" "',
       backgroundImage: `url(${dotsSvg})`,
@@ -33,7 +34,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
     alignItems: 'center',
 
     '& .grid-item': {
-      minHeight: 655,
+      minHeight: 739,
       borderRadius: 10,
       padding: '30px',
       display: 'flex',
@@ -42,6 +43,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
       justifyContent: 'center',
       height: 'fit-content',
       background: '#0037478f',
+      [theme.breakpoints.down(1200)]: { minHeight: '100%' },
 
       '& .dot': {
         position: 'absolute',
@@ -52,7 +54,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
         position: 'absolute',
         width: 3,
         height: '100%',
-        background: 'white',
+        background: '#02c6b3',
         top: 12,
         left: 5,
       },

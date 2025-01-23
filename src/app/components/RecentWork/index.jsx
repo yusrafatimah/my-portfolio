@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Text from '../../common-components/Text';
-import { StyledRecentWork, StyledCard, CardContainer } from './styles';
-import { Box, useMediaQuery } from '@mui/material';
+import { StyledRecentWork, CardContainer } from './styles';
+import { useMediaQuery } from '@mui/material';
 // import demo1Svg from '../../assets/images/demo-1.jpg';
 // import demo2Svg from '../../assets/images/demo-2.jpg';
 // import { magnifierSvg } from '../../assets/svgs/magnifier';

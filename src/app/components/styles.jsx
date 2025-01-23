@@ -7,6 +7,12 @@ export const MainSection = styled(Box)`
   justify-content: center;
   align-items: center;
   cursor: url(${cursorSvg}), auto;
+  background: linear-gradient(
+    132deg,
+    ${({ theme }) => theme.palette.background.bgCl1},
+    ${({ theme }) => theme.palette.background.bgCl2},
+    ${({ theme }) => theme.palette.background.bgCl3}
+  );
   .wave-svg {
     position: absolute;
     z-index: 1;

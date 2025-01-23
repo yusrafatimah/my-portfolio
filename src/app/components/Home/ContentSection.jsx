@@ -1,8 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { linkedInSvg } from '../../assets/svgs/linkedin';
-import { instaSvg } from '../../assets/svgs/insta';
-import { twitterSvg } from '../../assets/svgs/twitter';
 import CustomButton from '../../common-components/CustomButton';
 import Text from '../../common-components/Text';
 import { dragonSvg } from '../../assets/svgs/dragon';
@@ -49,21 +47,21 @@ const ContentSection = () => {
       </Box>
       <Text
         text={`I have expertise in building modern and user-friendly pixel-perfect interfaces. I specialize in solving complex challenges with innovative solutions, blending design and functionality to craft outstanding digital experiences. Let's build something extraordinary together!`}
-        color={'#c8c8c8'}
+        color={'light'}
         fontSize={14}
         margin={'10px 0 0 0'}
         fontWeight={400}
       />
       <Box className={'social-platform-wrapper'}>
-        <a
+        {/* <a
           href={'https://www.linkedin.com/in/yusra-f-518658206/'}
           target={'_blank'}
           rel="noreferrer"
         >
           {linkedInSvg}
-        </a>
-        <a href={'/'}>{instaSvg}</a>
-        <a href={'/'}>{twitterSvg}</a>
+        </a> */}
+        {/* <a href={'/'}>{instaSvg}</a>
+        <a href={'/'}>{twitterSvg}</a> */}
         <CustomButton
           url={'../../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf'}
           type={'link'}
@@ -75,6 +73,17 @@ const ContentSection = () => {
           fontSize={'14px'}
           fontWeight={500}
           // margin={'40px 0 20px'}
+        />
+
+        <CustomButton
+          svg={linkedInSvg}
+          text={'LinkedIn Profile'}
+          type={'link'}
+          url={'https://www.linkedin.com/in/yusra-f-518658206/'}
+          height={40}
+          width={150}
+          fontSize={'14px'}
+          fontWeight={500}
         />
       </Box>
     </>

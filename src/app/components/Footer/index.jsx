@@ -7,7 +7,7 @@ import { instaSvg } from '../../assets/svgs/insta';
 import { twitterSvg } from '../../assets/svgs/twitter';
 import Text from '../../common-components/Text';
 
-const Footer = () => {
+const FooterSection = () => {
   return (
     <StyledFooter>
       <Logo />
@@ -42,4 +42,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterSection;

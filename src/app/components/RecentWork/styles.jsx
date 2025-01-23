@@ -127,6 +127,7 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
     position: 'relative',
     letterSpacing: '2px',
     transition: 'all 0.3s ease',
+    [theme.breakpoints.down(1200)]: { margin: '0 0 20px 30px' },
     '&:before': {
       content: '" "',
       backgroundImage: `url(${dotsSvg})`,
@@ -169,4 +170,69 @@ export const CardContainer = styled(Grid)`
   display: flex;
   width: 100%;
   padding: 50px;
+  ${props => props.theme.breakpoints.down(1200)} {
+    padding: 30px;
+  }
+`;
+
+export const Card = styled(Grid)`
+  width: 100%;
+  justify-content: space-around;
+  gap: 14px;
+`;
+
+export const Tags = styled(Box)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 17px 0;
+`;
+
+export const Tag = styled('span')`
+  font-size: 12px;
+  font-weight: 400;
+  color: #02c6b3;
+  background-color: #02c6b315;
+  padding: 2px 8px;
+  border-radius: 10px;
+`;
+
+export const Details = styled('div')`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding: 0px 2px;
+`;
+export const Title = styled('div')`
+  font-size: 32px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.palette.text.tertiary};
+  overflow: hidden;
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+export const Date = styled('div')`
+  font-size: 14px;
+  margin-left: 2px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.palette.text.tertiary};
+  @media only screen and (max-width: 768px) {
+    font-size: 10px;
+  }
+`;
+
+export const Description = styled('div')`
+  font-weight: 400;
+  color: ${({ theme }) => theme.palette.text.tertiary};
+  overflow: hidden;
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: justify;
+  line-height: 20px;
 `;

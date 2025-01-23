@@ -1,4 +1,4 @@
-import { Box, Link } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
 import {
   StyledCodeSection,
@@ -68,7 +68,15 @@ const Home = () => {
           width={{ xs: '100%', sm: '100%', md: '100%', lg: '45%' }}
           className="styled-main-wrapper"
         >
-          <Box className={'intro-text-wrap'} paddingLeft={'7.5%'}>
+          <Box
+            className={'intro-text-wrap'}
+            padding={{
+              xs: '0 7.5%',
+              sm: '0 7.5%',
+              md: '0 0 0 7.5%',
+              lg: '0 0 0 7.5%',
+            }}
+          >
             <ContentSection />
           </Box>
         </StyledMainWrapper>
@@ -79,6 +87,7 @@ const Home = () => {
           height={'100%'}
         >
           <Box
+            className={'home-animate-eye-square-inner'}
             width={'500px'}
             height={'470px'}
             position={'relative'}
@@ -92,7 +101,12 @@ const Home = () => {
                     <Text
                       fontSize={16}
                       fontWeight={700}
-                      lineHeight={1.7}
+                      lineHeight={{
+                        xs: 1.2,
+                        sm: 1.7,
+                        md: 1.7,
+                        lg: 1.7,
+                      }}
                       color={'white'}
                       text={
                         <span>
@@ -182,5 +196,4 @@ const Home = () => {
     </StyledHomeSection>
   );
 };
-
 export default Home;

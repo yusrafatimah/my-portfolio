@@ -4,22 +4,26 @@ import {
   StyledClientsAndReviewsSection,
 } from './styles';
 import Text from '../../common-components/Text';
-import { Avatar, Box, Link } from '@mui/material';
-// import { StyledScrollDiv } from '../Home/styles';
+import { Avatar, Box } from '@mui/material';
 
 const ClientsAndReviewsSection = () => {
   const carouselImages = [
     {
       name: 'Syed Haseeb',
       text: '"Genuine expert as Front end developer" is the phrase that pops into my mind when I think about Yusra.',
-      title: 'Senior Backend Developer at Heuristify',
+      title: 'Senior Backend Developer at Heuristify(Team Lead)',
     },
     {
       name: 'Rooshan Ahmed',
       text: 'Yusra is sincere and passionate about solving client-related problems and writing clean code while working on projects. She has tremendous potential while enthusiastically tackling all assignments. She is friendly and easy-going person.',
-      title: 'Full Stack Developer at H&S Real Estate Pakistan',
+      title:
+        'Full Stack Developer at H&S Real Estate Pakistan (Freelance client)',
     },
-
+    {
+      name: 'Muhammad Usama',
+      text: `I initially worked with Yusra Fatima as a colleague before she became my team lead. Her helping nature, problem solving mindset and technical skills in ReactJS perfectly complemented her role in both capacities. Yusra can design anything, and I mean ANYTHING. Along with her excellent understanding of ever evolving HTML/CSS and other designing tools, her ability to integrate such complex designs seamlessly makes her a wonderful developer. From designing to integration and from state management to data handling, I found her a really talented and efficient Javascript Developer. Moreover, as a lead of development team, Yusra showed amazing leadership skills by always welcoming opposite views, creating an environment of healthy collaboration and friendly discussions. Consequently such a positive team environment helped us to complete and deliver our tasks efficiently and on time.`,
+      title: 'Full Stack Developer',
+    },
     {
       name: 'Shaiharyaar Ahmad',
       text: `I  have been in this field for 3+ years and i have not yet find a more devoted and passsionate person about it's work more than Yusra. If you want her to give 100%, she will give her 110%. She will go above and beyond. She has a creative mind and keen sense when it comes to Frontend.`,
@@ -74,6 +78,8 @@ const ClientsAndReviewsSection = () => {
         text={'Clients & Reviews'}
       />
       <StyledCarousalSection>
+        <div></div>
+        <div></div>
         <Box className="slideshow">
           <Box
             className="slideshowSlider"
@@ -99,7 +105,7 @@ const ClientsAndReviewsSection = () => {
                   <Text
                     fontSize={20}
                     fontWeight={700}
-                    color={'#c8c8c8'}
+                    color={'light'}
                     text={data?.name}
                     margin={'1rem 0 0 0'}
                   />
@@ -115,7 +121,7 @@ const ClientsAndReviewsSection = () => {
                     <Text
                       fontSize={17}
                       fontWeight={400}
-                      color={'#c8c8c8'}
+                      color={'light'}
                       text={data?.text}
                     />
                   </Box>

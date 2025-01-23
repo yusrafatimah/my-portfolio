@@ -33,10 +33,10 @@ const ImageContainer = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 370px;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 10px;
   @media (max-width: 899px) {
-    height: auto;
+    // height: auto;
   }
 `;
 
@@ -53,6 +53,7 @@ const ProjectImageCarousel = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex]);
 
   return (

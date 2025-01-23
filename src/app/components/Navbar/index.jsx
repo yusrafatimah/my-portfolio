@@ -7,16 +7,23 @@ import {
   NavbarContainer,
   NavItems,
   NavLink,
+  NavLinkBold,
+  ThemeButton,
 } from './styles';
 import CustomButton from '../../common-components/CustomButton';
 import { truckSvg } from '../../assets/svgs/truck';
 import Logo from '../../common-components/Logo';
+import { Switch } from '@mui/material';
+import { sunSvg } from '../../assets/svgs/sun';
+import { moonSvg } from '../../assets/svgs/moon';
 
-const Navbar = () => {
+const Navbar = ({ setAppTheme, appTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <NavbarContainer>
+    <NavbarContainer className={'navbar-container'}>
       <Logo />
+
       <MobileIcon>
         <div
           onClick={() => {
@@ -36,8 +43,21 @@ const Navbar = () => {
         <NavLink href="#RecentWork">Recent Work</NavLink>
         <NavLink href="#ExperienceSection">Experience</NavLink>
         <NavLink href="#ClientsAndReviewsSection">Reviews</NavLink>
-        <NavLink href="#ContactSection">Contact</NavLink>
+        <NavLinkBold href="#ContactSection">Contact Me</NavLinkBold>
       </NavItems>
+      <ThemeButton className="theme-button">
+        {appTheme === 'light' && sunSvg}
+        <Switch
+          defaultChecked
+          color="default"
+          checked={appTheme === 'light' ? true : false}
+          onChange={() => {
+            if (appTheme === 'light') setAppTheme('dark');
+            else setAppTheme('light');
+          }}
+        />
+        {appTheme === 'dark' && moonSvg}
+      </ThemeButton>
       <ButtonContainer>
         <CustomButton
           svg={truckSvg}
