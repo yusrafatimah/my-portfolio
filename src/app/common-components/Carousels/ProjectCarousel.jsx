@@ -35,8 +35,8 @@ const Image = styled.img`
   height: 370px;
   object-fit: fill;
   border-radius: 10px;
-  @media (max-width: 899px) {
-    // height: auto;
+  @media (max-width: 530px) {
+    height: 250px;
   }
 `;
 

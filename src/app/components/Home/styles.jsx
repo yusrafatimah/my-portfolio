@@ -315,12 +315,12 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     color: theme.palette.text.default,
     fontWeight: 600,
     margin: '20px 0',
-    [theme.breakpoints.down(600)]: { fontSize: '40px' },
+    [theme.breakpoints.down(600)]: { fontSize: '35px' },
     '& .first-letter': {
       fontSize: '75px',
       fontWeight: 700,
       textShadow: '5px 5px 0px #2d6373, 9px 6px 0px #2aecb1',
-      [theme.breakpoints.down(600)]: { fontSize: '55px' },
+      [theme.breakpoints.down(600)]: { fontSize: '50px' },
     },
   },
   '& .wipe-animated-text': {
