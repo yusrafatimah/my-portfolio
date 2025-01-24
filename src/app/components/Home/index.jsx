@@ -71,7 +71,7 @@ const Home = () => {
           <Box
             className={'intro-text-wrap'}
             padding={{
-              xs: '0',
+              xs: '0 20px',
               sm: '0 7.5%',
               md: '0 0 0 7.5%',
               lg: '0 0 0 7.5%',
