@@ -41,7 +41,7 @@ export const SpanTitle = styled('div')`
   // background: #02c6b3;
   aspect-ratio: cos(30deg);
   clip-path: polygon(-50% 50%, 50% 100%, 150% 50%, 50% 0);
-  border: 4px solid #03ffbd;
+  border: 4px solid ${({ theme }) => theme.palette.text.neon};
   height: 60px;
   width: 60px;
   display: flex;
@@ -143,7 +143,7 @@ export const MobileIcon = styled('div')`
     .line-3 {
       width: 22px;
       height: 2px;
-      background-color: #03ffbd;
+      background-color: ${({ theme }) => theme.palette.text.neon};
       margin: 4px 0;
       transition: 0.4s;
     }

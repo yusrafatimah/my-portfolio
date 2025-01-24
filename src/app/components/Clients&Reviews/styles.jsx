@@ -81,6 +81,10 @@ export const StyledCarousalSection = styled(Box)`
         border-radius: 10px;
         p {
           text-align: center;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
       }
     }

@@ -202,68 +202,58 @@ export const StyledHomeSection = styled(Box)`
     left: 45vw;
     width: 10px;
     height: 10px;
-    border: solid 0.1px #03ffbd;
+    border: solid 0.1px ${({ theme }) => theme.palette.text.neon};
     transform-origin: top left;
     transform: scale(0) rotate(0deg) translate(-50%, -50%);
     animation: cube 18s ease-in forwards infinite;
   }
 
   .cube:nth-child(2) {
-    border-color: #03ffbd;
     animation-delay: 0.1s;
     left: 50vw;
     top: 40vh;
   }
   .cube:nth-child(3) {
-    border-color: #03ffbd;
     animation-delay: 0.2s;
     left: 75vw;
     top: 50vh;
   }
   .cube:nth-child(4) {
-    border-color: #03ffbd;
     animation-delay: 0.3s;
     left: 90vw;
     top: 10vh;
   }
   .cube:nth-child(5) {
-    border-color: #03ffbd;
     animation-delay: 0.4s;
     left: 10vw;
     top: 85vh;
   }
   .cube:nth-child(6) {
-    border-color: #03ffbd;
     animation-delay: 0.5s;
     left: 50vw;
     top: 10vh;
   }
   .cube:nth-child(7) {
-    border-color: #03ffbd;
     animation-delay: 0.7s;
     left: 35vw;
     top: 60vh;
   }
   .cube:nth-child(8) {
-    border-color: #03ffbd;
     animation-delay: 0.9s;
     left: 85vw;
     top: 90vh;
   }
   .cube:nth-child(9) {
-    border-color: #03ffbd;
     animation-delay: 0.11s;
     left: 150vw;
     top: 20vh;
   }
   .cube:nth-child(10) {
-    border-color: #03ffbd;
     animation-delay: 0.13s;
     left: 5vw;
     top: 35vh;
   }
   .cube:nth-child(11) {
-    border-color: #03ffbd;
     animation-delay: 0.15s;
     left: 95vw;
     top: 15vh;
@@ -319,7 +309,7 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     '& .first-letter': {
       fontSize: '75px',
       fontWeight: 700,
-      textShadow: '5px 5px 0px #2d6373, 9px 6px 0px #2aecb1',
+      textShadow: `5px 5px 0px #2d6373, 9px 6px 0px ${theme.palette.text.neonBold} `,
       [theme.breakpoints.down(600)]: { fontSize: '50px' },
     },
   },

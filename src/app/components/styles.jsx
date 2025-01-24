@@ -11,7 +11,7 @@ export const MainSection = styled(Box)`
     132deg,
     ${({ theme }) => theme.palette.background.bgCl1},
     ${({ theme }) => theme.palette.background.bgCl2},
-    ${({ theme }) => theme.palette.background.bgCl3}
+    ${({ theme }) => theme.palette.background.bgCl1}
   );
   .wave-svg {
     position: absolute;
