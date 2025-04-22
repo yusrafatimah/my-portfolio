@@ -6,9 +6,9 @@ export const StyledButton = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid ${({ theme }) => theme.palette.text.primary};
+    border: 2px solid ${({ theme }) => theme.palette.text.btn};
     border-radius: 50px;
-    color: ${({ theme }) => theme.palette.text.primary};
+    color: ${({ theme }) => theme.palette.text.btn};
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.8em;
@@ -18,14 +18,14 @@ export const StyledButton = styled(Box)`
     overflow: hidden;
   }
   p {
-    color: ${({ theme }) => theme.palette.text.primary};
+    color: ${({ theme }) => theme.palette.text.btn};
     text-decoration: none;
     letter-spacing: 1px;
   }
   a {
     position: relative;
     z-index: 1;
-    color: ${({ theme }) => theme.palette.text.primary};
+    color: ${({ theme }) => theme.palette.text.btn};
     text-decoration: none;
     letter-spacing: 1px;
     height: 100%;
@@ -51,7 +51,7 @@ export const StyledButton = styled(Box)`
     height: 275%;
     left: -200px;
     top: -30px;
-    background: ${({ theme }) => theme.palette.text.primary};
+    background: ${({ theme }) => theme.palette.text.btn};
     position: absolute;
     transition: all 0.3s ease-Out;
   }
@@ -70,5 +70,10 @@ export const StyledButton = styled(Box)`
 
 export const StyledTypography = styled(Typography)(({ theme, color }) => ({
   [theme.breakpoints.down(1200)]: {},
-  color: color === 'light' ? theme.palette.text.tertiary : color,
+  color:
+    color === 'light'
+      ? theme.palette.text.tertiary
+      : color === 'white'
+        ? theme.palette.text.secondary
+        : color,
 }));

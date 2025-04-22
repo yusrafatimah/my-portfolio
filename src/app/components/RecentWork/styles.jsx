@@ -193,8 +193,10 @@ export const Tags = styled(Box)`
 export const Tag = styled('span')`
   font-size: 12px;
   font-weight: 400;
-  color: #02c6b3;
-  background-color: #02c6b315;
+  color: ${({ theme }) =>
+    theme.palette.mode === 'light' ? '#00ffbc' : '#02c6b3'};
+  background-color: ${({ theme }) =>
+    theme.palette.mode === 'light' ? '#139588' : '#02c6b315'};
   padding: 2px 8px;
   border-radius: 10px;
 `;

@@ -296,7 +296,7 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     borderRadius: '50%',
   },
   '& .intro-text': {
-    textShadow: '2px 2px black',
+    textShadow: `2px 2px ${theme.palette.text.shadow}`,
     [theme.breakpoints.down(600)]: { fontSize: '20px' },
   },
   '& .name-text': {
@@ -309,13 +309,16 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
     '& .first-letter': {
       fontSize: '75px',
       fontWeight: 700,
-      textShadow: `5px 5px 0px #2d6373, 9px 6px 0px ${theme.palette.text.neonBold} `,
+      textShadow:
+        theme.palette.mode === 'light'
+          ? '5px 5px 0px #02c6b3, 9px 6px 0px #2d6373'
+          : `5px 5px 0px #2d6373, 9px 6px 0px ${theme.palette.text.neonBold} `,
       [theme.breakpoints.down(600)]: { fontSize: '50px' },
     },
   },
   '& .wipe-animated-text': {
     textShadow: '2px 2px black',
-    color: 'white',
+    color: theme.palette.mode === 'light' ? '#00c6b3' : 'white',
     width: 0,
     maxWidth: 'max-content',
     overflow: 'hidden',

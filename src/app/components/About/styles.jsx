@@ -35,7 +35,7 @@ export const StyleBoxWrapper = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledAboutTextSection = styled(Box)(({ theme }) => ({
-  backgroundColor: 'rgba(0, 0, 0, 0.2)!important',
+  backgroundColor: theme.palette.background.blob,
   boxShadow: '0 5px 20px 0 rgba(69, 67, 96, .1)',
   borderRadius: '20px',
   [theme.breakpoints.down(1200)]: {},

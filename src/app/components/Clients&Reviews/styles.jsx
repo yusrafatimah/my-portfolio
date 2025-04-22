@@ -1,5 +1,6 @@
 import { Box, styled } from '@mui/material';
 import dotsSvg from '../../assets/svgs/dots-svg.svg';
+import dotsSvgLight from '../../assets/svgs/dots-svg-light.svg';
 
 export const StyledClientsAndReviewsSection = styled(Box)(({ theme }) => ({
   width: '100%',
@@ -16,7 +17,10 @@ export const StyledClientsAndReviewsSection = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down(1200)]: { margin: '20px 0px 20px 30px' },
     '&:before': {
       content: '" "',
-      backgroundImage: `url(${dotsSvg})`,
+      backgroundImage:
+        theme.palette.mode === 'light'
+          ? `url(${dotsSvgLight})`
+          : `url(${dotsSvg})`,
       display: 'block',
       height: 37,
       left: '-14px',
@@ -76,7 +80,7 @@ export const StyledCarousalSection = styled(Box)`
         ${props => props.theme.breakpoints.down(750)} {
           width: 80%;
         }
-        background: #0037478f;
+        background-color: ${({ theme }) => theme.palette.background.blob};
         padding: 30px;
         border-radius: 10px;
         p {

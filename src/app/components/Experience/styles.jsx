@@ -42,7 +42,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
       alignItems: 'flex-start',
       justifyContent: 'center',
       height: 'fit-content',
-      background: '#0037478f',
+      background: theme.palette.background.blob,
       [theme.breakpoints.down(1200)]: { minHeight: '100%' },
 
       '& .dot': {
