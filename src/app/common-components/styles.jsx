@@ -1,14 +1,12 @@
 import { Box, Typography, styled } from '@mui/material';
 
 export const StyledButton = styled(Box)`
-  .button {
+  .custom-button {
     width: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid ${({ theme }) => theme.palette.text.btn};
     border-radius: 50px;
-    color: ${({ theme }) => theme.palette.text.btn};
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.8em;
@@ -18,14 +16,12 @@ export const StyledButton = styled(Box)`
     overflow: hidden;
   }
   p {
-    color: ${({ theme }) => theme.palette.text.btn};
     text-decoration: none;
     letter-spacing: 1px;
   }
   a {
     position: relative;
     z-index: 1;
-    color: ${({ theme }) => theme.palette.text.btn};
     text-decoration: none;
     letter-spacing: 1px;
     height: 100%;

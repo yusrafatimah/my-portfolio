@@ -31,6 +31,7 @@ const ProjectCards = ({ project, setOpenModal, even }) => {
             <CustomButton
               svg={truckSvg}
               text={'Visit Website'}
+              type={'heroButton'}
               height={25}
               width={120}
               fontSize={'11px'}

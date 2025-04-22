@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 
 export const NavbarContainer = styled('div')`
-  background-color: ${({ theme }) => theme.palette.background.nav};
+  background-color: ${({ theme }) => theme.palette.background.secondary};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -134,7 +134,7 @@ export const MobileIcon = styled('div')`
   #btn-hamburger {
     border: none;
     outline: 0;
-    background: #19192499;
+    background: ${({ theme }) => theme.palette.background.hamburger};
     border-radius: 3px;
     padding: 0.6em;
     cursor: pointer;

@@ -64,7 +64,7 @@ const ContentSection = () => {
         <a href={'/'}>{twitterSvg}</a> */}
         <CustomButton
           url={'../../assets/docs/Yusra_Fatima_Senior_Dev_Resume.pdf'}
-          type={'link'}
+          type={'heroButton'}
           downloadTitle={'Yusra_Frontend_Dev_Resume'}
           svg={dragonSvg}
           text={'Download CV'}
@@ -78,7 +78,7 @@ const ContentSection = () => {
         <CustomButton
           svg={linkedInSvg}
           text={'LinkedIn Profile'}
-          type={'link'}
+          type={'heroButton'}
           url={'https://www.linkedin.com/in/yusra-f-518658206/'}
           height={40}
           width={150}
