@@ -26,16 +26,16 @@ const CustomButton = ({
       <Box
         class="button"
         id="custom-button"
+        height={height}
         sx={{
-          height: height,
           border:
             type === 'heroButton'
               ? `2px solid ${theme.palette.text.heroBtn}`
               : `2px solid  ${theme.palette.text.btn}`,
-          borderRadius: '50px',
-          fontSize: fontSize,
-          textTransform: 'uppercase',
         }}
+        borderRadius={'50px'}
+        fontSize={fontSize}
+        textTransform="uppercase"
       >
         <Box id="translate"></Box>
         {type === 'link' || type === 'heroButton' ? (

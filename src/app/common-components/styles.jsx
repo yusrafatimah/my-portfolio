@@ -57,10 +57,10 @@ export const StyledButton = styled(Box)`
   }
 
   #custom-button:hover p {
-    color: ${({ theme }) => theme.palette.text.secondary};
+    color: ${({ theme }) => theme.palette.text.secondary} !important;
   }
   #custom-button:hover a {
-    color: ${({ theme }) => theme.palette.text.secondary};
+    color: ${({ theme }) => theme.palette.text.secondary}!important;
   }
 `;
 
