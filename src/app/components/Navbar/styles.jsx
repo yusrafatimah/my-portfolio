@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 
 export const NavbarContainer = styled('div')`
-  background-color: ${({ theme }) => theme.palette.background.secondary};
+  background-color: ${({ theme }) => theme.palette.background.nav};
   display: flex;
   justify-content: space-between;
   align-items: center;

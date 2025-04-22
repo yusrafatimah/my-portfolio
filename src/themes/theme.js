@@ -14,7 +14,7 @@ const lightTheme = createTheme({
       bgCl2: '#139588',
       blob: '#139588c2',
       logo: '#49837c',
-      nav: '#139588c2',
+      nav: '#036157c2',
       hamburger: '#03a797',
     },
     text: {
