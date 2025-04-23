@@ -24,6 +24,7 @@ const MainBody = () => {
         flexDirection={'column'}
         sx={{ scrollBehavior: 'smooth', position: 'relative' }}
       >
+        <Navbar setAppTheme={setAppTheme} appTheme={appTheme} />
         <Box
           className={'main-body-inner'}
           style={{
@@ -31,7 +32,6 @@ const MainBody = () => {
             width: '100%',
           }}
         >
-          <Navbar setAppTheme={setAppTheme} appTheme={appTheme} />
           <Home />
           {/* <div class="wave"></div>
       <div class="wave wave--top"></div> */}
@@ -40,6 +40,7 @@ const MainBody = () => {
           <ExperienceSection />
           <ClientsAndReviewsSection />
         </Box>
+
         <FooterSection />
       </MainSection>
     </ThemeProvider>

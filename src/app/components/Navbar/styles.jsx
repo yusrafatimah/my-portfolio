@@ -17,9 +17,19 @@ export const ThemeButton = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+  position: relative;
   ${props => props.theme.breakpoints.down(769)} {
-    padding: 0 70px 0 0;
+    margin: 0 70px 0 0;
+  }
+    svg {
+    position: absolute;
+    z-index: 1;
+    width: 15px;
+    height: auto;
+    right:${props => (props.theme.palette.mode === 'dark' ? 'unset' : '12px')};
+    left:${props => (props.theme.palette.mode === 'dark' ? '11px' : 'unset')};
+    }
   }
 `;
 

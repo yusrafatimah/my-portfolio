@@ -55,6 +55,11 @@ const Navbar = ({ setAppTheme, appTheme }) => {
             if (appTheme === 'light') setAppTheme('dark');
             else setAppTheme('light');
           }}
+          sx={{
+            '& .MuiSwitch-thumb': {
+              backgroundColor: '#139588',
+            },
+          }}
         />
         {appTheme === 'dark' && moonSvg}
       </ThemeButton>
