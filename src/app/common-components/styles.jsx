@@ -1,7 +1,7 @@
 import { Box, Typography, styled } from '@mui/material';
 
 export const StyledButton = styled(Box)`
-  .custom-button {
+  #custom-button {
     width: inherit;
     display: flex;
     align-items: center;
