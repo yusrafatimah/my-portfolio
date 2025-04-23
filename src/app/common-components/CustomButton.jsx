@@ -25,14 +25,8 @@ const CustomButton = ({
     >
       <Box
         class="button"
-        id="custom-button"
+        id={type === 'heroButton' ? 'hero-button' : 'custom-button'}
         height={height}
-        sx={{
-          border:
-            type === 'heroButton'
-              ? `2px solid ${theme.palette.text.heroBtn}`
-              : `2px solid  ${theme.palette.text.btn}`,
-        }}
         borderRadius={'50px'}
         fontSize={fontSize}
         textTransform="uppercase"

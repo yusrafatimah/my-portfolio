@@ -4,6 +4,22 @@ export const StyledButton = styled(Box)`
   #custom-button {
     width: inherit;
     display: flex;
+    border: 2px solid ${props => props.theme.palette.text.btn};
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #hero-button {
+    width: inherit;
+    display: flex;
+    border: 2px solid ${props => props.theme.palette.text.heroBtn};
     align-items: center;
     justify-content: center;
     border-radius: 50px;
@@ -40,6 +56,16 @@ export const StyledButton = styled(Box)`
     position: relative;
     transition: all 0.45s ease-Out;
   }
+  #hero-button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #hero-button p {
+    position: relative;
+    transition: all 0.45s ease-Out;
+  }
 
   #translate {
     transform: rotate(50deg);
@@ -55,11 +81,20 @@ export const StyledButton = styled(Box)`
   #custom-button:hover #translate {
     left: 2px;
   }
+  #hero-button:hover #translate {
+    left: 2px;
+  }
 
   #custom-button:hover p {
     color: ${({ theme }) => theme.palette.text.secondary} !important;
   }
   #custom-button:hover a {
+    color: ${({ theme }) => theme.palette.text.secondary}!important;
+  }
+  #hero-button:hover p {
+    color: ${({ theme }) => theme.palette.text.secondary} !important;
+  }
+  #hero-button:hover a {
     color: ${({ theme }) => theme.palette.text.secondary}!important;
   }
 `;
