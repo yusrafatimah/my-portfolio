@@ -30,8 +30,8 @@ const CustomButton = ({
         sx={{
           border:
             type === 'heroButton'
-              ? `1px solid ${theme.palette.text.heroBtn}`
-              : `1px solid  ${theme.palette.text.btn}`,
+              ? `2px solid ${theme.palette.text.heroBtn}`
+              : `2px solid  ${theme.palette.text.btn}`,
         }}
         borderRadius={'50px'}
         fontSize={fontSize}
