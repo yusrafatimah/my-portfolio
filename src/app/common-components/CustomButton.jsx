@@ -26,7 +26,7 @@ const CustomButton = ({
       <Box
         class="button"
         id={type === 'heroButton' ? 'hero-button' : 'custom-button'}
-        height={height}
+        style={{ height: height }}
         borderRadius={'50px'}
         fontSize={fontSize}
         textTransform="uppercase"
