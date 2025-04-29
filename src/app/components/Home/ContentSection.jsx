@@ -26,7 +26,7 @@ const ContentSection = () => {
         display={'flex'}
         alignItems="center"
         gap={'10px'}
-        minWidth={'355px'}
+        minWidth={{ xs: '255px', sm: '355px', md: '355px', lg: '355px' }}
         justifyContent={'flex-start'}
       >
         <Text
@@ -39,7 +39,7 @@ const ContentSection = () => {
 
         <Text
           text={'Developer'}
-          fontSize={25}
+          fontSize={{ xs: 20, sm: 25, md: 25, lg: 25 }}
           fontWeight={500}
           color={'white'}
           className="wipe-animated-text"

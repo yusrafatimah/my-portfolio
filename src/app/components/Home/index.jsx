@@ -71,11 +71,12 @@ const Home = () => {
           <Box
             className={'intro-text-wrap'}
             padding={{
-              xs: '0 20px',
+              xs: '0',
               sm: '0 7.5%',
               md: '0 0 0 7.5%',
               lg: '0 0 0 7.5%',
             }}
+            width={{ xs: '90%', sm: '100%', md: '100%', lg: '100%' }}
           >
             <ContentSection />
           </Box>

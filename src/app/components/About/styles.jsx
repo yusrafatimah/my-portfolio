@@ -67,7 +67,13 @@ export const StyledSkillsAnimation = styled(Box)`
     justify-content: center;
     .inner-images {
       animation: widthLarge 1.5s linear 1;
-      transform: scale(0.97);
+      transform: scale(1.1);
+      ${props => props.theme.breakpoints.down(660)} {
+        transform: scale(0.97);
+      }
+      ${props => props.theme.breakpoints.down(400)} {
+        transform: scale(0.7);
+      }
       border-radius: 50%;
       position: relative;
       width: 300px;
