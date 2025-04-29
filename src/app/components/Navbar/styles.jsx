@@ -27,8 +27,8 @@ export const ThemeButton = styled('div')`
     z-index: 1;
     width: 15px;
     height: auto;
-    right:${props => (props.theme.palette.mode === 'dark' ? 'unset' : '12px')};
-    left:${props => (props.theme.palette.mode === 'dark' ? '11px' : 'unset')};
+    right:${props => (props.theme.palette.mode === 'dark' ? 'unset' : '12.5px')};
+    left:${props => (props.theme.palette.mode === 'dark' ? '11.5px' : 'unset')};
     }
   }
 `;
