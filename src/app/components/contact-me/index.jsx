@@ -1,153 +1,72 @@
-import React from 'react';
-import { StyledContactSection } from './styles';
+import React, { useState } from 'react';
+import { useRef } from 'react';
+import { Snackbar } from '@mui/material';
+import {
+  ContactButton,
+  ContactForm,
+  ContactInput,
+  ContactInputMessage,
+  Container,
+  Title,
+  Wrapper,
+} from './styles';
 
-const ContactMeSection = () => {
-  var lname = document.getElementById('l-name');
-  var lemail = document.getElementById('l-email');
-  var lsub = document.getElementById('l-sub');
-  var ltarea = document.getElementById('l-tarea');
+const Contact = () => {
+  //hooks
+  const [open, setOpen] = React.useState(false);
+  const form = useRef();
 
-  var textname = document.getElementById('name'); // I Really don't why 'name' is not working
-  var email = document.getElementById('email');
-  var subject = document.getElementById('subject');
-  var message = document.getElementById('message');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  console.log({ email, setIsSending });
 
-  function labelmove(inputname) {
-    if (inputname == 'name') {
-      lname.style.transition = 'all 0.2s';
-      lname.style.marginTop = '-15px';
-      lname.style.marginLeft = '10px';
-      lname.style.zIndex = '10';
-      lname.style.transform = 'scale(0.9)';
-      lname.style.padding = '5px 15px 5px 15px';
-      lname.style.backgroundColor = '#000000';
-    }
-
-    if (inputname == 'email') {
-      lemail.style.transition = 'all 0.2s';
-      lemail.style.marginTop = '-15px';
-      lemail.style.marginLeft = '10px';
-      lemail.style.zIndex = '10';
-      lemail.style.transform = 'scale(0.9)';
-      lemail.style.padding = '5px 15px 5px 15px';
-      lemail.style.backgroundColor = '#000000';
-    }
-
-    if (inputname == 'subject') {
-      lsub.style.transition = 'all 0.2s';
-      lsub.style.marginTop = '-15px';
-      lsub.style.marginLeft = '10px';
-      lsub.style.zIndex = '10';
-      lsub.style.transform = 'scale(0.9)';
-      lsub.style.padding = '5px 15px 5px 15px';
-      lsub.style.backgroundColor = '#000000';
-    }
-
-    if (inputname == 'message') {
-      ltarea.style.transition = 'all 0.2s';
-      ltarea.style.marginTop = '-15px';
-      ltarea.style.marginLeft = '10px';
-      ltarea.style.zIndex = '10';
-      ltarea.style.transform = 'scale(0.9)';
-      ltarea.style.padding = '5px 15px 5px 15px';
-      ltarea.style.backgroundColor = '#000000';
-    }
-  }
-
-  window.onclick = function (event) {
-    if (event.target != textname && textname.value.length == 0) {
-      lname.style.transform = 'scale(1)';
-      lname.style.transition = 'all 0.2s';
-      lname.style.marginTop = '17px';
-      lname.style.marginLeft = '20px';
-      lname.style.zIndex = '0';
-      lname.style.padding = '0px';
-      lname.style.backgroundColor = 'transparent';
-    }
-    if (event.target != email && email.value.length == 0) {
-      lemail.style.transform = 'scale(1)';
-      lemail.style.transition = 'all 0.2s';
-      lemail.style.marginTop = '17px';
-      lemail.style.marginLeft = '20px';
-      lemail.style.zIndex = '0';
-      lemail.style.padding = '0px';
-      lemail.style.backgroundColor = 'transparent';
-    }
-    if (event.target != subject && subject.value.length == 0) {
-      lsub.style.transform = 'scale(1)';
-      lsub.style.transition = 'all 0.2s';
-      lsub.style.marginTop = '17px';
-      lsub.style.marginLeft = '20px';
-      lsub.style.zIndex = '0';
-      lsub.style.padding = '0px';
-      lsub.style.backgroundColor = 'transparent';
-    }
-    if (event.target != message && message.value.length == 0) {
-      ltarea.style.transform = 'scale(1)';
-      ltarea.style.transition = 'all 0.2s';
-      ltarea.style.marginTop = '17px';
-      ltarea.style.marginLeft = '20px';
-      ltarea.style.zIndex = '0';
-      ltarea.style.padding = '0px';
-      ltarea.style.backgroundColor = 'transparent';
-    }
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('here');
+    window.open(
+      `mailto:mousuleman@gmail.com?subject=${subject}&body=${message}`,
+    );
   };
 
   return (
-    <StyledContactSection>
-      <div className="spectacledcoder-contact" id="contact-div">
-        <form action="" className="spectacledcoder-form">
-          <h1 id="contact">Contact</h1>
-          <div className="spectacledcoder-input">
-            <label id="l-name" className="d-label">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value=""
-              onFocus={() => labelmove('name')}
-            />
-          </div>
-          <div className="spectacledcoder-input">
-            <label id="l-email" className="d-label">
-              Email Address
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              onFocus={() => labelmove('email')}
-            />
-          </div>
-          <div className="spectacledcoder-input">
-            <label id="l-sub" className="d-label">
-              Subject
-            </label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              onFocus={() => labelmove('subject')}
-            />
-          </div>
-
-          <div className="spectacledcoder-tarea">
-            <label id="l-tarea" className="d-tarea-label">
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              onFocus={() => labelmove('message')}
-            ></textarea>
-          </div>
-
-          <input type="submit" value="Send Message" />
-        </form>
-      </div>
-    </StyledContactSection>
+    <Container id="contact">
+      <Wrapper>
+        <ContactForm ref={form}>
+          <Title>Contact Me</Title>
+          <ContactInput
+            placeholder="Your Email"
+            name="from_email"
+            onChange={e => setEmail(e.target.value)}
+          />
+          <ContactInput
+            placeholder="Subject"
+            name="subject"
+            onChange={e => setSubject(e.target.value)}
+          />
+          <ContactInputMessage
+            placeholder="Message"
+            rows="4"
+            name="message"
+            onChange={e => setMessage(e.target.value)}
+          />
+          <ContactButton
+            type="submit"
+            value={isSending ? 'Sending, Please wait!' : 'Send'}
+            onClick={handleSubmit}
+          />
+        </ContactForm>
+        <Snackbar
+          open={open}
+          autoHideDuration={6000}
+          onClose={() => setOpen(false)}
+          message="Email sent successfully!"
+          severity="success"
+        />
+      </Wrapper>
+    </Container>
   );
 };
-export default ContactMeSection;
+
+export default Contact;

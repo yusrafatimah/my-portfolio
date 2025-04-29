@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material/styles';
-import { nav } from 'motion/react-client';
 
 const lightTheme = createTheme({
   typography: {

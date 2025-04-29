@@ -10,6 +10,7 @@ import { Box, CssBaseline, ThemeProvider } from '@mui/material';
 import FooterSection from './Footer/index';
 
 import { darkTheme, lightTheme } from '../../themes/theme';
+import ContactMeSection from './contact-me';
 
 const MainBody = () => {
   const [appTheme, setAppTheme] = useState('dark');
@@ -39,6 +40,7 @@ const MainBody = () => {
           <RecentWork />
           <ExperienceSection />
           <ClientsAndReviewsSection />
+          <ContactMeSection />
         </Box>
 
         <FooterSection />
