@@ -31,7 +31,7 @@ const Contact = () => {
   };
 
   return (
-    <Container id="contact">
+    <Container id="ContactSection">
       <Wrapper>
         <ContactForm ref={form}>
           <Title>Contact Me</Title>
