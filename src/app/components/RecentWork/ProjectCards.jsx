@@ -36,6 +36,7 @@ const ProjectCards = ({ project, setOpenModal, even }) => {
               width={120}
               fontSize={'11px'}
               fontWeight={300}
+              url={project?.href}
             />
           )}
         </Grid>

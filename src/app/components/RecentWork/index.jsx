@@ -159,6 +159,7 @@ const RecentWork = () => {
 
       <CardContainer className="recent-work-grid" container xs={12} rowGap={7}>
         {projects &&
+          projects.length > 0 &&
           projects.map((project, index) => (
             <ProjectCard
               project={project}
