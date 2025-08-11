@@ -3,7 +3,9 @@ import { Box, styled } from '@mui/material';
 
 export const StyledTeleprompterWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
-  height: 'max-content',
+  height: 750,
+  overflowY: 'auto',
+  gap: '55px',
   display: 'flex',
   justifyContent: 'space-evenly',
   alignItems: 'center',
@@ -21,6 +23,20 @@ export const StyledTeleprompterWrapper = styled(Box)(({ theme }) => ({
       width: '45%',
       justifyContent: 'space-evenly',
     },
+    [theme.breakpoints.down(900)]: {
+      width: '100%',
+    },
+    [theme.breakpoints.down(500)]: {
+      flexDirection: 'column',
+    },
+    '& .col-1': {
+      div: {
+        [theme.breakpoints.down(500)]: {
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
+        },
+      },
+    },
     '& .col-2': {
       [theme.breakpoints.down(1250)]: {
         display: 'flex',
@@ -34,11 +50,17 @@ export const StyledTeleprompterWrapper = styled(Box)(({ theme }) => ({
           },
         },
       },
+      [theme.breakpoints.down(500)]: {
+        justifyContent: 'flex-start',
+      },
     },
   },
   '& .play-btn-wrapper': {
     [theme.breakpoints.down(1250)]: {
       width: '15%',
+    },
+    [theme.breakpoints.down(900)]: {
+      width: '100%',
     },
   },
   '& .prompter-sidebar': {
@@ -59,10 +81,17 @@ export const StyledTeleprompterWrapper = styled(Box)(({ theme }) => ({
       maxWidth: '100%',
       height: '170px',
     },
+    [theme.breakpoints.down(900)]: {
+      flexDirection: 'column',
+      height: 'auto',
+    },
     '& .script-input ': {
       [theme.breakpoints.down(1250)]: {
         width: '40%',
         borderRadius: '11px',
+      },
+      [theme.breakpoints.down(900)]: {
+        width: '100%',
       },
       '& fieldset': {
         borderRadius: '11px 11px 0 0',
@@ -154,6 +183,9 @@ export const StyledTeleprompterWrapper = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down(1250)]: {
       position: 'relative',
     },
+    [theme.breakpoints.down(1250)]: {
+      width: '100%',
+    },
     '& .screen-img-bg': {
       width: '100%',
       height: '100%',
@@ -168,7 +200,9 @@ export const StyledTeleprompterWrapper = styled(Box)(({ theme }) => ({
     top: 0,
     right: 0,
     background: 'rgba(17, 17, 17, 0.1)',
+
     [theme.breakpoints.down(1250)]: {
+      width: '100%',
       height: 380,
     },
   },
@@ -218,11 +252,11 @@ export const ScriptContainer = styled(Box)(
         display: 'flex',
         justifyContent: 'flex-end',
         position: 'relative',
-        right: '-5px',
-        top: 6,
+        right: '0',
+        top: 0,
         padding: '15.5% 0 0 0',
         [theme.breakpoints.down(1250)]: {
-          padding: '97px 0 0 0',
+          padding: '102px 0 0 0',
         },
       },
     },
@@ -255,7 +289,7 @@ export const ScriptContainer = styled(Box)(
       height: 'max-content',
       padding: '0 1rem 0 1rem',
       fontSize: `${fontSize}px`,
-      lineHeight: `${lineHeight}px`,
+      lineHeight: `${fontSize * 1.5}px`,
       margin: 0,
       fontWeight: '400',
       textAlign: 'left',
@@ -280,11 +314,12 @@ export const StyledScreen = styled(Box)`
   justify-content: center;
   ${props => props.theme.breakpoints.down(1250)} {
     height: 440px;
+    position: relative;
   }
-  ${props => props.theme.breakpoints.down(530)} {
-    width: 300px;
-    height: 200px;
+  ${props => props.theme.breakpoints.down(900)} {
+    width: 100%;
   }
+
   .screen-inner {
     margin-top: 24px;
     width: 650px;
@@ -294,10 +329,6 @@ export const StyledScreen = styled(Box)`
     position: relative;
     ${props => props.theme.breakpoints.down(1250)} {
       height: 380px;
-    }
-    ${props => props.theme.breakpoints.down(530)} {
-      width: 250px;
-      height: 150px;
     }
   }
   .stand {
@@ -310,12 +341,6 @@ export const StyledScreen = styled(Box)`
     ${props => props.theme.breakpoints.down(1250)} {
       bottom: -42px;
     }
-    ${props => props.theme.breakpoints.down(530)} {
-      bottom: 82px;
-    }
-    ${props => props.theme.breakpoints.down(450)} {
-      bottom: 23px;
-    }
   }
   .base {
     height: 50px;
@@ -327,12 +352,6 @@ export const StyledScreen = styled(Box)`
     ${props => props.theme.breakpoints.down(1250)} {
       bottom: -38px;
     }
-    ${props => props.theme.breakpoints.down(530)} {
-      bottom: 95px;
-    }
-    ${props => props.theme.breakpoints.down(450)} {
-      bottom: 35px;
-    }
   }
   .button {
     height: 30px;
@@ -343,9 +362,6 @@ export const StyledScreen = styled(Box)`
     bottom: 115px;
     ${props => props.theme.breakpoints.down(1250)} {
       bottom: -10px;
-    }
-    ${props => props.theme.breakpoints.down(530)} {
-      bottom: 140px;
     }
   }
 `;

@@ -6,7 +6,6 @@ import {
   StyledTeleprompterWrapper,
 } from './styles';
 import { Box, Slider, TextField, Tooltip } from '@mui/material';
-import screenSvg from '../../assets/images/screen.jpg';
 import { playSvg } from '../../assets/svgs/play';
 import { pauseSvg } from '../../assets/svgs/pause';
 import { arrowSvg } from '../../assets/svgs/arrow';
@@ -28,7 +27,6 @@ const Teleprompter = ({ prompter }) => {
   const [baseLineHeight, setBaseLineHeight] = useState(21);
   const [speed, setSpeed] = useState(1); // min 1 and max 8
   const [fontsize, setFontsize] = useState(18); // min 14 and max 50
-  const [textPosition, setTextPosition] = useState('center'); //  left, right and right
 
   const animationElement = document.getElementById(
     'prompter-animated-script-text',
@@ -40,21 +38,18 @@ const Teleprompter = ({ prompter }) => {
   useEffect(() => {
     if (totalLines > 10) {
       let linesToBeCounted = totalLines - 10;
-      let newspeedBaseValue = prompter?.speedBaseValue;
+      let newSpeedBaseValue = prompter?.speedBaseValue;
       let multiplier = linesToBeCounted * 720;
       if (linesToBeCounted > 0) {
-        newspeedBaseValue = newspeedBaseValue + multiplier;
+        newSpeedBaseValue = newSpeedBaseValue + multiplier;
       }
-      setSpeedBaseValue(newspeedBaseValue);
-      console.log('totalLines', totalLines);
+      setSpeedBaseValue(newSpeedBaseValue);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [totalLines]);
-  console.log(
-    'speedbasevalue',
-    Math.round(speedBaseValue),
-    Math.round(speedBaseValue) / speed,
-  );
-  console.log('TRANSPARENCY:', transparency);
+
+  console.log('speedBaseValue / speed', speedBaseValue / speed);
+
   useEffect(() => {
     if (defaultTextInPrompter) {
       setPrompterText(
@@ -84,19 +79,24 @@ const Teleprompter = ({ prompter }) => {
     }
   }, [transparency]);
 
+  const animationReset = () => {
+    if (animationElement) {
+      const clonedElement = animationElement.cloneNode(true);
+      if (animationElement?.parentNode) {
+        animationElement.parentNode.replaceChild(
+          clonedElement,
+          animationElement,
+        );
+      }
+    }
+    setPlay(false);
+    // Adding event listener for animation end to reset the animation
+  };
+
   useEffect(() => {
     if (animationElement) {
       animationElement.addEventListener('animationend', () => {
-        if (animationElement) {
-          const clonedElement = animationElement.cloneNode(true);
-          if (animationElement?.parentNode) {
-            animationElement.parentNode.replaceChild(
-              clonedElement,
-              animationElement,
-            );
-          }
-        }
-        setPlay(false);
+        animationReset();
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -115,27 +115,27 @@ const Teleprompter = ({ prompter }) => {
     if (action === 'minus' && speed > 1) newSpeed -= 1;
     if (action === 'plus' && speed < 8) newSpeed += 1;
     setSpeed(newSpeed);
-    setPlay(false);
+    animationReset();
   };
 
   const handleChangeFontSize = action => {
     let newFontSize = fontsize;
-    let newspeedBaseValue = speedBaseValue;
+    let newSpeedBaseValue = speedBaseValue;
     let newbaseLineHeight = baseLineHeight;
     if (action === 'minus' && fontsize > 14) {
       newFontSize -= 1;
-      newspeedBaseValue -= 720;
+      newSpeedBaseValue -= 720;
       newbaseLineHeight -= 1.5;
     }
     if (action === 'plus' && fontsize < 50) {
       newFontSize += 1;
-      newspeedBaseValue += 720;
+      newSpeedBaseValue += 720;
       newbaseLineHeight += 1.5;
     }
     setFontsize(newFontSize);
-    setSpeedBaseValue(newspeedBaseValue);
+    setSpeedBaseValue(newSpeedBaseValue);
     setBaseLineHeight(newbaseLineHeight);
-    setPlay(false);
+    animationReset();
   };
 
   return (
@@ -148,14 +148,14 @@ const Teleprompter = ({ prompter }) => {
       height={'100%'}
       position={'relative'}
     >
-      <Text
+      {/* <Text
         margin={'5px 0 0 0'}
         fontSize={35}
         fontWeight={500}
         cursor={'pointer'}
         text={'TELEPROMPTER'}
         sx={{ position: 'absolute', top: '20px' }}
-      />
+      /> */}
       <StyledTeleprompterWrapper className="styled-prompter-wrapper">
         <Box className={'prompter-sidebar'}>
           <TextField
@@ -185,7 +185,7 @@ const Teleprompter = ({ prompter }) => {
                 <Text
                   className={`try-remove-button ${!defaultTextInPrompter && 'rise-shake-text'}`}
                   margin={'25px 0 10px 0'}
-                  fontSize={13}
+                  fontSize={{ xs: 11, sm: 13, md: 13, lg: 13 }}
                   fontWeight={500}
                   color={'white'}
                   text={
@@ -236,18 +236,38 @@ const Teleprompter = ({ prompter }) => {
                     color={'white'}
                     text={'Font size:'}
                   />
-                  <span onClick={() => handleChangeFontSize('minus')}>
-                    {minusSvg}
-                  </span>
+                  <Tooltip
+                    title={
+                      play
+                        ? 'Applying the changes will reset the text on screen'
+                        : ''
+                    }
+                    arrow
+                    placement="top"
+                  >
+                    <span onClick={() => handleChangeFontSize('minus')}>
+                      {minusSvg}
+                    </span>
+                  </Tooltip>
                   <Text
                     fontSize={13}
                     fontWeight={500}
                     color={'white'}
                     text={`${fontsize}px`}
                   />
-                  <span onClick={() => handleChangeFontSize('plus')}>
-                    {dropdownSvg}
-                  </span>
+                  <Tooltip
+                    title={
+                      play
+                        ? 'Applying the changes will reset the text on screen'
+                        : ''
+                    }
+                    arrow
+                    placement="top"
+                  >
+                    <span onClick={() => handleChangeFontSize('plus')}>
+                      {dropdownSvg}
+                    </span>
+                  </Tooltip>
                 </Box>
 
                 <Box display={'flex'} gap="4px" alignItems={'center'}>
@@ -258,18 +278,38 @@ const Teleprompter = ({ prompter }) => {
                     color={'white'}
                     text={'Speed:'}
                   />
-                  <span onClick={() => handleChangeSpeed('minus')}>
-                    {minusSvg}
-                  </span>
+                  <Tooltip
+                    title={
+                      play
+                        ? 'Applying the changes will reset the text on screen'
+                        : ''
+                    }
+                    arrow
+                    placement="top"
+                  >
+                    <span onClick={() => handleChangeSpeed('minus')}>
+                      {minusSvg}
+                    </span>
+                  </Tooltip>
                   <Text
                     fontSize={13}
                     fontWeight={500}
                     color={'white'}
                     text={`${speed}x`}
                   />
-                  <span onClick={() => handleChangeSpeed('plus')}>
-                    {dropdownSvg}
-                  </span>
+                  <Tooltip
+                    title={
+                      play
+                        ? 'Applying the changes will reset the text on screen'
+                        : ''
+                    }
+                    arrow
+                    placement="top"
+                  >
+                    <span onClick={() => handleChangeSpeed('plus')}>
+                      {dropdownSvg}
+                    </span>
+                  </Tooltip>
                 </Box>
               </Box>
 
@@ -361,7 +401,6 @@ const Teleprompter = ({ prompter }) => {
                     <ScriptOverlayContainer
                       id={'prompter-overlay-container-id'}
                       pointerEvents={'auto'}
-                      alignItems={textPosition}
                     >
                       <ScriptContainer
                         className="styled-prompter-container"
@@ -391,7 +430,6 @@ const Teleprompter = ({ prompter }) => {
                               className={`script-animation-text`}
                               style={{
                                 color: textColor,
-                                lineHeight: `${fontsize * 1.5}px`,
                               }}
                             >
                               {prompterText}

@@ -141,7 +141,7 @@ const RecentWork = () => {
         handleClose={() => handleClosePrompter()}
         handleOpen={() => handleOpenPrompter()}
       >
-        <Teleprompter />
+        <Teleprompter prompter={{ speedBaseValue: 11000 }} />
       </CustomModal>
       <CustomModal
         open={openCharacterModal}
