@@ -6,7 +6,6 @@ export const StyledCard = styled(Box)`
   cursor: pointer;
   :hover {
     .details {
-      opacity: 1;
       transform: translateY(0);
       transition: all 0.3s ease-in-out;
     }
@@ -15,7 +14,6 @@ export const StyledCard = styled(Box)`
       transition: all 0.3s ease-in-out;
     }
     .hover-section {
-      opacity: 0.85;
       transition: all 0.3s ease-in-out;
     }
     .top-badge {
@@ -27,9 +25,9 @@ export const StyledCard = styled(Box)`
     background: rgb(3 169 126 / 68%);
     top: 0;
     position: absolute;
-    height: 400px;
-    width: 450px;
-    opacity: 0;
+    height: 300px;
+    width: 300px;
+    opacity: 1;
     border-radius: 20px;
     ${props => props.theme.breakpoints.down(480)} {
       width: 90%;
@@ -38,7 +36,7 @@ export const StyledCard = styled(Box)`
   .details {
     position: absolute;
     left: 25px;
-    opacity: 0;
+    opacity: 1;
     top: 60px;
     transition: all 0.3s ease-in-out;
     transform: translateY(30px);
@@ -77,7 +75,7 @@ export const StyledCard = styled(Box)`
     position: absolute;
     top: 0;
     right: 30px;
-    opacity: 0;
+    opacity: 1;
   }
 `;
 export const StyledRecentWork = styled(Box)(({ theme }) => ({
@@ -145,7 +143,7 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
     padding: '60px 0 100px 0',
     overflowX: 'auto',
     scrollBehavior: 'smooth',
-    gap: '40px',
+    gap: '70px',
     justifyContent: 'center',
     width: '100%',
     '& .card': {
@@ -155,8 +153,8 @@ export const StyledRecentWork = styled(Box)(({ theme }) => ({
       },
       img: {
         borderRadius: '20px',
-        width: '450px',
-        height: '400px',
+        width: '300px',
+        height: '300px',
         objectFit: 'cover',
         background: 'white',
         [theme.breakpoints.down(480)]: { width: '90%' },

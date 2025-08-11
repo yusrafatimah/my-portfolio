@@ -13,6 +13,7 @@ const Text = ({
   fontFamily,
   padding,
   letterSpacing,
+  ...props
 }) => {
   return (
     <StyledTypography
@@ -24,6 +25,7 @@ const Text = ({
       margin={margin}
       lineHeight={lineHeight}
       sx={{ cursor: cursor, padding: padding, letterSpacing: letterSpacing }}
+      {...props}
     >
       {text}
     </StyledTypography>

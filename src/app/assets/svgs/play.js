@@ -1,8 +1,8 @@
 export const playSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="80"
-    width="80"
+    height="65"
+    width="65"
     viewBox="0 0 512 512"
   >
     <path

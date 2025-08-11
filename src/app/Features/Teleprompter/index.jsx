@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   ScriptContainer,
   ScriptOverlayContainer,
+  StyledScreen,
   StyledTeleprompterWrapper,
 } from './styles';
 import { Box, Slider, TextField, Tooltip } from '@mui/material';
@@ -17,16 +18,18 @@ import { minusSvg } from '../../assets/svgs/minus';
 
 const Teleprompter = ({ prompter }) => {
   const [play, setPlay] = useState(false);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
+  const [textColor, setTextColor] = useState('#000000');
+  const [textReaderColor, settextReaderColor] = useState('#adfff7'); // #057167 or #adfff7
   const [prompterText, setPrompterText] = useState('');
-  const [transparency, setTransparency] = useState(80);
-  const [defaultTextInPrompter, setDefaultTextInPrompter] = useState(true);
+  const [transparency, setTransparency] = useState(10); // 10 to 100
+  const [defaultTextInPrompter, setDefaultTextInPrompter] = useState(false);
   const [speedBaseValue, setSpeedBaseValue] = useState(50280);
   const [baseLineHeight, setBaseLineHeight] = useState(21);
-  const [speed, setSpeed] = useState(1);
-  const [fontsize, setFontsize] = useState(14);
-  const [textPosition, setTextPosition] = useState('center');
-  console.log(setTextPosition('center'));
+  const [speed, setSpeed] = useState(1); // min 1 and max 8
+  const [fontsize, setFontsize] = useState(18); // min 14 and max 50
+  const [textPosition, setTextPosition] = useState('center'); //  left, right and right
+
   const animationElement = document.getElementById(
     'prompter-animated-script-text',
   );
@@ -35,7 +38,6 @@ const Teleprompter = ({ prompter }) => {
   let totalLines = Math.round(divHeight / lineHeight);
 
   useEffect(() => {
-    console.log('totalLines in start', totalLines);
     if (totalLines > 10) {
       let linesToBeCounted = totalLines - 10;
       let newspeedBaseValue = prompter?.speedBaseValue;
@@ -52,17 +54,35 @@ const Teleprompter = ({ prompter }) => {
     Math.round(speedBaseValue),
     Math.round(speedBaseValue) / speed,
   );
-
+  console.log('TRANSPARENCY:', transparency);
   useEffect(() => {
     if (defaultTextInPrompter) {
       setPrompterText(
-        'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.',
+        'Artificial Intelligence (AI) is the simulation of human intelligence in machines that can think, learn, and make decisions. AI is reshaping tech and software development by automating coding, testing, and debugging, making the process faster and more accurate. Tools like GitHub Copilot and ChatGPT assist developers in writing optimized code, generating documentation, and finding solutions instantly. AI-driven analytics help in predicting software performance issues, while machine learning models enable smarter features like personalization and automation. In the latest trends, AI is powering low-code/no-code platforms, speeding up app development, and integrating advanced capabilities like natural language search, image recognition, and predictive analytics directly into software.',
       );
     } else {
       setPrompterText('');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultTextInPrompter]);
+
+  useEffect(() => {
+    //changing the colors of text relative to transparency
+    if (transparency === 70 || transparency > 70) {
+      setTextColor('#ffffff');
+    } else {
+      setTextColor('#000000');
+    }
+  }, [transparency]);
+
+  useEffect(() => {
+    //changing the colors of line reader relative to transparency
+    if (transparency === 70 || transparency > 70) {
+      settextReaderColor('#057167');
+    } else {
+      settextReaderColor('#adfff7');
+    }
+  }, [transparency]);
 
   useEffect(() => {
     if (animationElement) {
@@ -126,6 +146,7 @@ const Teleprompter = ({ prompter }) => {
       alignItems="center"
       width={'100%'}
       height={'100%'}
+      position={'relative'}
     >
       <Text
         margin={'5px 0 0 0'}
@@ -133,6 +154,7 @@ const Teleprompter = ({ prompter }) => {
         fontWeight={500}
         cursor={'pointer'}
         text={'TELEPROMPTER'}
+        sx={{ position: 'absolute', top: '20px' }}
       />
       <StyledTeleprompterWrapper className="styled-prompter-wrapper">
         <Box className={'prompter-sidebar'}>
@@ -153,83 +175,163 @@ const Teleprompter = ({ prompter }) => {
               handleChangePrompterText(e.target.value);
             }}
           />
-          <Box onClick={() => setDefaultTextInPrompter(!defaultTextInPrompter)}>
-            <Text
-              margin={'5px 0 0 0'}
-              fontSize={13}
-              fontWeight={500}
-              color={'white'}
-              cursor={'pointer'}
-              text={
-                defaultTextInPrompter
-                  ? 'Remove default text'
-                  : 'Try with default text'
-              }
-            />
+          <Box className={'settings-btn-wrapper'}>
+            <div className="col-1">
+              <Box
+                onClick={() => setDefaultTextInPrompter(!defaultTextInPrompter)}
+                display={'flex'}
+                justifyContent={'center'}
+              >
+                <Text
+                  className={`try-remove-button ${!defaultTextInPrompter && 'rise-shake-text'}`}
+                  margin={'25px 0 10px 0'}
+                  fontSize={13}
+                  fontWeight={500}
+                  color={'white'}
+                  text={
+                    defaultTextInPrompter
+                      ? 'Remove default text'
+                      : 'Try with default text . .'
+                  }
+                />
+              </Box>
+
+              <Box
+                display={'flex'}
+                alignItems={'center'}
+                width={'100%'}
+                onClick={() => setShow(!show)}
+                justifyContent={'space-around'}
+                className={'view-icon'}
+                mt={'5px'}
+              >
+                <Text
+                  className={''}
+                  fontSize={13}
+                  fontWeight={500}
+                  color={'white'}
+                  text={
+                    !show ? 'Show text on canvas' : 'Remove text from canvas'
+                  }
+                />
+
+                {show ? hideSvg : showSvg}
+              </Box>
+            </div>
+            <div className="col-2">
+              <Box
+                width={'100%'}
+                display={'flex'}
+                gap="4px"
+                mt={'15px'}
+                alignItems={'center'}
+                justifyContent={'space-evenly'}
+                className={'font-speed-wrapper'}
+              >
+                <Box display={'flex'} gap="4px" alignItems={'center'}>
+                  <Text
+                    className={''}
+                    fontSize={13}
+                    fontWeight={500}
+                    color={'white'}
+                    text={'Font size:'}
+                  />
+                  <span onClick={() => handleChangeFontSize('minus')}>
+                    {minusSvg}
+                  </span>
+                  <Text
+                    fontSize={13}
+                    fontWeight={500}
+                    color={'white'}
+                    text={`${fontsize}px`}
+                  />
+                  <span onClick={() => handleChangeFontSize('plus')}>
+                    {dropdownSvg}
+                  </span>
+                </Box>
+
+                <Box display={'flex'} gap="4px" alignItems={'center'}>
+                  <Text
+                    className={''}
+                    fontSize={13}
+                    fontWeight={500}
+                    color={'white'}
+                    text={'Speed:'}
+                  />
+                  <span onClick={() => handleChangeSpeed('minus')}>
+                    {minusSvg}
+                  </span>
+                  <Text
+                    fontSize={13}
+                    fontWeight={500}
+                    color={'white'}
+                    text={`${speed}x`}
+                  />
+                  <span onClick={() => handleChangeSpeed('plus')}>
+                    {dropdownSvg}
+                  </span>
+                </Box>
+              </Box>
+
+              <Box
+                display={'flex'}
+                alignItems={'center'}
+                gap={'15px'}
+                width={'95%'}
+                className={'t-slider-container'}
+                mt={'15px'}
+              >
+                <Text
+                  className={''}
+                  fontSize={13}
+                  fontWeight={500}
+                  color={'white'}
+                  text={'Transparency'}
+                />
+                <Slider
+                  className="opacity-slider"
+                  id="os-3442"
+                  value={transparency}
+                  size={'small'}
+                  sx={{
+                    height: 6,
+                    width: '100%',
+                    '& .MuiSlider-thumb': {
+                      width: '16px !important',
+                      height: '16px !important',
+                    },
+                  }}
+                  step={10}
+                  min={10}
+                  onChange={(e, v) => handleChangeTransparency(v)}
+                />
+              </Box>
+            </div>
           </Box>
-          <Box
-            width={'100%'}
-            display={'flex'}
-            gap="4px"
-            mt={'15px'}
-            alignItems={'center'}
-            justifyContent={'space-evenly'}
-          >
-            <Box display={'flex'} gap="4px" alignItems={'center'}>
-              <span onClick={() => handleChangeFontSize('minus')}>
-                {minusSvg}
-              </span>
-              <Text
-                fontSize={13}
-                fontWeight={500}
-                color={'white'}
-                text={`${fontsize}px`}
-              />
-              <span onClick={() => handleChangeFontSize('plus')}>
-                {dropdownSvg}
-              </span>
-            </Box>
-            <Box
-              display={'flex'}
-              alignItems={'center'}
-              height={27}
-              onClick={() => setShow(!show)}
-            >
-              {show ? hideSvg : showSvg}
-            </Box>
-            <Box display={'flex'} gap="4px" alignItems={'center'}>
-              <span onClick={() => handleChangeSpeed('minus')}>{minusSvg}</span>
-              <Text
-                fontSize={13}
-                fontWeight={500}
-                color={'white'}
-                text={`${speed}x`}
-              />
-              <span onClick={() => handleChangeSpeed('plus')}>
-                {dropdownSvg}
-              </span>
-            </Box>
-          </Box>
-          <Box display={'flex'} width={'95%'} className={'t-slider-container'}>
-            <Slider
-              className="opacity-slider"
-              id="os-3442"
-              value={transparency}
-              size={'small'}
-              sx={{ height: 10, width: '100%' }}
-              step={10}
-              min={10}
-              onChange={(e, v) => handleChangeTransparency(v)}
-            />
-          </Box>
+
           <Tooltip
             title={show ? '' : 'Click on eye icon to add text on canvas'}
             arrow
             placement="top"
           >
-            <Box sx={{ cursor: show ? 'pointer' : 'not-allowed' }}>
+            <Box
+              className={'play-btn-wrapper'}
+              width={'100%'}
+              display={'flex'}
+              alignItems={'center'}
+              justifyContent={'center'}
+              gap={'17px'}
+              sx={{ cursor: show ? 'pointer' : 'not-allowed' }}
+            >
+              <Text
+                className={''}
+                fontSize={13}
+                fontWeight={500}
+                color={'white'}
+                text={play ? 'Pause' : 'Play'}
+              />
               <Box
-                mt={'5px'}
+                mt={'13px'}
                 onClick={() => {
                   setPlay(!play);
                 }}
@@ -249,45 +351,65 @@ const Teleprompter = ({ prompter }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'relative',
           }}
         >
-          <img className="screen-img-bg" src={screenSvg} alt={'screen-img'} />
-          <Box className={'screen-top-bg'} height={'100%'} width={'100%'}>
-            <Box position={'relative'} height={'100%'} width={'100%'}>
-              {prompterText && (
-                <ScriptOverlayContainer
-                  id={'prompter-overlay-container-id'}
-                  pointerEvents={'auto'}
-                  alignItems={textPosition}
-                >
-                  <ScriptContainer
-                    className="styled-prompter-container"
-                    pointerEvents={'none'}
-                    speed={speed}
-                    fontSize={fontsize}
-                    opacity={transparency}
-                    animationPlayState={play ? 'running' : 'paused'}
-                    visible={show}
-                    lineHeight={baseLineHeight}
-                    width={'100%'}
-                    height={'100%'}
-                  >
-                    <Box className="styled-prompter-container-inner">
-                      <p
-                        id={'prompter-animated-script-text'}
-                        className={`script-animation-text`}
+          <StyledScreen className="screen">
+            <div className="screen-inner">
+              <Box className={'screen-top-bg'} height={'100%'} width={'100%'}>
+                <Box position={'relative'} height={'100%'} width={'100%'}>
+                  {prompterText && (
+                    <ScriptOverlayContainer
+                      id={'prompter-overlay-container-id'}
+                      pointerEvents={'auto'}
+                      alignItems={textPosition}
+                    >
+                      <ScriptContainer
+                        className="styled-prompter-container"
+                        pointerEvents={'none'}
+                        speed={speed}
+                        fontSize={fontsize}
+                        opacity={transparency}
+                        animationPlayState={play ? 'running' : 'paused'}
+                        visible={show}
+                        lineHeight={baseLineHeight}
+                        width={'100%'}
+                        height={'100%'}
                       >
-                        {prompterText}
-                      </p>
-                      <div className="line-reader"></div>
-                      <Box className={'arrow-icon'}>{arrowSvg}</Box>
-                    </Box>
-                  </ScriptContainer>
-                </ScriptOverlayContainer>
-              )}
-            </Box>
-          </Box>
+                        <Box className="styled-prompter-container-inner">
+                          <div
+                            className="line-reader"
+                            style={{
+                              background: textReaderColor,
+                              height: fontsize * 1.2,
+                            }}
+                          >
+                            <div className="inner"> {arrowSvg}</div>
+                          </div>
+                          <Box className={'arrow-icon'}>
+                            <p
+                              id={'prompter-animated-script-text'}
+                              className={`script-animation-text`}
+                              style={{
+                                color: textColor,
+                                lineHeight: `${fontsize * 1.5}px`,
+                              }}
+                            >
+                              {prompterText}
+                            </p>
+                          </Box>
+                        </Box>
+                      </ScriptContainer>
+                    </ScriptOverlayContainer>
+                  )}
+                </Box>
+              </Box>
+            </div>
+            <div className="stand"></div>
+            <div className="base"></div>
+            <div className="button">
+              <div className="button-in"></div>
+            </div>
+          </StyledScreen>
         </Box>
       </StyledTeleprompterWrapper>
     </Box>

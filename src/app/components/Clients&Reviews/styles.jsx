@@ -80,7 +80,8 @@ export const StyledCarousalSection = styled(Box)`
         ${props => props.theme.breakpoints.down(750)} {
           width: 80%;
         }
-        background-color: ${({ theme }) => theme.palette.background.blob};
+        // background-color: ${({ theme }) => theme.palette.background.blob};
+        background: ${({ theme }) => theme.palette.background.gridCard};
         padding: 30px;
         border-radius: 10px;
         p {

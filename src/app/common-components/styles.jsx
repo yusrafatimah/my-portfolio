@@ -1,6 +1,9 @@
 import { Box, Typography, styled } from '@mui/material';
 
 export const StyledButton = styled(Box)`
+  @media (max-width: 360px) {
+    width: 145px;
+  }
   #custom-button {
     width: inherit;
     display: flex;
@@ -16,6 +19,7 @@ export const StyledButton = styled(Box)`
     justify-content: center;
     overflow: hidden;
   }
+
   #hero-button {
     width: inherit;
     display: flex;
@@ -107,4 +111,9 @@ export const StyledTypography = styled(Typography)(({ theme, color }) => ({
       : color === 'white'
         ? theme.palette.text.secondary
         : color,
+  // : color === 'purple'
+  //   ? theme.palette.text.skills
+  //   : color === 'white'
+  //     ? 'white'
+  //     : color,
 }));

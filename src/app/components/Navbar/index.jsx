@@ -13,7 +13,7 @@ import {
 import CustomButton from '../../common-components/CustomButton';
 import { truckSvg } from '../../assets/svgs/truck';
 import Logo from '../../common-components/Logo';
-import { Switch } from '@mui/material';
+import { Switch, Tooltip } from '@mui/material';
 import { sunSvg } from '../../assets/svgs/sun';
 import { moonSvg } from '../../assets/svgs/moon';
 
@@ -45,24 +45,27 @@ const Navbar = ({ setAppTheme, appTheme }) => {
         <NavLink href="#ClientsAndReviewsSection">Reviews</NavLink>
         <NavLinkBold href="#ContactSection">Contact Me</NavLinkBold>
       </NavItems>
-      <ThemeButton className="theme-button">
-        {appTheme === 'light' && sunSvg}
-        <Switch
-          defaultChecked
-          color="default"
-          checked={appTheme === 'light' ? true : false}
-          onChange={() => {
-            if (appTheme === 'light') setAppTheme('dark');
-            else setAppTheme('light');
-          }}
-          sx={{
-            '& .MuiSwitch-thumb': {
-              backgroundColor: '#139588',
-            },
-          }}
-        />
-        {appTheme === 'dark' && moonSvg}
-      </ThemeButton>
+      <Tooltip title="Light Theme Coming Soon">
+        <ThemeButton className="theme-button">
+          {appTheme === 'light' && sunSvg}
+          <Switch
+            defaultChecked
+            color="default"
+            checked={appTheme === 'light' ? true : false}
+            onChange={() => {
+              if (appTheme === 'light') setAppTheme('dark');
+              else setAppTheme('light');
+            }}
+            sx={{
+              '& .MuiSwitch-thumb': {
+                backgroundColor: '#139588',
+              },
+            }}
+          />
+          {appTheme === 'dark' && moonSvg}
+        </ThemeButton>
+      </Tooltip>
+
       <ButtonContainer>
         <CustomButton
           svg={truckSvg}

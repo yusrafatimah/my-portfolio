@@ -16,14 +16,20 @@ const CustomModal = ({
       aria-describedby="unstyled-modal-description"
       open={open}
       onClose={handleClose}
+      sx={{ width: '100%', p: '2%' }}
     >
       <Box
         className={'modal-content'}
-        sx={{ width: 'fit-content', height: 'fit-content' }}
+        sx={{
+          maxWidth: '1300px',
+          width: '100%',
+          height: '100%',
+          maxHeight: 700,
+        }}
       >
         <Box
           className={'modal-inner-wrapper'}
-          sx={{ width: width, height: height }}
+          sx={{ height: '100%', width: '100%' }}
         >
           {children}
         </Box>

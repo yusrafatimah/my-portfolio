@@ -263,7 +263,7 @@ export const StyledHomeSection = styled(Box)`
 export const StyledCodeSection = styled(Box)`
   margin: 20px 0 0 10px;
   .code-tag {
-    color: #02c6b3;
+    color: ${({ theme }) => theme.palette.text.skills};
     font-size: 11px;
     font-family: monaco;
     line-height: 1.3;
@@ -297,7 +297,6 @@ export const StyledMainWrapper = styled(Box)(({ theme }) => ({
   },
   '& .intro-text': {
     textShadow: `2px 2px ${theme.palette.text.shadow}`,
-    [theme.breakpoints.down(600)]: { fontSize: '20px' },
   },
   '& .name-text': {
     fontFamily: ` "Playwrite BE VLG", cursive !important`,

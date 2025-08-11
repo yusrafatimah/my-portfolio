@@ -19,7 +19,7 @@ const ExperienceSection = () => {
       />
       <Box
         className={'grid'}
-        padding={{ xs: '30px', sm: '30px', md: '0' }}
+        padding={{ xs: '20px', sm: '30px', md: '0' }}
         gap={{ xs: '50px', sm: '50px', md: '60px', lg: '70px', xl: '80px' }}
       >
         <Box

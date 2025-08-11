@@ -1,4 +1,5 @@
-import { Box, styled } from '@mui/material';
+import { Box, Input, styled } from '@mui/material';
+import dotsSvg from '../../assets/svgs/dots-svg.svg';
 
 export const Container = styled(Box)`
   display: flex;
@@ -104,3 +105,80 @@ export const ContactButton = styled('input')`
   font-weight: 600;
   margin: 30px auto 0 auto;
 `;
+export const StyledContactSection = styled(Box)(({ theme }) => ({
+  padding: '50px',
+  [theme.breakpoints.down(1200)]: { margin: '20px 0px 20px 30px' },
+  '& .form-wrap': {
+    display: 'flex',
+    padding: '50px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  '& .form-wrapper': {
+    width: 500,
+    background: theme.palette.background.contact,
+    borderRadius: 20,
+    padding: 30,
+    '& p': {
+      textAlign: 'center',
+    },
+  },
+  '& label': {
+    color: 'white',
+  },
+  '& .contact-me-text': {
+    margin: '20px 70px 20px 70px',
+    position: 'relative',
+    letterSpacing: '2px',
+    transition: 'all 0.3s ease',
+    span: {
+      color: 'white',
+    },
+    '& .bold-text': { color: `${theme.palette.text.primary}!important` },
+
+    '& .contact-me-text:hover': {
+      color: theme.palette.text.primary,
+    },
+    [theme.breakpoints.down(1200)]: { margin: '20px 0px 20px 30px' },
+    '&:before': {
+      content: '" "',
+      backgroundImage: `url(${dotsSvg})`,
+      display: 'block',
+      height: 37,
+      left: '-14px',
+      top: '-14px',
+      position: 'absolute',
+      width: 37,
+    },
+  },
+  [theme.breakpoints.down('xl')]: {},
+}));
+
+export const StyledInput = styled(Input)(({ theme }) => ({
+  width: '100%',
+  fontSize: '0.875rem',
+  fontWeight: 400,
+  lineHeight: 1.5,
+  padding: '8px 12px',
+  borderRadius: '8px',
+  color: 'black',
+  background: '#fff',
+  border: `none`,
+  outline: 'none',
+  margin: '16px 0 20px 0',
+  '&:hover': {
+    outline: 'none',
+    borderColor: 'transparent',
+    '&:before': {
+      borderBottom: '2px solid transparent !important',
+    },
+  },
+  '&::before': {
+    borderBottom: '1px solid transparent !important',
+  },
+  '&:focus': {
+    outline: 0,
+    borderColor: theme.palette.text.primary,
+  },
+}));

@@ -14,7 +14,7 @@ import ContactMeSection from './contact-me';
 
 const MainBody = () => {
   const [appTheme, setAppTheme] = useState('dark');
-  const currentTheme = appTheme === 'light' ? lightTheme : darkTheme;
+  const currentTheme = appTheme === 'light' ? darkTheme : darkTheme;
 
   return (
     <ThemeProvider theme={currentTheme}>
@@ -39,7 +39,7 @@ const MainBody = () => {
           <About />
           <RecentWork />
           <ExperienceSection />
-          <ClientsAndReviewsSection />
+          <ClientsAndReviewsSection theme={currentTheme} />
           <ContactMeSection />
         </Box>
 

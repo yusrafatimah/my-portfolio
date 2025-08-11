@@ -6,7 +6,7 @@ import {
 import Text from '../../common-components/Text';
 import { Avatar, Box } from '@mui/material';
 
-const ClientsAndReviewsSection = () => {
+const ClientsAndReviewsSection = ({ currentTheme }) => {
   const carouselImages = [
     {
       name: 'Syed Haseeb',
@@ -95,7 +95,8 @@ const ClientsAndReviewsSection = () => {
                       width: 90,
                       fontSize: 40,
                       color: '#ffffff',
-                      background: '#44b7aa;',
+                      background:
+                        currentTheme === 'light' ? '#70127d' : '#44b7aa;',
                       border: '2px dotted #FFEB3B',
                     }}
                     mb={'1rem'}

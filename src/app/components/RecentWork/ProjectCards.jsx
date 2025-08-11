@@ -6,7 +6,7 @@ import { truckSvg } from '../../assets/svgs/truck';
 import { motion } from 'framer-motion';
 import { Card, Date, Description, Details, Tag, Tags, Title } from './styles';
 
-const ProjectCards = ({ project, setOpenModal, even }) => {
+const ProjectCards = ({ project, onOpenModal, even }) => {
   return (
     <motion.div key={project.id} className={`project_card-${project.id}`}>
       <Card container xs={12} rowGap={5}>
@@ -37,6 +37,7 @@ const ProjectCards = ({ project, setOpenModal, even }) => {
               fontSize={'11px'}
               fontWeight={300}
               url={project?.href}
+              onClick={onOpenModal}
             />
           )}
         </Grid>

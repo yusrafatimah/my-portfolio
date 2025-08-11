@@ -43,6 +43,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
       justifyContent: 'center',
       height: 'fit-content',
       background: theme.palette.background.blob,
+      // background: theme.palette.background.gridCard,
       [theme.breakpoints.down(1200)]: { minHeight: '100%' },
 
       '& .dot': {
@@ -54,7 +55,7 @@ export const StyledExperienceSection = styled(Box)(({ theme }) => ({
         position: 'absolute',
         width: 3,
         height: '100%',
-        background: '#02c6b3',
+        background: theme.palette.text.skills,
         top: 12,
         left: 5,
       },

@@ -10,7 +10,7 @@ const About = () => {
   return (
     <StyleBoxWrapper
       padding={{
-        xs: '30px',
+        xs: '15px',
         sm: '30px',
         md: '30px',
         lg: '40px 0px 100px 70px',

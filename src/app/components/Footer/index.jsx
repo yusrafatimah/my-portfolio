@@ -22,14 +22,38 @@ const FooterSection = () => {
         <a href={'/'}>{instaSvg}</a>
         <a href={'/'}>{twitterSvg}</a>
       </Box>
-      <Text
-        fontSize={16}
-        fontWeight={500}
-        lineHeight={1.7}
-        color={'white'}
-        letterSpacing={10}
-        text={'Yusra Fatima'}
-      />
+      <Box display={'flex'} gap={'20px'}>
+        <Text
+          fontSize={16}
+          fontWeight={700}
+          lineHeight={1.7}
+          color={'white'}
+          letterSpacing={30}
+          textTransform={'uppercase'}
+          text={'Yusra'}
+          sx={{
+            '&::first-letter': {
+              fontSize: '25px',
+            },
+            letterSpacing: { xs: '10px', sm: '25px', md: '30px', lg: '30px' },
+          }}
+        />
+        <Text
+          fontSize={16}
+          fontWeight={700}
+          lineHeight={1.7}
+          color={'white'}
+          letterSpacing={30}
+          textTransform={'uppercase'}
+          text={'Fatima'}
+          sx={{
+            '&::first-letter': {
+              fontSize: '25px',
+            },
+            letterSpacing: { xs: '10px', sm: '25px', md: '30px', lg: '30px' },
+          }}
+        />
+      </Box>
       <Text
         fontSize={16}
         fontWeight={500}

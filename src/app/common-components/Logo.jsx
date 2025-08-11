@@ -12,9 +12,20 @@ const Logo = () => {
         }}
       >
         <SpanTitle>
-          <Span>Y</Span>
-          <Divider>YUSRA FATIMA</Divider>
-          <Span>F</Span>
+          <Span style={{ position: 'absolute', top: '-6px', left: '4px' }}>
+            Y
+          </Span>
+
+          <Span
+            style={{
+              position: 'absolute',
+              bottom: '-10px',
+              fontFamily: 'auto',
+              right: '4px',
+            }}
+          >
+            F
+          </Span>
         </SpanTitle>
       </div>
     </NavLogo>

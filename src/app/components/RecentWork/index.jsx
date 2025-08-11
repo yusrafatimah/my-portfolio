@@ -1,32 +1,37 @@
 import React, { useState } from 'react';
 import Text from '../../common-components/Text';
-import { StyledRecentWork, CardContainer } from './styles';
-import { useMediaQuery } from '@mui/material';
-// import demo1Svg from '../../assets/images/demo-1.jpg';
-// import demo2Svg from '../../assets/images/demo-2.jpg';
-// import { magnifierSvg } from '../../assets/svgs/magnifier';
-// import prompterVideo from '../../assets/gifs/prompter.mov';
-// import CustomModal from '../../common-components/CustomModal';
-// import Teleprompter from '../../Features/Teleprompter';
-// import CustomCharacters from '../../Features/CustomCharacters';
+import { StyledRecentWork, CardContainer, StyledCard } from './styles';
+import { Box, useMediaQuery } from '@mui/material';
+import demo1Svg from '../../assets/images/demo-1.jpg';
+import demo2Svg from '../../assets/images/demo-2.jpg';
+import { magnifierSvg } from '../../assets/svgs/magnifier';
+import prompterVideo from '../../assets/gifs/prompter.mov';
+import CustomModal from '../../common-components/CustomModal';
+import Teleprompter from '../../Features/Teleprompter';
+import CustomCharacters from '../../Features/CustomCharacters';
 import ProjectCard from './ProjectCards';
 import { projects } from './constants';
+import { backArrowIcon } from '../../assets/svgs/back-arrow';
 
 const RecentWork = () => {
-  // const [openCardModal, setOpenCardModal] = React.useState(false);
-  // const [openPrompterModal, setOpenPrompterModal] = React.useState(false);
-  // const [openCharacterModal, setOpenCharacterModal] = React.useState(false);
+  const [openCardModal, setOpenCardModal] = useState(false);
+  const [openPrompterModal, setOpenPrompterModal] = useState(false);
+  const [openCharacterModal, setOpenCharacterModal] = useState(false);
 
-  // const handleOpen = () => setOpenCardModal(true);
-  // const handleClose = () => setOpenCardModal(false);
+  const handleOpen = () => setOpenCardModal(true);
+  const handleClose = () => setOpenCardModal(false);
 
-  // const handleOpenPrompter = () => setOpenPrompterModal(true);
-  // const handleClosePrompter = () => setOpenPrompterModal(false);
+  const handleOpenPrompter = () => setOpenPrompterModal(true);
+  const handleClosePrompter = () => setOpenPrompterModal(false);
 
-  // const handleOpenCharacters = () => setOpenCharacterModal(true);
-  // const handleCloseCharacters = () => setOpenCharacterModal(false);
+  const handleOpenCharacters = () => setOpenCharacterModal(true);
+  const handleCloseCharacters = () => setOpenCharacterModal(false);
   const isBelowDesktopView = useMediaQuery('(max-width: 899px)');
   const [openModal, setOpenModal] = useState({ state: false, project: null });
+
+  const scrollBack = () => {
+    console.log('i am here');
+  };
 
   return (
     <StyledRecentWork
@@ -41,29 +46,22 @@ const RecentWork = () => {
         color={'white'}
         text={'Recent Work'}
       />
-      {/* <Box
+      <Box
         className={'recent-work-wrap'}
         position={'relative'}
         width={'100%'}
         display="flex"
         justifyContent="center"
       >
-        {/* <Box
-          width={'fit-content'}
-          className={'arrow-icon back'}
-          onClick={() => scrollBack()}
-        >
-          {backArrowIcon}
-        </Box> 
         <Box id={'scroll-next'} className={'card-grid'} display={'flex'}>
-          {/* <StyledCard className={'card'} onClick={handleOpenPrompter}>
+          <StyledCard className={'card'} onClick={() => handleOpenPrompter()}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
               fontSize={24}
               fontWeight={700}
               color={'white'}
-              text={'Interactive Teleprompter Demo'}
+              text={'Teleprompter Feature'}
             />
 
             <Box className={'more'}>{magnifierSvg}</Box>
@@ -76,8 +74,8 @@ const RecentWork = () => {
                 text={'Try it yourself'}
               />
             </Box>
-          </StyledCard> *
-          <StyledCard className={'card'} onClick={handleOpen}>
+          </StyledCard>{' '}
+          {/* <StyledCard className={'card'} onClick={() => handleOpen()}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
@@ -91,14 +89,14 @@ const RecentWork = () => {
             <img className="figure" src={demo1Svg} alt="demo-2" />
             <Box className={'top-badge'}>
               <Text
-                fontSize={10}
+                fontSize={12}
                 fontWeight={600}
                 color={'white'}
                 text={'Demo'}
               />
             </Box>
-          </StyledCard>
-          <StyledCard className={'card'} onClick={handleOpenCharacters}>
+          </StyledCard> */}
+          <StyledCard className={'card'} onClick={() => handleOpenCharacters()}>
             <Box className={'hover-section'}></Box>
             <Text
               className="details"
@@ -115,18 +113,18 @@ const RecentWork = () => {
                 fontSize={12}
                 fontWeight={600}
                 color={'white'}
-                text={'Demo'}
+                text={'Checkout'}
               />
             </Box>
           </StyledCard>
         </Box>
       </Box>
-      <CustomModal
+      {/* <CustomModal
         width="1200px"
         height="700px"
         open={openCardModal}
-        handleClose={handleClose}
-        handleOpen={handleOpen}
+        handleClose={() => handleClose()}
+        handleOpen={() => handleOpen()}
       >
         <video
           width="100%"
@@ -137,35 +135,32 @@ const RecentWork = () => {
         >
           <source src={prompterVideo} type="video/mp4"></source>
         </video>
-      </CustomModal>
+      </CustomModal> */}
       <CustomModal
-        width="1200px"
-        height="700px"
         open={openPrompterModal}
-        handleClose={handleClosePrompter}
-        handleOpen={handleOpenPrompter}
+        handleClose={() => handleClosePrompter()}
+        handleOpen={() => handleOpenPrompter()}
       >
         <Teleprompter />
       </CustomModal>
       <CustomModal
-        width="1200px"
-        height="700px"
         open={openCharacterModal}
-        handleClose={handleCloseCharacters}
-        handleOpen={handleOpenCharacters}
+        handleClose={() => handleCloseCharacters()}
+        handleOpen={() => handleOpenCharacters()}
       >
         <CustomCharacters />
-      </CustomModal> */}
+      </CustomModal>
 
       <CardContainer className="recent-work-grid" container xs={12} rowGap={7}>
         {projects &&
           projects.length > 0 &&
           projects.map((project, index) => (
             <ProjectCard
+              key={project.id || index} // add a key
               project={project}
               openModal={openModal}
               even={isBelowDesktopView ? true : index % 2 === 0}
-              setOpenModal={setOpenModal}
+              onOpenModal={() => setOpenModal({ state: true, project })} // pass as a click handler
             />
           ))}
       </CardContainer>

@@ -13,6 +13,7 @@ const CustomButton = ({
   fontSize,
   margin,
   downloadTitle,
+  onClick,
 }) => {
   const theme = useTheme();
   return (
@@ -22,6 +23,7 @@ const CustomButton = ({
       margin={margin}
       className="animated-button"
       id="animated-btn"
+      onClick={onClick}
     >
       <Box
         class="button"

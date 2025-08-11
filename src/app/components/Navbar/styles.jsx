@@ -17,19 +17,9 @@ export const ThemeButton = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 20px 0 0;
-  position: relative;
-  ${props => props.theme.breakpoints.down(769)} {
-    margin: 0 70px 0 0;
-  }
-    svg {
-    position: absolute;
-    z-index: 1;
-    width: 15px;
-    height: auto;
-    right:${props => (props.theme.palette.mode === 'dark' ? 'unset' : '12.5px')};
-    left:${props => (props.theme.palette.mode === 'dark' ? '11.5px' : 'unset')};
-    }
+  padding: 0 20px 0 0;
+  ${props => props.theme.breakpoints.down(860)} {
+    padding: 0 70px 0 0;
   }
 `;
 
@@ -91,7 +81,7 @@ export const NavItems = styled('ul')`
   gap: 32px;
   padding: 0 6px;
   list-style: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     display: none;
   }
 `;
@@ -104,7 +94,7 @@ export const NavLink = styled('a')`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   &:hover {
-    color: #02c6b3;
+    color: ${({ theme }) => theme.palette.text.skills};
   }
 `;
 export const NavLinkBold = styled('a')`
@@ -115,7 +105,7 @@ export const NavLinkBold = styled('a')`
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   &:hover {
-    color: #02c6b3;
+    color: ${({ theme }) => theme.palette.text.skills};
   }
 `;
 
@@ -125,14 +115,14 @@ export const ButtonContainer = styled('div')`
   justify-content: end;
   align-items: center;
   padding: 0 25px 0 0;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     display: none;
   }
 `;
 
 export const MobileIcon = styled('div')`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     display: block;
     position: absolute;
     top: 10px;

@@ -32,14 +32,14 @@ const ContentSection = () => {
         <Text
           className={'intro-text'}
           text={'I am a Front-End Web'}
-          fontSize={25}
+          fontSize={{ xs: 18, sm: 25, md: 25, lg: 25 }}
           fontWeight={500}
           color={'white'}
         />
 
         <Text
           text={'Developer'}
-          fontSize={{ xs: 20, sm: 25, md: 25, lg: 25 }}
+          fontSize={{ xs: 18, sm: 25, md: 25, lg: 25 }}
           fontWeight={500}
           color={'white'}
           className="wipe-animated-text"
@@ -51,6 +51,7 @@ const ContentSection = () => {
         fontSize={14}
         margin={'10px 0 0 0'}
         fontWeight={400}
+        textAlign={'justify'}
       />
       <Box className={'social-platform-wrapper'}>
         {/* <a
